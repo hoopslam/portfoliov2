@@ -21,5 +21,4 @@ export default function Home() {
 
 const HomeContainer = styled.div`
   width: 100%;
-  background-color: ${({theme}) => {theme.background}};
 `

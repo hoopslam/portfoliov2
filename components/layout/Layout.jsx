@@ -16,6 +16,7 @@ export default Layout
 
 const LayoutContainer = styled.div`
     width: 100%;
+    max-width: 990px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;

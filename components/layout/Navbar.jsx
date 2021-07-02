@@ -6,7 +6,7 @@ import Link from "next/link";
 const Navbar = ({ themeHandler }) => {
 	return (
 		<NavbarContainer>
-			<Logo />
+			<Logo>DC</Logo>
 			<ul>
 				<li>
 					<Link href='/'>
@@ -15,6 +15,12 @@ const Navbar = ({ themeHandler }) => {
 					</Link>
 				</li>
 				<li>
+					<Link href='/about'>
+						<a>
+							<MdTagFaces className="icon" size={25}/>
+							<span>About</span>
+						</a>
+					</Link>
 					<Link href='/about'>
 						<a>
 							<MdTagFaces className="icon" size={25}/>
