@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaBlog } from "react-icons/fa";
 import { MdTagFaces } from "react-icons/md";
+import { BsBriefcase } from "react-icons/bs";
+import { BiMessageDetail } from "react-icons/bi";
 import Link from "next/link";
 
 const Navbar = ({ themeHandler }) => {
@@ -10,21 +12,41 @@ const Navbar = ({ themeHandler }) => {
 			<ul>
 				<li>
 					<Link href='/'>
-						<a><FaHome className="icon" size={25}/><span>Home</span>
+						<a>
+							<FaHome className='icon' size={25} />
+							<span>Home</span>
 						</a>
 					</Link>
 				</li>
 				<li>
 					<Link href='/about'>
 						<a>
-							<MdTagFaces className="icon" size={25}/>
+							<MdTagFaces className='icon' size={25} />
 							<span>About</span>
 						</a>
 					</Link>
-					<Link href='/about'>
+				</li>
+				<li>
+					<Link href='/portfolio'>
 						<a>
-							<MdTagFaces className="icon" size={25}/>
-							<span>About</span>
+							<BsBriefcase className='icon' size={25} />
+							<span>Portfolio</span>
+						</a>
+					</Link>
+				</li>
+				<li>
+					<Link href='/blog/'>
+						<a>
+							<FaBlog className='icon' size={25} />
+							<span>Blog</span>
+						</a>
+					</Link>
+				</li>
+				<li>
+					<Link href='/contact'>
+						<a>
+							<BiMessageDetail className='icon' size={25} />
+							<span>Contact</span>
 						</a>
 					</Link>
 				</li>
@@ -45,7 +67,7 @@ const NavbarContainer = styled.nav`
 	width: 110px;
 	left: 0;
 	background-color: ${({ theme }) => theme.primary};
-	color: ${({ theme }) => theme.textColor};
+	color: white;
 	transition: all 0.6s;
 
 	.icon {
@@ -75,7 +97,7 @@ const NavbarContainer = styled.nav`
 	}
 
 	li {
-		height: 40px;
+		height: 50px;
 		position: relative;
 	}
 `;
@@ -86,5 +108,5 @@ const Logo = styled.div`
 	left: 0;
 	height: 100px;
 	width: 100%;
-	background-color: ${({theme}) => theme.dark};
+	background-color: ${({ theme }) => theme.dark};
 `;
