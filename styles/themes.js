@@ -29,7 +29,7 @@ const themes = {
 		light: "#4f5b62",
 		textColor: "#000",
 		lightText: "rgb(142, 142, 142)",
-		background: "#263238",
+		background: "#4f5b62",
     },
 	breakpoints: {
 		sm: 'screen and (max-width: 640px)',

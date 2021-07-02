@@ -10,46 +10,60 @@ const Navbar = ({ themeHandler }) => {
 		<NavbarContainer>
 			<Logo>DC</Logo>
 			<ul>
-				<li>
-					<Link href='/'>
+				<Link href='/'>
+					<li>
 						<a>
-							<FaHome className='icon' size={25} />
-							<span>Home</span>
+							<div className='centeredIcon'>
+								<FaHome className='icon' size={25} />
+								<span>Home</span>
+							</div>
 						</a>
-					</Link>
-				</li>
-				<li>
-					<Link href='/about'>
+					</li>
+				</Link>
+
+				<Link href='/about'>
+					<li>
 						<a>
-							<MdTagFaces className='icon' size={25} />
-							<span>About</span>
+							<div className='centeredIcon'>
+								<MdTagFaces className='icon' size={25} />
+								<span>About</span>
+							</div>
 						</a>
-					</Link>
-				</li>
-				<li>
-					<Link href='/portfolio'>
+					</li>
+				</Link>
+
+				<Link href='/portfolio'>
+					<li>
 						<a>
-							<BsBriefcase className='icon' size={25} />
-							<span>Portfolio</span>
+							<div className='centeredIcon'>
+								<BsBriefcase className='icon' size={25} />
+								<span>Portfolio</span>
+							</div>
 						</a>
-					</Link>
-				</li>
-				<li>
-					<Link href='/blog/'>
+					</li>
+				</Link>
+
+				<Link href='/blog/'>
+					<li>
 						<a>
-							<FaBlog className='icon' size={25} />
-							<span>Blog</span>
+							<div className='centeredIcon'>
+								<FaBlog className='icon' size={25} />
+								<span>Blog</span>
+							</div>
 						</a>
-					</Link>
-				</li>
-				<li>
-					<Link href='/contact'>
+					</li>
+				</Link>
+
+				<Link href='/contact'>
+					<li>
 						<a>
-							<BiMessageDetail className='icon' size={25} />
-							<span>Contact</span>
+							<div className='centeredIcon'>
+								<BiMessageDetail className='icon' size={25} />
+								<span>Contact</span>
+							</div>
 						</a>
-					</Link>
-				</li>
+					</li>
+				</Link>
 			</ul>
 		</NavbarContainer>
 	);
@@ -68,19 +82,20 @@ const NavbarContainer = styled.nav`
 	left: 0;
 	background-color: ${({ theme }) => theme.primary};
 	color: white;
-	transition: all 0.6s;
+	transition: all 0.5s;
 
 	.icon {
 		position: absolute;
 		left: 30px;
-		top: 5px;
 	}
 
 	span {
 		display: none;
+		visibility: hidden;
+		opacity: 0;
 		position: absolute;
 		left: 70px;
-		font-size: 1.5rem;
+		font-size: 1.1rem;
 	}
 
 	:hover {
@@ -89,6 +104,8 @@ const NavbarContainer = styled.nav`
 
 	:hover span {
 		display: inline;
+		visibility: visible;
+		opacity: 1;
 	}
 
 	ul {
@@ -98,7 +115,20 @@ const NavbarContainer = styled.nav`
 
 	li {
 		height: 50px;
+		border-radius: 12px;
+		margin-top: 10px;
+	}
+
+	.centeredIcon {
+		display: flex;
+		align-items: center;
 		position: relative;
+		top: 50%;
+	}
+
+	li:hover {
+		cursor: pointer;
+		background-color: ${({ theme }) => theme.light};
 	}
 `;
 

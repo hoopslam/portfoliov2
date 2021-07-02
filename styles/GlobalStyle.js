@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import themes from "./themes";
 
 //Global Styles Reset
 const GlobalStyle = createGlobalStyle`
@@ -23,6 +24,7 @@ body{
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  background-color: ${({theme}) => theme.background}
 }
 `;
 
