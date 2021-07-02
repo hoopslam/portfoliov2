@@ -6,7 +6,7 @@ import GlobalStyle from "../styles/GlobalStyle";
 import themes from "../styles/themes";
 
 function MyApp({ Component, pageProps }) {
-	const [selectedTheme, setSelectedTheme] = useState("blue")
+	const [selectedTheme, setSelectedTheme] = useState("orange")
 	
 	const themeHandler = (theme) => {
 		setSelectedTheme(theme);

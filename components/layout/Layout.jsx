@@ -16,11 +16,14 @@ export default Layout
 
 const LayoutContainer = styled.div`
     width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: ${({theme}) => {theme.background}};
-    color: ${({theme}) => {theme.textColor}}
+    color: ${({theme}) => {theme.textColor}};
 `
 
 const Main = styled.main`
     width: 100%;
-    max-width: 1200px;
+    flex-grow: 1;
 `

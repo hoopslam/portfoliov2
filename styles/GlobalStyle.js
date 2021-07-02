@@ -1,5 +1,6 @@
 import {createGlobalStyle} from "styled-components";
 
+//Global Styles Reset
 const GlobalStyle = createGlobalStyle`
 * {
     box-sizing: border-box;
@@ -9,6 +10,11 @@ const GlobalStyle = createGlobalStyle`
 
 a {
 	text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
 }
 
 body{

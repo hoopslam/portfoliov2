@@ -20,5 +20,5 @@ export default Footer
 
 const FooterContainer = styled.footer`
     width: 100%;
-    color: rgb(142,142,142);
+    height: 150px;
 `
