@@ -19,7 +19,7 @@ const Navbar = () => {
 				<Logo>DC</Logo>
 				<ul>
 					<Link href='/'>
-						<li>
+						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
 									<FaHome className='icon' size={25} />
@@ -30,7 +30,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/about'>
-						<li>
+						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
 									<MdTagFaces className='icon' size={25} />
@@ -41,7 +41,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/portfolio'>
-						<li>
+						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
 									<BsBriefcase className='icon' size={25} />
@@ -52,7 +52,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/blog/'>
-						<li>
+						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
 									<FaBlog className='icon' size={25} />
@@ -63,7 +63,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/contact'>
-						<li>
+						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
 									<BiMessageDetail className='icon' size={25} />
@@ -75,7 +75,9 @@ const Navbar = () => {
 				</ul>
 			</NavbarContainer>
 			<Hamburger onClick={buttonHandler}>
-				<div className={`bar ${active ? "active" : ""}`}></div>
+				<div className={`bar top ${active ? "active" : ""}`}></div>
+				<div className={`bar middle ${active ? "active" : ""}`}></div>
+				<div className={`bar bottom ${active ? "active" : ""}`}></div>
 			</Hamburger>
 		</>
 	);
@@ -188,29 +190,29 @@ const Hamburger = styled.button`
 	border: none;
 	outline: none;
 
+	.bar {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: rgb(160, 160, 160);
+		margin: 5px 0px;
+		transition: 0.6s;
+	}
+
+	.bar.top.active {
+		transform: rotate(135deg) translate(6px, -6px);
+	}
+
+	.bar.middle.active {
+		transform: rotate(315deg);
+	}
+
+	.bar.bottom.active {
+		transform: rotate(225deg) translate(5px, 5px);
+	}
+
 	@media screen and (max-width: 768px) {
 		display: block;
-
-		.bar,
-		::before,
-		::after {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 3px;
-			background-color: rgb(160, 160, 160);
-			margin: 5px 0px;
-			transition: 0.4s;
-		}
-
-		&.active::before {
-			transform: rotate(225deg) translate(-5px, -5px);
-		}
-		&.active::after {
-			transform: rotate(135deg) translate(-5px, 5px);
-		}
-		&.active .bar {
-			transform: rotate(315deg);
-		}
 	}
 `;
