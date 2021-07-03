@@ -5,8 +5,8 @@ import Footer from "./Footer";
 const Layout = ({children, themeHandler}) => {
     return (
         <LayoutContainer>
-			<Navbar themeHandler={themeHandler}/>
-            <Main>{children}</Main>
+			<Navbar />
+            <Main themeHandler={themeHandler}>{children}</Main>
             <Footer />
         </LayoutContainer>
     )
@@ -16,7 +16,6 @@ export default Layout
 
 const LayoutContainer = styled.div`
     width: 100%;
-    max-width: 990px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -25,5 +24,8 @@ const LayoutContainer = styled.div`
 
 const Main = styled.main`
     width: 100%;
+    max-width: 990px;
     flex-grow: 1;
+
+    
 `

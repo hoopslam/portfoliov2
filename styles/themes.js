@@ -28,7 +28,7 @@ const themes = {
 		dark: "#000a12",
 		light: "#4f5b62",
 		textColor: "#000",
-		lightText: "rgb(142, 142, 142)",
+		lightText: "#fff",
 		background: "#4f5b62",
     },
 	breakpoints: {

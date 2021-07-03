@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { FaHome, FaBlog } from "react-icons/fa";
 import { MdTagFaces } from "react-icons/md";
@@ -5,67 +6,78 @@ import { BsBriefcase } from "react-icons/bs";
 import { BiMessageDetail } from "react-icons/bi";
 import Link from "next/link";
 
-const Navbar = ({ themeHandler }) => {
+const Navbar = () => {
+	const [active, setActive] = useState(false);
+
+	const buttonHandler = () => {
+		setActive(!active);
+	};
+
 	return (
-		<NavbarContainer>
-			<Logo>DC</Logo>
-			<ul>
-				<Link href='/'>
-					<li>
-						<a>
-							<div className='centeredIcon'>
-								<FaHome className='icon' size={25} />
-								<span>Home</span>
-							</div>
-						</a>
-					</li>
-				</Link>
+		<>
+			<NavbarContainer className={`${active ? "active" : ""}`}>
+				<Logo>DC</Logo>
+				<ul>
+					<Link href='/'>
+						<li>
+							<a>
+								<div className='centeredIcon'>
+									<FaHome className='icon' size={25} />
+									<span>Home</span>
+								</div>
+							</a>
+						</li>
+					</Link>
 
-				<Link href='/about'>
-					<li>
-						<a>
-							<div className='centeredIcon'>
-								<MdTagFaces className='icon' size={25} />
-								<span>About</span>
-							</div>
-						</a>
-					</li>
-				</Link>
+					<Link href='/about'>
+						<li>
+							<a>
+								<div className='centeredIcon'>
+									<MdTagFaces className='icon' size={25} />
+									<span>About</span>
+								</div>
+							</a>
+						</li>
+					</Link>
 
-				<Link href='/portfolio'>
-					<li>
-						<a>
-							<div className='centeredIcon'>
-								<BsBriefcase className='icon' size={25} />
-								<span>Portfolio</span>
-							</div>
-						</a>
-					</li>
-				</Link>
+					<Link href='/portfolio'>
+						<li>
+							<a>
+								<div className='centeredIcon'>
+									<BsBriefcase className='icon' size={25} />
+									<span>Portfolio</span>
+								</div>
+							</a>
+						</li>
+					</Link>
 
-				<Link href='/blog/'>
-					<li>
-						<a>
-							<div className='centeredIcon'>
-								<FaBlog className='icon' size={25} />
-								<span>Blog</span>
-							</div>
-						</a>
-					</li>
-				</Link>
+					<Link href='/blog/'>
+						<li>
+							<a>
+								<div className='centeredIcon'>
+									<FaBlog className='icon' size={25} />
+									<span>Blog</span>
+								</div>
+							</a>
+						</li>
+					</Link>
 
-				<Link href='/contact'>
-					<li>
-						<a>
-							<div className='centeredIcon'>
-								<BiMessageDetail className='icon' size={25} />
-								<span>Contact</span>
-							</div>
-						</a>
-					</li>
-				</Link>
-			</ul>
-		</NavbarContainer>
+					<Link href='/contact'>
+						<li>
+							<a>
+								<div className='centeredIcon'>
+									<BiMessageDetail className='icon' size={25} />
+									<span>Contact</span>
+								</div>
+							</a>
+						</li>
+					</Link>
+				</ul>
+			</NavbarContainer>
+			<Hamburger onClick={buttonHandler}>
+				<div className={`bar ${active ? "active" : ""}`}></div>
+			</Hamburger>
+		</>
 	);
 };
 
@@ -82,7 +94,7 @@ const NavbarContainer = styled.nav`
 	left: 0;
 	background-color: ${({ theme }) => theme.primary};
 	color: white;
-	transition: all 0.5s;
+	transition: all 0.5s ease;
 
 	.icon {
 		position: absolute;
@@ -130,13 +142,75 @@ const NavbarContainer = styled.nav`
 		cursor: pointer;
 		background-color: ${({ theme }) => theme.light};
 	}
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		max-width: 220px;
+		left: -100%;
+
+		span {
+			display: inline;
+			visibility: visible;
+			opacity: 1;
+		}
+
+		&.active {
+			left: 0;
+		}
+	}
 `;
 
 const Logo = styled.div`
+	font-family: "Yellowtail", cursive;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.5rem;
+	font-weight: bold;
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100px;
 	width: 100%;
 	background-color: ${({ theme }) => theme.dark};
+`;
+
+const Hamburger = styled.button`
+	display: none;
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	appearance: none;
+	background: none;
+	border: none;
+	outline: none;
+
+	@media screen and (max-width: 768px) {
+		display: block;
+
+		.bar,
+		::before,
+		::after {
+			content: "";
+			display: block;
+			width: 100%;
+			height: 3px;
+			background-color: rgb(160, 160, 160);
+			margin: 5px 0px;
+			transition: 0.4s;
+		}
+
+		&.active::before {
+			transform: rotate(225deg) translate(-5px, -5px);
+		}
+		&.active::after {
+			transform: rotate(135deg) translate(-5px, 5px);
+		}
+		&.active .bar {
+			transform: rotate(315deg);
+		}
+	}
 `;
