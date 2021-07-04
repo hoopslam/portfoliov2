@@ -201,15 +201,15 @@ const Hamburger = styled.button`
 	}
 
 	.bar.top.active {
-		transform: rotate(135deg) translate(6px, -6px);
+		transform: rotate(45deg) translate(6px, 5px);
 	}
 
 	.bar.middle.active {
-		transform: rotate(315deg);
+		transform: rotate(135deg);
 	}
 
 	.bar.bottom.active {
-		transform: rotate(225deg) translate(5px, 5px);
+		transform: rotate(135deg) translate(-6px, 6px);
 	}
 
 	@media screen and (max-width: 768px) {

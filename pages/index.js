@@ -4,7 +4,7 @@ import HomeAbout from "../components/Home/HomeAbout";
 import HomeHeader from "../components/Home/HomeHeader";
 import HomeProjects from "../components/Home/HomeProjects";
 
-export default function Home() {
+export default function Home({themeHandler}) {
   return (
     <HomeContainer>
        <Head>
@@ -12,7 +12,7 @@ export default function Home() {
         <meta name="description" content="David Cho's home page.  Web Developer, blogger, cat dad" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <HomeHeader />
+      <HomeHeader themeHandler={themeHandler}/>
       <HomeAbout />
       <HomeProjects />
     </HomeContainer>

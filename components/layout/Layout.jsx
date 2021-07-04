@@ -2,11 +2,11 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 
-const Layout = ({children, themeHandler}) => {
+const Layout = ({children}) => {
     return (
         <LayoutContainer>
 			<Navbar />
-            <Main themeHandler={themeHandler}>{children}</Main>
+            <Main >{children}</Main>
             <Footer />
         </LayoutContainer>
     )
@@ -24,8 +24,6 @@ const LayoutContainer = styled.div`
 
 const Main = styled.main`
     width: 100%;
-    max-width: 990px;
+    max-width: 768px;
     flex-grow: 1;
-
-    
 `

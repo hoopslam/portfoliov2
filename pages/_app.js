@@ -10,14 +10,15 @@ function MyApp({ Component, pageProps }) {
 
 	const themeHandler = (theme) => {
 		setSelectedTheme(theme);
+		console.log(theme)
 	};
 
 	return (
 		<>
 			<ThemeProvider theme={themes[selectedTheme]}>
 				<GlobalStyle />
-				<Layout themeHandler={themeHandler}>
-					<Component {...pageProps} />
+				<Layout>
+					<Component {...pageProps} themeHandler={themeHandler}/>
 				</Layout>
 			</ThemeProvider>
 		</>
