@@ -20,7 +20,8 @@ const Footer = () => {
 				</Link>
 			</LinksContainer>
 			<SocialLinks />
-			
+			<p>Made with time, love, and copious amounts of coffee ☕</p>
+			<p>&#169; David Cho 2021 All rights reserved</p>
 		</FooterContainer>
 	);
 };
@@ -32,9 +33,9 @@ const FooterContainer = styled.footer`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding: 20px;
 	width: 100%;
-	height: 150px;
-	color: rgb(142, 142, 142);
+	color: ${({theme}) => theme.lightText};
 `;
 
 const LinksContainer = styled.nav`
@@ -46,9 +47,5 @@ const LinksContainer = styled.nav`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-
-	@media screen and (max-width: 990px) {
-		flex-direction: row;
 	}
 `;

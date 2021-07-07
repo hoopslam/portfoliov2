@@ -8,13 +8,18 @@ const HomeHeader = ({ themeHandler }) => {
 
 	const arrowRef = useRef();
 
-	const toggler = () => {
-		indexNumber < 4 ? setIndexNumber(indexNumber + 1) : setIndexNumber(0);
+	const toggler = (direction = "right") => {
+		if(direction === "right"){
+			indexNumber < 4 ? setIndexNumber(indexNumber + 1) : setIndexNumber(0);
+		} else if(direction === "left") {
+			indexNumber > 0 ? setIndexNumber(indexNumber - 1) : setIndexNumber(4);
+		} else return null
 	};
 
 	const scrollDown = () => {
-		arrowRef.current.scrollIntoView({ behavior: 'smooth' })
-	}
+		console.log("clicked");
+		arrowRef.current.scrollIntoView({ behavior: "smooth" });
+	};
 
 	useEffect(() => {
 		themeHandler(numToColor(indexNumber));
@@ -22,11 +27,18 @@ const HomeHeader = ({ themeHandler }) => {
 
 	return (
 		<Container>
-			<Avatar
-				onClick={toggler}
-				src={`/images/${indexNumber}.png`}
-				alt='David Simpsonized Profile Image'
-			/>
+			<AvatarContainer>
+				<Slider className='left' onClick={() => toggler("left")}>
+					<Arrow className='left'>{"<"}</Arrow>
+				</Slider>
+				<Slider className='right' onClick={() => toggler("right")}>
+					<Arrow className='right'>{">"}</Arrow>
+				</Slider>
+				<Avatar
+					src={`/images/${indexNumber}.png`}
+					alt='David Simpsonized Profile Image'
+				/>
+			</AvatarContainer>
 			<TextContainer>
 				<Greeting>
 					<p>
@@ -35,8 +47,7 @@ const HomeHeader = ({ themeHandler }) => {
 				</Greeting>
 				<TextBlock>
 					<p>
-						I'm a {" "}
-						<span onClick={toggler}>{WHATIDO[indexNumber]}</span>
+						I'm a <span onClick={toggler}>{WHATIDO[indexNumber]}</span>
 					</p>
 				</TextBlock>
 				<ColorPicker>
@@ -49,7 +60,9 @@ const HomeHeader = ({ themeHandler }) => {
 				</ColorPicker>
 			</TextContainer>
 			<DownArrow onClick={scrollDown} ref={arrowRef}>
-				<div className="arrowContainer"><div className="arrow"></div></div>
+				<div className='arrowContainer'>
+					<div className='arrow'></div>
+				</div>
 			</DownArrow>
 		</Container>
 	);
@@ -68,10 +81,22 @@ const Container = styled.header`
 	}
 `;
 
+const AvatarContainer = styled.div`
+	position: relative;
+	width: 350px;
+	height: 350px;
+	margin: 15px;
+
+	@media screen and (max-width: 990px) {
+		width: 100%;
+		max-width: 250px;
+		height: 250px;
+	}
+`;
+
 const Avatar = styled.img`
 	border-radius: 50%;
 	width: 350px;
-	margin: 15px;
 	box-shadow: 0 0 5px #333;
 	cursor: pointer;
 	@media screen and (max-width: 990px) {
@@ -95,7 +120,7 @@ const Greeting = styled.div`
 	position: relative;
 
 	span {
-		color: ${({ theme }) => (theme.primary === "#263238" ? "#00ff37" : theme.primary)};
+		color: ${({ theme }) => (theme.primary === "#263238" ? "#00ff37" : theme.primary === "#d32f2f" ? "#1944d2" :theme.primary)};
 		position: relative;
 		font-size: 3rem;
 		font-weight: bold;
@@ -146,7 +171,6 @@ const ColorPicker = styled.div`
 		right: 50%;
 		transform: translate(50%, 0);
 
-
 		button {
 			margin: 10px;
 		}
@@ -157,7 +181,7 @@ const DownArrow = styled.div`
 	.arrowContainer {
 		position: absolute;
 		left: 50%;
-		transform: translate( -50%, -50%);
+		transform: translate(-50%, -50%);
 		display: flex;
 		height: 100px;
 		justify-content: center;
@@ -174,42 +198,81 @@ const DownArrow = styled.div`
 			100% {
 				bottom: 20px;
 			}
-
 		}
 	}
 
 	@media screen and (max-width: 990px) {
-		.arrowContainer{
+		.arrowContainer {
 			height: 50px;
 
 			@keyframes bounce {
-			0% {
-				bottom: 5px;
+				0% {
+					bottom: 5px;
+				}
+				50% {
+					bottom: 0px;
+				}
+				100% {
+					bottom: 5px;
+				}
 			}
-			50% {
-				bottom: 0px;
-			}
-			100% {
-				bottom: 5px;
-			}
-
 		}
-		}
-
 	}
 
 	.arrow {
 		height: 50px;
 		width: 50px;
 		border-style: solid;
-		border-color: ${({theme}) => theme.primary};
+		border-color: ${({ theme }) => theme.primary};
 		border-width: 0px 4px 4px 0px;
 		transform: rotate(45deg);
 		transition: border-width 150ms ease-in-out;
 
 		:hover {
 			cursor: pointer;
-			border-color: ${({theme}) => theme.light === "#4f5b62" ? theme.dark : theme.light};
+			border-color: ${({ theme }) => (theme.light === "#4f5b62" ? theme.dark : theme.light)};
 		}
+	}
+`;
+
+const Arrow = styled.div`
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	top: 50%;
+	transform: translate(0, -50%);
+	z-index: 11;
+	cursor: pointer;
+	user-select: none;
+	font-size: 2.5rem;
+	border-radius: 50%;
+	color: rgba(255, 255, 255, 0.89);
+
+	&.left {
+		left: 5px;
+	}
+
+	&.right {
+		right: 5px;
+	}
+`;
+
+const Slider = styled.div`
+	position: absolute;
+	width: 50%;
+	height: 100%;
+	z-index: 10;
+	cursor: pointer;
+	user-select: none;
+
+	&.left {
+		left: 0;
+	}
+
+	&.right {
+		right: 0;
 	}
 `;

@@ -16,6 +16,7 @@ export default SocialLinks
 
 const Container = styled.div`
     display: flex;
+    margin: 10px 0 20px;
 
     a {
         margin-left: 25px;
