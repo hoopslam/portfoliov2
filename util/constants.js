@@ -4,7 +4,6 @@ export const WHATIDO = [
     "Basketball Fanatic",
     "Gamer",
     "Foodie",
-    "Adventurer"
 ];
 
 export const COLORCODE = [
@@ -12,6 +11,5 @@ export const COLORCODE = [
     "#f57c00",
     "#d32f2f",
     "#263238",
-    "#7cb342",
     "#00796b",
 ]

@@ -15,11 +15,10 @@ const SocialLinks = () => {
 export default SocialLinks
 
 const Container = styled.div`
-    width: 100%;
     display: flex;
 
     a {
-        margin-right: 25px;
+        margin-left: 25px;
         padding: 5px 5px 0;
     }
 

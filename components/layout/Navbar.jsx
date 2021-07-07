@@ -94,7 +94,7 @@ const NavbarContainer = styled.nav`
 	height: 100vh;
 	width: 110px;
 	left: 0;
-	background-color: ${({ theme }) => theme.primary};
+	background-color: ${({ theme }) => theme.sidebar};
 	color: white;
 	transition: all 0.5s ease;
 	z-index: 10;
@@ -190,6 +190,7 @@ const Hamburger = styled.button`
 	background: none;
 	border: none;
 	outline: none;
+	z-index: 10;
 
 	.bar {
 		content: "";

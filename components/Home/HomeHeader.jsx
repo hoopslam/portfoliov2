@@ -9,7 +9,7 @@ const HomeHeader = ({ themeHandler }) => {
 	const arrowRef = useRef();
 
 	const toggler = () => {
-		indexNumber < 5 ? setIndexNumber(indexNumber + 1) : setIndexNumber(0);
+		indexNumber < 4 ? setIndexNumber(indexNumber + 1) : setIndexNumber(0);
 	};
 
 	const scrollDown = () => {
@@ -24,7 +24,7 @@ const HomeHeader = ({ themeHandler }) => {
 		<Container>
 			<Avatar
 				onClick={toggler}
-				src='/images/davidsimpson.svg'
+				src={`/images/${indexNumber}.png`}
 				alt='David Simpsonized Profile Image'
 			/>
 			<TextContainer>
@@ -35,7 +35,7 @@ const HomeHeader = ({ themeHandler }) => {
 				</Greeting>
 				<TextBlock>
 					<p>
-						I'm a{indexNumber === 5 ? "n" : null}{" "}
+						I'm a {" "}
 						<span onClick={toggler}>{WHATIDO[indexNumber]}</span>
 					</p>
 				</TextBlock>
@@ -70,9 +70,14 @@ const Container = styled.header`
 
 const Avatar = styled.img`
 	border-radius: 50%;
+	width: 350px;
 	margin: 15px;
 	box-shadow: 0 0 5px #333;
 	cursor: pointer;
+	@media screen and (max-width: 990px) {
+		width: 100%;
+		max-width: 250px;
+	}
 `;
 
 const TextContainer = styled.div`
@@ -90,7 +95,7 @@ const Greeting = styled.div`
 	position: relative;
 
 	span {
-		color: ${({ theme }) => (theme.primary === "#263238" ? "#000" : theme.primary)};
+		color: ${({ theme }) => (theme.primary === "#263238" ? "#00ff37" : theme.primary)};
 		position: relative;
 		font-size: 3rem;
 		font-weight: bold;
@@ -105,7 +110,7 @@ const TextBlock = styled.div`
 	position: relative;
 
 	span {
-		color: ${({ theme }) => (theme.primary === "#263238" ? "#000" : theme.primary)};
+		color: ${({ theme }) => (theme.primary === "#263238" ? "#00ff37" : theme.primary)};
 		font-weight: bold;
 		border-bottom: 2px solid
 			${({ theme }) => (theme.primary === "#263238" ? "#000" : theme.primary)};
@@ -116,8 +121,12 @@ const TextBlock = styled.div`
 `;
 
 const ColorPicker = styled.div`
-	width: 100%;
+	position: fixed;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
@@ -130,18 +139,63 @@ const ColorPicker = styled.div`
 		box-shadow: 1px 1px 5px #333;
 		border-radius: 50%;
 	}
+
+	@media screen and (max-width: 990px) {
+		flex-direction: row;
+		top: 10px;
+		right: 50%;
+		transform: translate(50%, 0);
+
+
+		button {
+			margin: 10px;
+		}
+	}
 `;
 
 const DownArrow = styled.div`
 	.arrowContainer {
 		position: absolute;
-		bottom: 20px;
 		left: 50%;
 		transform: translate( -50%, -50%);
 		display: flex;
 		height: 100px;
 		justify-content: center;
 		align-items: center;
+		animation: bounce 1.5s ease infinite;
+
+		@keyframes bounce {
+			0% {
+				bottom: 20px;
+			}
+			50% {
+				bottom: 10px;
+			}
+			100% {
+				bottom: 20px;
+			}
+
+		}
+	}
+
+	@media screen and (max-width: 990px) {
+		.arrowContainer{
+			height: 50px;
+
+			@keyframes bounce {
+			0% {
+				bottom: 5px;
+			}
+			50% {
+				bottom: 0px;
+			}
+			100% {
+				bottom: 5px;
+			}
+
+		}
+		}
+
 	}
 
 	.arrow {
@@ -155,7 +209,7 @@ const DownArrow = styled.div`
 
 		:hover {
 			cursor: pointer;
-			border-color: ${({theme}) => theme.light};
+			border-color: ${({theme}) => theme.light === "#4f5b62" ? theme.dark : theme.light};
 		}
 	}
 `;

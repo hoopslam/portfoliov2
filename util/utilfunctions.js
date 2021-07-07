@@ -9,8 +9,6 @@ export const numToColor = (num) => {
 		case 3:
 			return "dark";
 		case 4:
-			return "green";
-		case 5:
 			return "teal";
 		default:
 			return "blue";

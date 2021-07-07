@@ -1,0 +1,84 @@
+import { SiJavascript, SiNextDotJs, SiFirebase, SiRedux } from "react-icons/si";
+import { AiFillHtml5, AiFillGithub } from "react-icons/ai";
+import { DiCss3, DiBootstrap, DiReact, DiMongodb, DiSass } from "react-icons/di";
+import { FaNode } from "react-icons/fa";
+import styled from "styled-components";
+
+const Toolkit = () => {
+	return (
+		<ToolKitContainer>
+			<Item>
+				<AiFillHtml5 size={50} color={"#e34c26"} title={"HTML 5"} />
+				<p>HTML5</p>
+			</Item>
+			<Item>
+				<DiCss3 size={50} color={"DiCss3"} color={"#264de4"} title={"CSS 3"} />
+				<p>CSS3</p>
+			</Item>
+			<Item>
+				<SiJavascript size={50} color={"#f0db4f"} title={"Javascript"} />
+				<p>Javascript</p>
+			</Item>
+			<Item>
+				<DiBootstrap size={50} color={"#602C50"} title={"Bootstrap"} />
+				<p>Bootstrap</p>
+			</Item>
+			<Item>
+				<DiSass size={50} color={"#c69"} title={"Sass"} />
+				<p>Sass</p>
+			</Item>
+			<Item>
+				<DiReact size={50} color={"#61DBFB"} title={"React"} />
+				<p>React</p>
+			</Item>
+			<Item>
+				<SiRedux size={50} color={"#764abc"} title={"Redux"} />
+				<p>Redux</p>
+			</Item>
+			<Item>
+				<SiNextDotJs size={50} color={"#000000"} title={"Next.js"} />
+				<p>Next.js</p>
+			</Item>
+			<Item>
+				<FaNode size={50} color={"#303030"} title={"Node"} />
+				<p>Node</p>
+			</Item>
+			<Item>
+				<DiMongodb size={50} color={"#4DB33D"} title={"MongoDB"} />
+				<p>MongoDB</p>
+			</Item>
+			<Item>
+				<AiFillGithub size={50} color={"#211F1F"} title={"Github"} />
+				<p>Github</p>
+			</Item>
+
+			<Item>
+				<SiFirebase size={50} color={"#ffcb2b"} title={"Firebase"} />
+				<p>Firebase</p>
+			</Item>
+		</ToolKitContainer>
+	);
+};
+
+export default Toolkit;
+
+const ToolKitContainer = styled.div`
+	width: 100%;
+    padding: 0 20px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+`;
+
+const Item = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 10px 0;
+
+    p {
+        margin: 0;
+        font-size: .8rem;
+    }
+`;
