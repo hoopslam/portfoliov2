@@ -20,5 +20,14 @@ const Container = styled.div`
 
     a {
         margin-right: 25px;
+        padding: 5px 5px 0;
+    }
+
+    a:hover {
+        box-shadow: 0 0 10px rgb(142, 142, 142);
+        background-color: rgb(142, 142, 142);
+        color: white;
+        border-radius: 5px;
+
     }
 `

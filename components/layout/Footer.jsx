@@ -21,5 +21,5 @@ export default Footer
 const FooterContainer = styled.footer`
     width: 100%;
     height: 150px;
-    color: ${({theme}) => theme.lightText};
+    color: rgb(142, 142, 142);
 `

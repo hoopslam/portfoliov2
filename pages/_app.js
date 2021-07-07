@@ -10,7 +10,6 @@ function MyApp({ Component, pageProps }) {
 
 	const themeHandler = (theme) => {
 		setSelectedTheme(theme);
-		console.log(theme)
 	};
 
 	return (

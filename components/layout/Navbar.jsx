@@ -97,6 +97,7 @@ const NavbarContainer = styled.nav`
 	background-color: ${({ theme }) => theme.primary};
 	color: white;
 	transition: all 0.5s ease;
+	z-index: 10;
 
 	.icon {
 		position: absolute;
