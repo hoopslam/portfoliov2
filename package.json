@@ -10,9 +10,7 @@
   },
   "dependencies": {
     "better-react-spinkit": "^2.0.4",
-    "dotenv": "^10.0.0",
     "next": "11.0.1",
-    "nodemailer": "^6.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.2.0",

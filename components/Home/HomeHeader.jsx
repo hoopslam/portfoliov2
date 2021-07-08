@@ -42,12 +42,12 @@ const HomeHeader = ({ themeHandler }) => {
 			<TextContainer>
 				<Greeting>
 					<p>
-						Howdy! I'm <span>David</span>
+						Howdy! I&apos;m <span>David</span>
 					</p>
 				</Greeting>
 				<TextBlock>
 					<p>
-						I'm a <span onClick={()=> toggler("right")}>{WHATIDO[indexNumber]}</span>
+						I&apos;m a <span onClick={()=> toggler("right")}>{WHATIDO[indexNumber]}</span>
 					</p>
 				</TextBlock>
 				<ColorPicker>

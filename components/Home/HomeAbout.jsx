@@ -7,20 +7,20 @@ const HomeAbout = () => {
 		<AboutContainer id="about">
 			<h1>About Me</h1>
 			<p>
-				I'm a developer with a passion for making things, be it web apps, homemade kimchi,
+				I&apos;m a developer with a passion for making things, be it web apps, homemade kimchi,
 				or cardboard box castles for my cat. Whatever the endeavor, I genuinely enjoy the
 				challenge of putting small pieces together to create a beautiful and cohesive
 				product.
 			</p>
 			<p>
-				When building web apps, I mainly use React to build out the front end. I've recently
+				When building web apps, I mainly use React to build out the front end. I&apos;ve recently
 				been using Next.js with styled components and am loving it! For the back end,
 				Firebase has been my JAM but I can also use a bit of Node, Express, MongoDB and
 				PostgreSQL.
 			</p>
 			<p>
 				Outside of coding, I love spending time with my fiancee and our cat, Miru 😸. I
-				follow my basketball religiously (let's go Clippers!) and unwind in the evenings
+				follow my basketball religiously (let&apos;s go Clippers!) and unwind in the evenings
 				with a bit of Overwatch, PUBG, or Civ.
 			</p>
 
