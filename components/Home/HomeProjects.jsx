@@ -18,13 +18,13 @@ const HomeProjects = () => {
 						</h3>
 						<p>{project.description}</p>
 						<Links>
-							<a href={project.github} target='_blank'>
+							<a href={project.github} target='_blank' rel="noreferrer">
 								<StyledButton>
 									Code
 									<FaGithubAlt size={25} className="icon"/>
 								</StyledButton>
 							</a>
-							<a href={project.live} target='_blank'>
+							<a href={project.live} target='_blank' rel="noreferrer">
 								<StyledButton>
 									Live
 									<FaExternalLinkAlt size={25} className="icon"/>
