@@ -12,7 +12,7 @@ const Toolkit = () => {
 				<p>HTML5</p>
 			</ToolIcon>
 			<ToolIcon>
-				<DiCss3 size={50} color={"DiCss3"} color={"#264de4"} title={"CSS 3"} />
+				<DiCss3 size={50} color={"#264de4"} title={"CSS 3"} />
 				<p>CSS3</p>
 			</ToolIcon>
 			<ToolIcon>
