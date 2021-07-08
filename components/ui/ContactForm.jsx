@@ -1,28 +1,46 @@
 import styled from "styled-components";
-import emailjs from "emailjs-com";
+import { useState } from "react";
 
 const ContactForm = () => {
-	function sendEmail(e) {
-		e.preventDefault();
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 
-		emailjs
-			.sendForm("service_f4t6rk9", "template_hx5g5sc", e.target, "user_XtYyMqV78dTetP6lLHnBA")
-			.then(
-				(result) => {
-					console.log(result.text);
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		console.log("Sending");
+		let data = {
+			name,
+			email,
+			message,
+		};
+
+		try {
+			const response = await fetch("/api/contact", {
+				method: "POST",
+				headers: {
+					Accept: "application/json, text/plain, */*",
+					"Content-Type": "application/json",
 				},
-				(error) => {
-					console.log(error.text);
-				}
-			);
-		e.target.reset();
-		alert("Thanks! I'll get back to you as soon as possible!");
-	}
+				body: JSON.stringify(data),
+			});
+			if (response.accepted) {
+				alert("Message Sent!");
+				console.log("sent");
+				setName("");
+				setEmail("");
+				setMessage("");
+			} 
+		} catch (err) {
+			alert("There was an error while trying to send your message")
+			console.error(err);
+		}
+	};
 
 	return (
-		<ContactContainer>
+		<ContactContainer id='contact'>
 			<Container>
-				<div className="text">
+				<div className='text'>
 					<h1>Drop me a Line!</h1>
 					<p>
 						Want to get a hold of me? Send me a message and I'll get back to you
@@ -30,16 +48,41 @@ const ContactForm = () => {
 					</p>
 				</div>
 
-				<form className="formContainer" onSubmit={sendEmail}>
+				<form className='formContainer'>
 					<label htmlFor='name'>Name</label>
-					<input type='text' name='name' required />
+					<input
+						type='text'
+						onChange={(e) => {
+							setName(e.target.value);
+						}}
+						name='name'
+						required
+					/>
 					<label htmlFor='email'>Email</label>
-					<input type='email' name='email' required />
-					<label htmlFor='subject'>Subject</label>
-					<input type='text' name='subject' required />
+					<input
+						type='email'
+						onChange={(e) => {
+							setEmail(e.target.value);
+						}}
+						name='email'
+						required
+					/>
 					<label htmlFor='message'>Message</label>
-					<textarea required name='message' cols='30' rows='8' />
-					<button className="button" type='submit'>
+					<textarea
+						required
+						name='message'
+						cols='30'
+						rows='8'
+						onChange={(e) => {
+							setMessage(e.target.value);
+						}}
+					/>
+					<button
+						className='button'
+						type='submit'
+						onClick={(e) => {
+							handleSubmit(e);
+						}}>
 						Send
 					</button>
 				</form>
@@ -69,7 +112,7 @@ const ContactContainer = styled.div`
 		outline: none;
 		border: none;
 		height: 2rem;
-        border-radius: 8px;
+		border-radius: 8px;
 	}
 	textarea {
 		background-color: whitesmoke;
@@ -83,14 +126,14 @@ const ContactContainer = styled.div`
 		outline: none;
 	}
 	h1 {
-		color: ${({theme}) => theme.primary};
-        margin: 10px;
+		color: ${({ theme }) => theme.primary};
+		margin: 10px;
 	}
 	.text {
 		text-align: center;
 	}
 	.formContainer {
-        margin: 20px;
+		margin: 20px;
 		width: 100%;
 		max-width: 500px;
 		display: flex;
@@ -103,13 +146,14 @@ const ContactContainer = styled.div`
 		height: 2rem;
 		width: 100%;
 		text-align: center;
-		background-color: ${({theme}) => theme.primary};
-		color: ${({theme}) => theme.background};
+		background-color: ${({ theme }) => theme.primary};
+		color: ${({ theme }) => theme.background};
 		border: none;
 	}
 
 	.button:hover {
-		background-color: ${({theme}) => theme.light};
+		background-color: ${({ theme }) =>
+			theme.light === "#4f5b62" ? theme.primary : theme.light};
 		cursor: pointer;
 	}
 `;

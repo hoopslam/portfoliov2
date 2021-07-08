@@ -4,7 +4,7 @@ import Toolkit from "../ui/Toolkit";
 
 const HomeAbout = () => {
 	return (
-		<AboutContainer>
+		<AboutContainer id="about">
 			<h1>About Me</h1>
 			<p>
 				I'm a developer with a passion for making things, be it web apps, homemade kimchi,
@@ -23,13 +23,7 @@ const HomeAbout = () => {
 				follow my basketball religiously (let's go Clippers!) and unwind in the evenings
 				with a bit of Overwatch, PUBG, or Civ.
 			</p>
-			<p>
-				For a more details about who I am, {" "}
-				<Link href='/about'>
-					<a>click here</a>
-				</Link>
-				.
-			</p>
+
             <h1>My Toolkit</h1>
             <Toolkit />
 		</AboutContainer>

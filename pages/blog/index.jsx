@@ -1,7 +1,9 @@
+import Construction from "../../components/ui/Construction"
+
 const index = () => {
     return (
         <div>
-            Blog Home
+            <Construction />
         </div>
     )
 }

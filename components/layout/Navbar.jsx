@@ -18,7 +18,7 @@ const Navbar = () => {
 			<NavbarContainer className={`${active ? "active" : ""}`}>
 				<Logo>DC</Logo>
 				<ul>
-					<Link href='/'>
+					<Link href='/#home'>
 						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
@@ -29,7 +29,7 @@ const Navbar = () => {
 						</li>
 					</Link>
 
-					<Link href='/about'>
+					<Link href='/#about'>
 						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
@@ -40,7 +40,7 @@ const Navbar = () => {
 						</li>
 					</Link>
 
-					<Link href='/portfolio'>
+					<Link href='/#projects'>
 						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
@@ -62,7 +62,7 @@ const Navbar = () => {
 						</li>
 					</Link>
 
-					<Link href='/contact'>
+					{/* <Link href='/#contact'>
 						<li onClick={buttonHandler}>
 							<a>
 								<div className='centeredIcon'>
@@ -71,7 +71,7 @@ const Navbar = () => {
 								</div>
 							</a>
 						</li>
-					</Link>
+					</Link> */}
 				</ul>
 			</NavbarContainer>
 			<Hamburger onClick={buttonHandler}>

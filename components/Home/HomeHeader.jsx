@@ -26,7 +26,7 @@ const HomeHeader = ({ themeHandler }) => {
 	}, [indexNumber]);
 
 	return (
-		<Container>
+		<Container id="home">
 			<AvatarContainer>
 				<Slider className='left' onClick={() => toggler("left")}>
 					<Arrow className='left'>{"<"}</Arrow>
@@ -47,7 +47,7 @@ const HomeHeader = ({ themeHandler }) => {
 				</Greeting>
 				<TextBlock>
 					<p>
-						I'm a <span onClick={toggler}>{WHATIDO[indexNumber]}</span>
+						I'm a <span onClick={()=> toggler("right")}>{WHATIDO[indexNumber]}</span>
 					</p>
 				</TextBlock>
 				<ColorPicker>

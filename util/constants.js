@@ -53,7 +53,7 @@ export const PROJECTS = [
     {
         title: "Disney Plus Clone",
         id: 6,
-        image: "/images/projects/disneyplus0.png",
+        image: "/images/projects/disneyplus1.png",
         description: "A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.",
         tech: "React, Redux, Styled Components, Firebase",
         github: "https://github.com/hoopslam/disneyplusclone",

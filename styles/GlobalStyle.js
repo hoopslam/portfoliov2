@@ -2,6 +2,11 @@ import {createGlobalStyle} from "styled-components";
 
 //Global Styles Reset
 const GlobalStyle = createGlobalStyle`
+
+html {
+  scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +28,8 @@ body{
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  background-color: ${({theme}) => theme.background}
+  background-color: ${({theme}) => theme.background};
+  scroll-behavior: smooth;
 }
 `;
 

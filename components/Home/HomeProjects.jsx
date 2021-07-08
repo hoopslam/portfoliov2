@@ -4,7 +4,7 @@ import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
 
 const HomeProjects = () => {
 	return (
-		<ProjectContainer>
+		<ProjectContainer id="projects">
 			<h1>Featured Projects</h1>
 			{PROJECTS.map((project) => (
 				<Project key={project.id}>

@@ -10,7 +10,6 @@ export default function Home({themeHandler}) {
       <HomeHeader themeHandler={themeHandler}/>
       <HomeAbout />
       <HomeProjects />
-      <ContactForm />
     </HomeContainer>
   )
 }
