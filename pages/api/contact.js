@@ -1,8 +1,8 @@
-export default async function (req, res) {
-	require("dotenv").config();
+require("dotenv").config();
 
-	let nodemailer = require("nodemailer");
-
+const nodemailer = require("nodemailer");
+	
+export default async (req, res) => {
 	const transporter = nodemailer.createTransport({
 		port: 465,
 		host: "smtp.gmail.com",
@@ -13,7 +13,7 @@ export default async function (req, res) {
 		secure: true,
 	});
 
-	if (req.method === "POST") {
+	if(req.method === "POST") {
 		const mailData = {
 			from: "hoopslamburneremail@gmail.com",
 			to: "hoopslam@gmail.com",
@@ -24,9 +24,9 @@ export default async function (req, res) {
 		};
 		transporter.sendMail(mailData, function (err, info) {
 			if (err) console.log(err);
-			else res.status(200).send({ message: "Message Sent" });
+			else res.status(200).send({ info });
 		});
 	} else {
-		res.status(404).send({ message: "Can only accept POST" });
+		res.status(200).json({status: "OK"})
 	}
 }
