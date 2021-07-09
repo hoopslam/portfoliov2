@@ -59,4 +59,13 @@ export const PROJECTS = [
         github: "https://github.com/hoopslam/disneyplusclone",
 		live: "https://disneyplus-clone-703c8.web.app/",
     },
+	{
+		title: "Portfolio v1",
+		id: 7,
+		image: "/images/projects/oldportfolio.png",
+		description: "Previous version of my portfolio website.  A bit embarressing to show now but I think it shows my progression as a developer and designer.",
+		tech: "Next.js, CSS Modules, React-reveal",
+		github: "https://github.com/hoopslam/portfolio",
+		live: "https://portfolio-hoopslam.vercel.app/",
+	}
 ];
