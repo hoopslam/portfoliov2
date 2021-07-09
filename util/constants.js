@@ -29,7 +29,7 @@ export const PROJECTS = [
 		image: "/images/projects/random.png",
 		description: "A random geography quiz app built in Typescript.  This app uses the Opentdb API to generate random questions.",
 		tech: "Typescript, React, Styled Components, Opentdb API",
-		github: "https://hoopslam.com/hoopslam/RandomTrivia/",
+		github: "https://github.com/hoopslam/RandomTrivia",
 		live: "https://hoopslam.github.io/RandomTrivia/",
 	},
     {
