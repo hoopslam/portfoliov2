@@ -163,6 +163,11 @@ const ColorPicker = styled.div`
 		border: none;
 		box-shadow: 1px 1px 5px #333;
 		border-radius: 50%;
+		transition: all .4s ease-in-out;
+
+		:hover {
+			transform: scale(1.2);
+		}
 	}
 
 	@media screen and (max-width: 990px) {
