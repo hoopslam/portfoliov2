@@ -66,6 +66,6 @@ export const PROJECTS = [
 		description: "Previous version of my portfolio website.  A bit embarressing to show now but I think it shows my progression as a developer and designer.",
 		tech: "Next.js, CSS Modules, React-reveal",
 		github: "https://github.com/hoopslam/portfolio",
-		live: "https://portfolio-hoopslam.vercel.app/",
+		live: "https://portfoliov2-alpha.vercel.app/",
 	}
 ];
