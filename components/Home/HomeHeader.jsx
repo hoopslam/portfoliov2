@@ -104,7 +104,8 @@ const Avatar = styled.img`
 	cursor: pointer;
 	@media screen and (max-width: 990px) {
 		width: 100%;
-		max-width: 250px;
+		width: 250px;
+		height: 250px;
 	}
 `;
 
