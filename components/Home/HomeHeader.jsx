@@ -37,6 +37,8 @@ const HomeHeader = ({ themeHandler }) => {
 				<Avatar
 					src={`/images/${indexNumber}.png`}
 					alt='David Simpsonized Profile Image'
+					width="350"
+					height="350"
 				/>
 			</AvatarContainer>
 			<TextContainer>
@@ -55,7 +57,8 @@ const HomeHeader = ({ themeHandler }) => {
 						<button
 							key={i}
 							onClick={() => setIndexNumber(i)}
-							style={{ backgroundColor: `${code}` }}></button>
+							style={{ backgroundColor: `${code}` }}
+							aria-label="color-picker-button"></button>
 					))}
 				</ColorPicker>
 			</TextContainer>

@@ -10,7 +10,7 @@ const HomeProjects = () => {
 				<Project key={project.id}>
 					<ImageContainer>
 						<h2>{project.title}</h2>
-						<img src={project.image} alt={`Project Image ${project.title}`} />
+						<img src={project.image} alt={`Project Image ${project.title}`} width="350" height="262" />
 					</ImageContainer>
 					<ProjectDescription>
 						<h3>
@@ -64,7 +64,7 @@ const Project = styled.div`
 	justify-content: center;
 	align-items: flex-start;
 	margin: 10px 0;
-	box-shadow: 0 1px 10px #a7a9ac;
+	box-shadow: 0 1px 5px #333;
 	border-radius: 12px;
 
 	img {
@@ -72,7 +72,8 @@ const Project = styled.div`
 		border-radius: 12px;
 		height: auto;
 		object-fit: cover;
-		box-shadow: 0 0 5px #a7a9ac;
+		margin: 10px;
+		box-shadow: 0 0 2px #333;
 	}
 
 	@media screen and (max-width: 990px) {
@@ -101,7 +102,7 @@ const ImageContainer = styled.div`
 `;
 
 const ProjectDescription = styled.div`
-	padding: 2rem 1.5rem 0;
+	padding: 2.8rem 1.5rem 0;
 	display: flex;
 	flex-direction: column;
 
@@ -139,7 +140,7 @@ const StyledButton = styled.button`
     justify-content: center;
     align-items: center;
     color: #fff;
-    background-color: ${({theme}) => theme.light === "#4f5b62" ? "#263238" : theme.light};
+    background-color: ${({theme}) => theme.primary === "#00ff37" ? "#000" : theme.primary};
     border: none;
     padding: 5px 10px;
     border-radius: 12px;

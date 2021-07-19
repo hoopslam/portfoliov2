@@ -74,7 +74,7 @@ const Navbar = () => {
 					</Link> */}
 				</ul>
 			</NavbarContainer>
-			<Hamburger onClick={buttonHandler}>
+			<Hamburger onClick={buttonHandler} aria-label="hamburger menu">
 				<div className={`bar top ${active ? "active" : ""}`}></div>
 				<div className={`bar middle ${active ? "active" : ""}`}></div>
 				<div className={`bar bottom ${active ? "active" : ""}`}></div>
