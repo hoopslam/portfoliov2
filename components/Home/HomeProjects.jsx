@@ -86,6 +86,12 @@ const Project = styled.div`
 			max-width: 450px;
 		}
 	}
+
+	@media screen and (max-width: 540px) {
+		img {
+			border-radius: 0;
+		}
+	}
 `;
 
 const ImageContainer = styled.div`
