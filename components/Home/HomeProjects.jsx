@@ -97,6 +97,7 @@ const Project = styled.div`
 
 const ImageContainer = styled.div`
 	display: flex;
+	position: relative;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
