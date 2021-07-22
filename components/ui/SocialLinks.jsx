@@ -24,8 +24,8 @@ const Container = styled.div`
     }
 
     a:hover {
-        box-shadow: 0 0 10px rgb(142, 142, 142);
-        background-color: rgb(142, 142, 142);
+        box-shadow: 0 0 10px #333;
+        background-color: #333;
         color: white;
         border-radius: 5px;
 

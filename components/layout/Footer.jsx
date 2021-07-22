@@ -20,7 +20,7 @@ const Footer = () => {
 				</Link>
 			</LinksContainer>
 			<SocialLinks />
-			<p>Made with time, love, and copious amounts of coffee ☕</p>
+			<p>Site Made with time, love, and coffee ☕</p>
 			<p>&#169; David Cho 2021 All rights reserved</p>
 		</FooterContainer>
 	);
@@ -35,12 +35,22 @@ const FooterContainer = styled.footer`
 	align-items: center;
 	padding: 20px;
 	width: 100%;
-	color: ${({theme}) => theme.lightText};
+	color: ${({theme}) =>theme.primary === "#00ff37" ? "#fff" : "#333"};
+
+	p {
+		margin: 5px;
+		padding: 5px;
+	}
+
 `;
 
 const LinksContainer = styled.nav`
 	display: flex;
 	margin: 15px;
+
+	@media screen and (max-width: 540px) {
+		display: block;
+	}
 
 	a {
 		margin: 0 15px;

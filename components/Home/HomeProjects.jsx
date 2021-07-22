@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { PROJECTS } from "../../util/constants";
 import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
+import Image from "next/image"
 
 const HomeProjects = () => {
 	return (
@@ -10,7 +11,7 @@ const HomeProjects = () => {
 				<Project key={project.id}>
 					<ImageContainer>
 						<h2>{project.title}</h2>
-						<img src={project.image} alt={`Project Image ${project.title}`} width="350" height="262" />
+						<Image src={project.image} alt={`Project Image ${project.title}`} width={350} height={262} />
 					</ImageContainer>
 					<ProjectDescription>
 						<h3>
@@ -66,14 +67,14 @@ const Project = styled.div`
 	margin: 10px 0;
 	box-shadow: 0 1px 5px #333;
 	border-radius: 12px;
+	background-color: ${({theme}) => theme.primary === "#00ff37" ? "#000" : ""};
 
 	img {
 		width: 350px;
-		border-radius: 12px;
 		height: auto;
+		padding: 12px !important;
 		object-fit: cover;
-		margin: 10px;
-		box-shadow: 0 0 2px #333;
+		border: 1px solid ${({theme}) => theme.primary};
 	}
 
 	@media screen and (max-width: 990px) {
@@ -99,6 +100,11 @@ const ImageContainer = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	min-width: 350px;
+
+	@media screen and (max-width: 990px){
+		min-width: 0;
+	}
 
 	h2 {
 		font-size: 1.2rem;
@@ -132,12 +138,7 @@ const Links = styled.div`
 	a {
 		padding: 10px;
 		color: ${({ theme }) => theme.primary};
-		transition: all 0.25s ease;
         text-decoration: none;
-	}
-
-	a:hover {
-		transform: scale(1.2);
 	}
 `;
 
@@ -145,11 +146,12 @@ const StyledButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
-    background-color: ${({theme}) => theme.primary === "#00ff37" ? "#000" : theme.primary};
+    color: ${({theme}) =>theme.primary === "#00ff37" ? "#000" : "#fff"};
+    background-color: ${({theme}) => theme.primary};
     border: none;
     padding: 5px 10px;
     border-radius: 12px;
+	transition: all 0.25s ease;
 
     .icon {
         margin: 0 5px;
@@ -157,5 +159,6 @@ const StyledButton = styled.button`
 
     :hover {
         cursor: pointer;
+		transform: scale(1.2);
     }
 `;

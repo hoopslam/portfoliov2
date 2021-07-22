@@ -135,7 +135,7 @@ const Greeting = styled.div`
 const TextBlock = styled.div`
 	margin: 15px;
 	color: ${({ theme }) => theme.textColor};
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	position: relative;
 
 	span {
