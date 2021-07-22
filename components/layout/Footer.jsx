@@ -48,14 +48,26 @@ const LinksContainer = styled.nav`
 	display: flex;
 	margin: 15px;
 
-	@media screen and (max-width: 540px) {
-		display: block;
-	}
-
 	a {
-		margin: 0 15px;
+		padding: 0 15px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		transition: all .4s ease;
+
+		:hover {
+			transform: translateY(-4px);
+		}
+	}
+
+	@media screen and (max-width: 540px) {
+		display: block;
+		a {
+			padding: 8px 15px;
+
+			:hover {
+				transform: translateY(0);
+			}
+		}
 	}
 `;
