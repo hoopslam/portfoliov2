@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import Head from "next/head";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, themeHandler }) => {
 	return (
 		<LayoutContainer>
 			<Head>
@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
 				/>
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
-			<Navbar />
+			<Navbar themeHandler={themeHandler}/>
 			<Main>{children}</Main>
 			<Footer />
 		</LayoutContainer>

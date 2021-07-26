@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { FaHome, FaBlog } from "react-icons/fa";
 import { MdTagFaces } from "react-icons/md";
 import { BsBriefcase } from "react-icons/bs";
-import { BiMessageDetail } from "react-icons/bi";
 import Link from "next/link";
+import {COLORS} from "../../util/constants"; 
 
-const Navbar = () => {
+const Navbar = ({themeHandler}) => {
 	const [active, setActive] = useState(false);
 
-	const buttonHandler = () => {
+	const menuToggler = () => {
 		setActive(!active);
 	};
 
@@ -19,7 +19,7 @@ const Navbar = () => {
 				<Logo>DC</Logo>
 				<ul>
 					<Link href='/#home'>
-						<li onClick={buttonHandler}>
+						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<FaHome className='icon' size={25} />
@@ -30,7 +30,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/#about'>
-						<li onClick={buttonHandler}>
+						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<MdTagFaces className='icon' size={25} />
@@ -41,7 +41,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/#projects'>
-						<li onClick={buttonHandler}>
+						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<BsBriefcase className='icon' size={25} />
@@ -52,7 +52,7 @@ const Navbar = () => {
 					</Link>
 
 					<Link href='/blog/'>
-						<li onClick={buttonHandler}>
+						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<FaBlog className='icon' size={25} />
@@ -63,7 +63,7 @@ const Navbar = () => {
 					</Link>
 
 					{/* <Link href='/#contact'>
-						<li onClick={buttonHandler}>
+						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<BiMessageDetail className='icon' size={25} />
@@ -74,11 +74,20 @@ const Navbar = () => {
 					</Link> */}
 				</ul>
 			</NavbarContainer>
-			<Hamburger onClick={buttonHandler} aria-label="hamburger menu">
+			<Hamburger onClick={menuToggler} aria-label="hamburger menu">
 				<div className={`bar top ${active ? "active" : ""}`}></div>
 				<div className={`bar middle ${active ? "active" : ""}`}></div>
 				<div className={`bar bottom ${active ? "active" : ""}`}></div>
 			</Hamburger>
+			<ColorPicker>
+					{COLORS.map((color) => (
+						<button
+							key={color.id}
+							onClick={() => themeHandler(color.id)}
+							style={{ backgroundColor: `${color.hex}` }}
+							aria-label="color-picker-button"></button>
+					))}
+				</ColorPicker>
 		</>
 	);
 };
@@ -216,5 +225,43 @@ const Hamburger = styled.button`
 
 	@media screen and (max-width: 768px) {
 		display: block;
+	}
+`;
+
+const ColorPicker = styled.div`
+	position: fixed;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+
+	button {
+		cursor: pointer;
+		margin: 5px;
+		width: 20px;
+		height: 20px;
+		border: none;
+		box-shadow: 1px 1px 5px #333;
+		border-radius: 50%;
+		transition: all .4s ease-in-out;
+
+		:hover {
+			transform: scale(1.2);
+		}
+	}
+
+	@media screen and (max-width: 990px) {
+		flex-direction: row;
+		top: 10px;
+		right: 50%;
+		transform: translate(50%, 0);
+
+		button {
+			margin: 10px;
+		}
 	}
 `;

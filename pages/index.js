@@ -3,10 +3,10 @@ import HomeAbout from "../components/Home/HomeAbout";
 import HomeHeader from "../components/Home/HomeHeader";
 import HomeProjects from "../components/Home/HomeProjects";
 
-export default function Home({themeHandler}) {
+export default function Home({selectedTheme, themeHandler}) {
   return (
     <HomeContainer>
-      <HomeHeader themeHandler={themeHandler}/>
+      <HomeHeader selectedTheme={selectedTheme} themeHandler={themeHandler}/>
       <HomeAbout />
       <HomeProjects />
     </HomeContainer>

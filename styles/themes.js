@@ -1,5 +1,5 @@
 const themes = {
-	blue: {
+	0: {
 		primary: "#1976d2",
 		sidebar: "#1976d2",
 		dark: "#004ba0",
@@ -8,7 +8,7 @@ const themes = {
 		lightText: "rgb(141, 141, 141)",
 		background: "#fff",
 	},
-	orange: {
+	1: {
         primary: "#f57c00",
 		sidebar: "#f57c00",
 		dark: "#bb4d00",
@@ -17,7 +17,7 @@ const themes = {
 		lightText: "rgb(141, 141, 141)",
 		background: "#fff",
     },
-    red: {
+    2: {
         primary: "#d32f2f",
 		sidebar: "#d32f2f",
 		dark: "#9a0007",
@@ -26,7 +26,7 @@ const themes = {
 		lightText: "rgb(141, 141, 141)",
 		background: "#fff",
     },
-    dark: {
+    3: {
         primary: "#00ff37",
 		sidebar: "#263238",
 		dark: "#000a12",
@@ -35,7 +35,7 @@ const themes = {
 		lightText: "#fff",
 		background: "#4f5b62",
     },
-	teal: {
+	4: {
 		primary: "#00796b",
 		sidebar: "#00796b",
 		dark: "#004c40",

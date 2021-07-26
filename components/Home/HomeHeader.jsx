@@ -1,29 +1,21 @@
 import styled from "styled-components";
-import { useState, useEffect, useRef } from "react";
-import { WHATIDO, COLORCODE } from "../../util/constants";
-import { numToColor } from "../../util/utilfunctions";
+import { useRef } from "react";
+import { WHATIDO } from "../../util/constants";
 
-const HomeHeader = ({ themeHandler }) => {
-	const [indexNumber, setIndexNumber] = useState(0);
-
+const HomeHeader = ({ selectedTheme, themeHandler }) => {
 	const arrowRef = useRef();
 
 	const toggler = (direction = "right") => {
 		if(direction === "right"){
-			indexNumber < 4 ? setIndexNumber(indexNumber + 1) : setIndexNumber(0);
+			selectedTheme < 4 ? themeHandler(selectedTheme + 1) : themeHandler(0);
 		} else if(direction === "left") {
-			indexNumber > 0 ? setIndexNumber(indexNumber - 1) : setIndexNumber(4);
+			selectedTheme > 0 ? themeHandler(selectedTheme - 1) : themeHandler(4);
 		} else return null
 	};
 
 	const scrollDown = () => {
-		console.log("clicked");
 		arrowRef.current.scrollIntoView({ behavior: "smooth" });
 	};
-
-	useEffect(() => {
-		themeHandler(numToColor(indexNumber));
-	}, [indexNumber]);
 
 	return (
 		<Container id="home">
@@ -35,7 +27,7 @@ const HomeHeader = ({ themeHandler }) => {
 					<Arrow className='right'>{">"}</Arrow>
 				</Slider>
 				<Avatar
-					src={`/images/${indexNumber}.png`}
+					src={`/images/${selectedTheme}.png`}
 					alt='David Simpsonized Profile Image'
 					width="350"
 					height="350"
@@ -49,18 +41,9 @@ const HomeHeader = ({ themeHandler }) => {
 				</Greeting>
 				<TextBlock>
 					<p>
-						I&apos;m a <span onClick={()=> toggler("right")}>{WHATIDO[indexNumber]}</span>
+						I&apos;m a <span onClick={()=> toggler("right")}>{WHATIDO[selectedTheme]}</span>
 					</p>
 				</TextBlock>
-				<ColorPicker>
-					{COLORCODE.map((code, i) => (
-						<button
-							key={i}
-							onClick={() => setIndexNumber(i)}
-							style={{ backgroundColor: `${code}` }}
-							aria-label="color-picker-button"></button>
-					))}
-				</ColorPicker>
 			</TextContainer>
 			<DownArrow onClick={scrollDown} ref={arrowRef}>
 				<div className='arrowContainer'>
@@ -100,8 +83,10 @@ const AvatarContainer = styled.div`
 const Avatar = styled.img`
 	border-radius: 50%;
 	width: 350px;
+	height: 350px;
 	box-shadow: 0 0 5px #333;
 	cursor: pointer;
+	aspect-ratio: attr(width) / attr(height);
 	@media screen and (max-width: 990px) {
 		width: 100%;
 		width: 250px;
@@ -145,44 +130,6 @@ const TextBlock = styled.div`
 			${({ theme }) => (theme.primary === "#263238" ? "#000" : theme.primary)};
 		&:hover {
 			cursor: pointer;
-		}
-	}
-`;
-
-const ColorPicker = styled.div`
-	position: fixed;
-	top: 50%;
-	right: 10px;
-	transform: translate(0, -50%);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	z-index: 100;
-
-	button {
-		cursor: pointer;
-		margin: 5px;
-		width: 20px;
-		height: 20px;
-		border: none;
-		box-shadow: 1px 1px 5px #333;
-		border-radius: 50%;
-		transition: all .4s ease-in-out;
-
-		:hover {
-			transform: scale(1.2);
-		}
-	}
-
-	@media screen and (max-width: 990px) {
-		flex-direction: row;
-		top: 10px;
-		right: 50%;
-		transform: translate(50%, 0);
-
-		button {
-			margin: 10px;
 		}
 	}
 `;

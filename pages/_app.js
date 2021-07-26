@@ -6,18 +6,18 @@ import GlobalStyle from "../styles/GlobalStyle";
 import themes from "../styles/themes";
 
 function MyApp({ Component, pageProps }) {
-	const [selectedTheme, setSelectedTheme] = useState("blue");
+	const [selectedTheme, setSelectedTheme] = useState(0);
 
-	const themeHandler = (theme) => {
-		setSelectedTheme(theme);
+	const themeHandler = (themeNumber) => {
+		setSelectedTheme(themeNumber);
 	};
 
 	return (
 		<>
 			<ThemeProvider theme={themes[selectedTheme]}>
 				<GlobalStyle />
-				<Layout>
-					<Component {...pageProps} themeHandler={themeHandler}/>
+				<Layout themeHandler={themeHandler}>
+					<Component {...pageProps} selectedTheme={selectedTheme} themeHandler={themeHandler}/>
 				</Layout>
 			</ThemeProvider>
 		</>
