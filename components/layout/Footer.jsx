@@ -53,7 +53,7 @@ const LinksContainer = styled.nav`
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition: all .4s ease;
+		transition: all .2s ease;
 
 		:hover {
 			transform: translateY(-4px);

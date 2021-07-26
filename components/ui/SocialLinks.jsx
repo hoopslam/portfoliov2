@@ -21,13 +21,11 @@ const Container = styled.div`
     a {
         margin-left: 25px;
         padding: 5px 5px 0;
-        transition: all .5s ease;
+        transition: all .2s ease;
+        color: ${({ theme }) => theme.primary};
     }
 
     a:hover {
-        background-color: #333;
-        color: white;
-        border-radius: 5px;
-        box-shadow: 0 0 10px #333;
+        transform: translateY(-4px) scale(1.3);
     }
 `

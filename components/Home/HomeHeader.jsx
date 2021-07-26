@@ -86,7 +86,7 @@ const Avatar = styled.img`
 	height: 350px;
 	box-shadow: 0 0 5px #333;
 	cursor: pointer;
-	aspect-ratio: attr(width) / attr(height);
+	aspect-ratio: 1 / 1;
 	@media screen and (max-width: 990px) {
 		width: 100%;
 		width: 250px;

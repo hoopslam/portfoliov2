@@ -2,46 +2,48 @@ import styled from "styled-components";
 import { PROJECTS } from "../../util/constants";
 import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
+import Slide from "react-reveal/Slide";
 
 const HomeProjects = () => {
   return (
     <ProjectContainer id="projects">
       <h1>Featured Projects</h1>
       {PROJECTS.map((project) => (
-        <Project key={project.id}>
-          <LeftContainer>
-            <h2>{project.title}</h2>
-            <ImageContainer>
-              <Image
-                src={project.image}
-                alt={`Project Image ${project.title}`}
-                width={350}
-                height={262}
-              />
-            </ImageContainer>
-          </LeftContainer>
-
-          <ProjectDescription>
-            <h3>
-              Tech: <span>{project.tech}</span>
-            </h3>
-            <p>{project.description}</p>
-            <Links>
-              <a href={project.github} target="_blank" rel="noreferrer">
-                <StyledButton>
-                  Code
-                  <FaGithubAlt size={25} className="icon" />
-                </StyledButton>
-              </a>
-              <a href={project.live} target="_blank" rel="noreferrer">
-                <StyledButton>
-                  Live
-                  <FaExternalLinkAlt size={25} className="icon" />
-                </StyledButton>
-              </a>
-            </Links>
-          </ProjectDescription>
-        </Project>
+        <Slide bottom fraction={.75} key={project.id}>
+          <Project >
+            <LeftContainer>
+              <h2>{project.title}</h2>
+              <ImageContainer>
+                <Image
+                  src={project.image}
+                  alt={`Project Image ${project.title}`}
+                  width={350}
+                  height={262}
+                />
+              </ImageContainer>
+            </LeftContainer>
+            <ProjectDescription>
+              <h3>
+                Tech: <span>{project.tech}</span>
+              </h3>
+              <p>{project.description}</p>
+              <Links>
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <StyledButton>
+                    Code
+                    <FaGithubAlt size={25} className="icon" />
+                  </StyledButton>
+                </a>
+                <a href={project.live} target="_blank" rel="noreferrer">
+                  <StyledButton>
+                    Live
+                    <FaExternalLinkAlt size={25} className="icon" />
+                  </StyledButton>
+                </a>
+              </Links>
+            </ProjectDescription>
+          </Project>
+        </Slide>
       ))}
     </ProjectContainer>
   );

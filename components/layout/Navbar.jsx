@@ -242,12 +242,12 @@ const ColorPicker = styled.div`
 	button {
 		cursor: pointer;
 		margin: 5px;
-		width: 20px;
-		height: 20px;
+		width: 22px;
+		height: 22px;
 		border: none;
 		box-shadow: 1px 1px 5px #333;
 		border-radius: 50%;
-		transition: all .4s ease-in-out;
+		transition: all .2s;
 
 		:hover {
 			transform: scale(1.2);
