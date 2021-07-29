@@ -12,15 +12,15 @@ const Footer = () => {
 				<Link href='/about'>
 					<a>About</a>
 				</Link>
-				<Link href='/portfolio'>
-					<a>Portfolio</a>
+				<Link href='/projects'>
+					<a>Projects</a>
 				</Link>
 				<Link href='/blog/'>
 					<a>Blog</a>
 				</Link>
 			</LinksContainer>
 			<SocialLinks />
-			<p>Site Made with time, love, and coffee ☕</p>
+			<p>Powered by coffee ☕</p>
 			<p>&#169; David Cho 2021 All rights reserved</p>
 		</FooterContainer>
 	);

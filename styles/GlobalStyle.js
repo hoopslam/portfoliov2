@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 
 //Global Styles Reset
 const GlobalStyle = createGlobalStyle`
@@ -34,3 +34,24 @@ body{
 `;
 
 export default GlobalStyle
+
+export const StyledButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: ${({ theme }) => (theme.primary === "#00ff37" ? "#000" : "#fff")};
+  background-color: ${({ theme }) => theme.primary};
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+
+  .icon {
+    margin: 0 5px;
+  }
+
+  :hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+`;

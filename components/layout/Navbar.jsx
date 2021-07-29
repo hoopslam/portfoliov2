@@ -18,7 +18,7 @@ const Navbar = ({themeHandler}) => {
 			<NavbarContainer className={`${active ? "active" : ""}`}>
 				<Logo>DC</Logo>
 				<ul>
-					<Link href='/#home'>
+					<Link href='/'>
 						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
@@ -29,7 +29,7 @@ const Navbar = ({themeHandler}) => {
 						</li>
 					</Link>
 
-					<Link href='/#about'>
+					<Link href='/about'>
 						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
@@ -40,12 +40,12 @@ const Navbar = ({themeHandler}) => {
 						</li>
 					</Link>
 
-					<Link href='/#projects'>
+					<Link href='/projects'>
 						<li onClick={menuToggler}>
 							<a>
 								<div className='centeredIcon'>
 									<BsBriefcase className='icon' size={25} />
-									<span>Portfolio</span>
+									<span>Projects</span>
 								</div>
 							</a>
 						</li>

@@ -1,55 +1,122 @@
 import styled from "styled-components";
 import Toolkit from "../ui/Toolkit";
+import Fade from "react-reveal/Fade";
+import DesktopSlider from "../ui/DesktopSlider";
+import MobileSlider from "../ui/MobileSlider";
+import { PROJECTS } from "../../util/constants";
 
 const HomeAbout = () => {
-	return (
-		<AboutContainer id="about">
-			<h1>About Me</h1>
-			<p>
-				I&apos;m a developer with a passion for making things, be it web apps, homemade kimchi,
-				or cardboard box castles for my cat. Whatever the endeavor, I genuinely enjoy the
-				challenge of putting small pieces together to create a beautiful and cohesive
-				product.
-			</p>
-			<p>
-				When building web apps, I mainly use React to build out the front end. I&apos;ve recently
-				been using Next.js with styled components and am loving it! For the back end,
-				Firebase has been my JAM but I can also use a bit of Node, Express, MongoDB and
-				PostgreSQL.
-			</p>
-			<p>
-				Outside of coding, I love spending time with my fiancee and our cat, Miru 😸. I
-				follow my basketball religiously (let&apos;s go Clippers!) and unwind in the evenings
-				with a bit of Overwatch, PUBG, or Civ.
-			</p>
-
-            <h1>My Toolkit</h1>
-            <Toolkit />
-		</AboutContainer>
-	);
+  return (
+    <AboutContainer id="about">
+      <Fade>
+        <h1>I build mobile responsive web apps</h1>
+      </Fade>
+      <SliderContainer>
+        <DesktopContainer>
+          <DesktopSlider images={PROJECTS.map((project) => project.image)} />
+          <Stand />
+          <Base />
+        </DesktopContainer>
+        <MobileContainer>
+          <MobileSlider images={PROJECTS.map((project) => project.mobile)} />
+        </MobileContainer>
+      </SliderContainer>
+      <Fade fraction={.5}>
+        <ToolkitContainer>
+          <h2>using modern web technology</h2>
+          <Toolkit />
+        </ToolkitContainer>
+      </Fade>
+    </AboutContainer>
+  );
 };
 
 export default HomeAbout;
 
 const AboutContainer = styled.section`
-    width: 100%;
-    padding: 20px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    h1 {
-        color: ${({theme})=> theme.primary};
-        margin: 20px;
-    }
+  h1,
+  h2 {
+    color: ${({ theme }) => theme.primary};
+    margin: 50px;
+  }
 
-    p {
-        margin: 20px;
-    }
+  p {
+    margin: 20px;
+  }
 
-    a {
-        text-decoration: underline ${({theme}) => theme.primary};
-        font-weight: bold;
-    }
+  a {
+    text-decoration: underline ${({ theme }) => theme.primary};
+    font-weight: bold;
+  }
 
-    @media screen and (max-width: 990px) {
-        max-width: 600px;
-    }
+  @media screen and (max-width: 990px) {
+    max-width: 600px;
+  }
+`;
+
+const DesktopContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px 20px 0px;
+`;
+
+const Stand = styled.div`
+  position: relative;
+  top: 0px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+`;
+
+const Base = styled.div`
+  position: relative;
+  top: -18px;
+  width: 200px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+`;
+
+const SliderContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 990px) {
+    flex-direction: column;
+  }
+`;
+
+const ToolkitContainer = styled.div`
+  width: 100%;
+  min-width: 600px;
+  margin: 150px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  @media screen and (max-width: 990px) {
+    min-width: 350px;
+  }
+`;
+
+const MobileContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px 20px 0px;
 `;

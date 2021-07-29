@@ -2,15 +2,19 @@ import styled from "styled-components";
 import { PROJECTS } from "../../util/constants";
 import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
-import Slide from "react-reveal/Slide";
+import Fade from "react-reveal/Fade";
+import {StyledButton} from "../../styles/GlobalStyle";
 
 const HomeProjects = () => {
   return (
     <ProjectContainer id="projects">
-      <h1>Featured Projects</h1>
+      <Fade>
+        <h1>These are some of the projects I've made</h1>
+      </Fade>
+
       {PROJECTS.map((project) => (
-        <Slide bottom fraction={.75} key={project.id}>
-          <Project >
+        <Fade fraction={0.5} key={project.id}>
+          <Project>
             <LeftContainer>
               <h2>{project.title}</h2>
               <ImageContainer>
@@ -43,7 +47,7 @@ const HomeProjects = () => {
               </Links>
             </ProjectDescription>
           </Project>
-        </Slide>
+        </Fade>
       ))}
     </ProjectContainer>
   );
@@ -56,11 +60,12 @@ const ProjectContainer = styled.section`
   padding: 40px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
 
   h1 {
     color: ${({ theme }) => theme.primary};
+    margin-bottom: 50px;
   }
 
   a {
@@ -151,23 +156,3 @@ const Links = styled.div`
   }
 `;
 
-const StyledButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${({ theme }) => (theme.primary === "#00ff37" ? "#000" : "#fff")};
-  background-color: ${({ theme }) => theme.primary};
-  border: none;
-  padding: 5px 10px;
-  border-radius: 12px;
-  transition: all 0.25s ease;
-
-  .icon {
-    margin: 0 5px;
-  }
-
-  :hover {
-    cursor: pointer;
-    transform: scale(1.2);
-  }
-`;
