@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ContactForm from "../ui/ContactForm";
-import Fade from "react-reveal";
+import Fade from "react-reveal/Fade";
 
 const HomeContact = () => {
   return (

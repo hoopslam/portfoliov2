@@ -1,50 +1,32 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { StyledButton } from "../../styles/GlobalStyle";
+import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  function sendEmail(e) {
+		e.preventDefault();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const data = {
-      name,
-      email,
-      message,
-    };
-
-    try {
-      const res = await (
-        await fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        })
-      ).json();
-      console.log(res);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+		emailjs
+			.sendForm("service_f4t6rk9", "template_hx5g5sc", e.target, "user_XtYyMqV78dTetP6lLHnBA")
+			.then(
+				(result) => {
+					console.log(result.text);
+          alert("Message Sent!")
+				},
+				(error) => {
+					console.log(error.text);
+				}
+			);
+		e.target.reset();
+	}
 
   return (
-    <FormContainer>
+    <FormContainer onSubmit={sendEmail}>
       <InputGroup>
         <label htmlFor="name">Name</label>
         <input
           type="text"
           name="name"
           required
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
         />
       </InputGroup>
       <InputGroup>
@@ -53,9 +35,14 @@ const ContactForm = () => {
           type="email"
           required
           name="email"
-          onChange={(e) => {
-            setEmail(e.target.value);
-          }}
+        />
+      </InputGroup>
+      <InputGroup>
+        <label htmlFor="subject">Subject</label>
+        <input
+          type="text"
+          required
+          name="subject"
         />
       </InputGroup>
       <InputGroup>
@@ -64,16 +51,11 @@ const ContactForm = () => {
           name="message"
           row="10"
           col="40"
-          onChange={(e) => {
-            setMessage(e.target.value);
-          }}
           required
         />
       </InputGroup>
       <InputGroup>
-        <StyledButton onClick={(e) => handleSubmit(e)}>
-          Send Message
-        </StyledButton>
+        <input type="submit" value="Send" className="submit"/>
       </InputGroup>
     </FormContainer>
   );
@@ -116,5 +98,14 @@ const InputGroup = styled.div`
 
   textarea {
     height: 80px;
+  }
+
+  .submit {
+    background-color: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => (theme.primary === "#00ff37" ? "#000" : "#fff")};
+    :hover {
+      cursor: pointer;
+      background-color: ${({ theme }) => (theme.primary === "#00ff37" ? "#00cc00" : theme.dark)};
+    }
   }
 `;
