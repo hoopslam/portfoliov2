@@ -1,18 +1,11 @@
-import styled from "styled-components";
+import Construction from "../../components/ui/Construction"
 
 const index = () => {
     return (
-        <ProjectsContainer>
-            Projects
-        </ProjectsContainer>
+        <div>
+            <Construction />
+        </div>
     )
 }
 
 export default index
-
-const ProjectsContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-`

@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import ContactForm from "../components/ui/ContactForm";
 
 const contact = () => {
   return (
     <Container>
       <div>
-        <h1>Drop me a Line!</h1>
+        <h1>Contact Me</h1>
         <p>
-          Want to get a hold of me? Send me a message and I'll get back to you
-          posthaste!
+          I check and respond to every message sent through my website.  Send me a message and I will get back to you as soon as possible!
         </p>
       </div>
+      <ContactForm />
     </Container>
   );
 };
@@ -18,8 +19,17 @@ export default contact;
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   min-height: 70vh;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+
+  p {
+    max-width: 400px;
+  }
 `;

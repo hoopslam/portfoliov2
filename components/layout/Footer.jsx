@@ -47,6 +47,7 @@ const FooterContainer = styled.footer`
 const LinksContainer = styled.nav`
 	display: flex;
 	margin: 15px;
+	cursor: pointer;
 
 	a {
 		padding: 0 15px;
