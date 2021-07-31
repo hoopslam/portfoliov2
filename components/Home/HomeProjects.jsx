@@ -9,7 +9,7 @@ const HomeProjects = () => {
   return (
     <ProjectContainer id="projects">
       <Fade>
-        <h1>These are some of the projects I've made</h1>
+        <h1>These are some of the projects I&apos;ve made</h1>
       </Fade>
 
       {PROJECTS.map((project) => (
