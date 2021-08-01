@@ -22,7 +22,7 @@ const Navbar = ({ themeHandler }) => {
           <li>
             <Link href="/" passHref>
               <a onClick={menuToggler} >
-                <div className="centeredIcon" >
+                <div className="centeredIcon"  aria-label="Home Link" >
                   <FaHome className="icon" size={25} alt="Home Icon"/>
                   <span>Home</span>
                 </div>
@@ -32,7 +32,7 @@ const Navbar = ({ themeHandler }) => {
           <li>
             <Link href="/about" passHref>
               <a onClick={menuToggler}>
-                <div className="centeredIcon">
+                <div className="centeredIcon"  aria-label="About Link">
                   <MdTagFaces className="icon" size={25} alt="About Icon"/>
                   <span>About</span>
                 </div>
@@ -42,7 +42,7 @@ const Navbar = ({ themeHandler }) => {
           <li>
             <Link href="/projects">
               <a onClick={menuToggler}>
-                <div className="centeredIcon">
+                <div className="centeredIcon"  aria-label="Projects Link">
                   <BsBriefcase className="icon" size={25} alt="Projects Icon"/>
                   <span>Projects</span>
                 </div>
@@ -52,7 +52,7 @@ const Navbar = ({ themeHandler }) => {
           <li>
             <Link href="/blog/">
               <a onClick={menuToggler}>
-                <div className="centeredIcon">
+                <div className="centeredIcon"  aria-label="Blog Link">
                   <FaBlog className="icon" size={25} alt="Blog Icon"/>
                   <span>Blog</span>
                 </div>
@@ -62,7 +62,7 @@ const Navbar = ({ themeHandler }) => {
           <li>
             <Link href="/contact">
               <a onClick={menuToggler}>
-                <div className="centeredIcon">
+                <div className="centeredIcon" aria-label="Contact Link">
                   <BiMessageDetail className="icon" size={25} alt="Contact Icon"/>
                   <span>Contact</span>
                 </div>

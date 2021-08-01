@@ -1,61 +1,49 @@
 import styled from "styled-components";
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 
 const ContactForm = () => {
   function sendEmail(e) {
-		e.preventDefault();
+    e.preventDefault();
 
-		emailjs
-			.sendForm("service_f4t6rk9", "template_hx5g5sc", e.target, "user_XtYyMqV78dTetP6lLHnBA")
-			.then(
-				(result) => {
-					console.log(result.text);
-          alert("Message Sent!")
-				},
-				(error) => {
-					console.log(error.text);
-				}
-			);
-		e.target.reset();
-	}
+    emailjs
+      .sendForm(
+        "service_f4t6rk9",
+        "template_hx5g5sc",
+        e.target,
+        "user_XtYyMqV78dTetP6lLHnBA"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Message Sent!");
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
 
   return (
     <FormContainer onSubmit={sendEmail}>
       <InputGroup>
         <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          required
-        />
+        <input id="name" type="text" name="name" required />
       </InputGroup>
       <InputGroup>
         <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          required
-          name="email"
-        />
+        <input id="email" type="email" required name="email" />
       </InputGroup>
       <InputGroup>
         <label htmlFor="subject">Subject</label>
-        <input
-          type="text"
-          required
-          name="subject"
-        />
+        <input id="subject" type="text" required name="subject" />
       </InputGroup>
       <InputGroup>
         <label htmlFor="message">Message</label>
-        <textarea
-          name="message"
-          row="10"
-          col="40"
-          required
-        />
+        <textarea id="message" name="message" row="10" col="40" required />
       </InputGroup>
       <InputGroup>
-        <input type="submit" value="Send" className="submit"/>
+        <input type="submit" value="Send" className="submit" />
       </InputGroup>
     </FormContainer>
   );
@@ -105,7 +93,8 @@ const InputGroup = styled.div`
     color: ${({ theme }) => (theme.primary === "#00ff37" ? "#000" : "#fff")};
     :hover {
       cursor: pointer;
-      background-color: ${({ theme }) => (theme.primary === "#00ff37" ? "#00cc00" : theme.dark)};
+      background-color: ${({ theme }) =>
+        theme.primary === "#00ff37" ? "#00cc00" : theme.dark};
     }
   }
 `;
