@@ -19,60 +19,56 @@ const Navbar = ({ themeHandler }) => {
       <NavbarContainer className={`${active ? "active" : ""}`}>
         <Logo>DC</Logo>
         <ul>
-          <Link href="/">
-            <li onClick={menuToggler}>
-              <a>
-                <div className="centeredIcon">
-                  <FaHome className="icon" size={25} />
+          <li>
+            <Link href="/" passHref>
+              <a onClick={menuToggler} >
+                <div className="centeredIcon" >
+                  <FaHome className="icon" size={25} alt="Home Icon"/>
                   <span>Home</span>
                 </div>
               </a>
-            </li>
-          </Link>
-
-          <Link href="/about">
-            <li onClick={menuToggler}>
-              <a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" passHref>
+              <a onClick={menuToggler}>
                 <div className="centeredIcon">
-                  <MdTagFaces className="icon" size={25} />
+                  <MdTagFaces className="icon" size={25} alt="About Icon"/>
                   <span>About</span>
                 </div>
               </a>
-            </li>
-          </Link>
-
-          <Link href="/projects">
-            <li onClick={menuToggler}>
-              <a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/projects">
+              <a onClick={menuToggler}>
                 <div className="centeredIcon">
-                  <BsBriefcase className="icon" size={25} />
+                  <BsBriefcase className="icon" size={25} alt="Projects Icon"/>
                   <span>Projects</span>
                 </div>
               </a>
-            </li>
-          </Link>
-
-          <Link href="/blog/">
-            <li onClick={menuToggler}>
-              <a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog/">
+              <a onClick={menuToggler}>
                 <div className="centeredIcon">
-                  <FaBlog className="icon" size={25} />
+                  <FaBlog className="icon" size={25} alt="Blog Icon"/>
                   <span>Blog</span>
                 </div>
               </a>
-            </li>
-          </Link>
-
-          <Link href="/contact">
-            <li onClick={menuToggler}>
-              <a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a onClick={menuToggler}>
                 <div className="centeredIcon">
-                  <BiMessageDetail className="icon" size={25} />
+                  <BiMessageDetail className="icon" size={25} alt="Contact Icon"/>
                   <span>Contact</span>
                 </div>
               </a>
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
       </NavbarContainer>
       <Hamburger onClick={menuToggler} aria-label="hamburger menu">

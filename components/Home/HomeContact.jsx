@@ -9,11 +9,11 @@ const HomeContact = () => {
         <Fade>
           <h1>Want to reach me?</h1>
         </Fade>
-        <Fade delay={1000}>
+        <Fade delay={500}>
           <p>Send me a message and I&apos;ll get back to you ASAP!</p>
         </Fade>
       </div>
-      <Fade delay={2000}>
+      <Fade delay={1200}>
         <ContactForm />
       </Fade>
     </Container>

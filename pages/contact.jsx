@@ -26,7 +26,7 @@ const Container = styled.div`
   min-height: 70vh;
 
   h1 {
-    margin: 150px 0 30px;
+    margin: 75px 0 30px;
   }
 
   p {
