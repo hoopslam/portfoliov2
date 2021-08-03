@@ -22,16 +22,16 @@ const about = () => {
           Korean culture. After years working in the English education industry,
           I decided to pursue my passion for coding right as the 2020 pandemic
           struck. What better way to spend a pandemic than to lock yourself in
-          self confinement and learn the things you've always wanted to learn?
+          self confinement and learn the things you&apos;ve always wanted to learn?
         </p>
         <p>
           Nowadays, I build modern web apps using awesome technologies like
           React and Typescript. Meanwhile, the learning hasn&apos;t stopped and
           I continue to add new skills to my developer toolbox with each passing
           day. While I&apos;m by no means, anywhere close to being a world-class
-          developer, if you're looking for someone who believes in hard-work,
+          developer, if you&apos;re looking for someone who believes in hard-work,
           dedication, kindness, and a willingness to try just about anything,
-          I'm your guy.
+          I&apos;m your guy.
         </p>
       </About>
       <FunFacts>
