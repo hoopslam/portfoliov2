@@ -36,17 +36,17 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
       </AvatarContainer>
       <TextContainer>
         <Greeting>
-          <Fade delay={1000}>
+          <Fade >
             <p>Howdy!</p>
           </Fade>
-          <Fade delay={2000}>
+          <Fade delay={1000}>
             <p>I&apos;m</p>
           </Fade>
-		  <Fade top delay={2200}>
+		  <Fade top delay={1200}>
 			  <p><span>David</span></p>
 		  </Fade>
         </Greeting>
-        <Fade delay={3800}>
+        <Fade delay={2800}>
           <TextBlock>
             <p>
               I&apos;m a{" "}

@@ -33,6 +33,10 @@ const LayoutContainer = styled.div`
 
 const Main = styled.main`
 	width: 100%;
-	max-width: 768px;
+	max-width: 767px;
 	flex-grow: 1;
+
+	@media screen and (max-width: 990px) {
+		max-width: none;
+	}
 `;

@@ -18,58 +18,66 @@ const Navbar = ({ themeHandler }) => {
     <>
       <NavbarContainer className={`${active ? "active" : ""}`}>
         <Logo>DC</Logo>
-        <ul>
-          <li>
-            <Link href="/" passHref>
-              <a onClick={menuToggler} >
-                <div className="centeredIcon"  aria-label="Home Link" >
-                  <FaHome className="icon" size={25} alt="Home Icon"/>
+        <MenuList>
+          <Link href="/" passHref>
+            <a onClick={menuToggler}>
+              <ListItem>
+                <div className="centeredIcon" aria-label="Home Link">
+                  <FaHome className="icon" size={25} alt="Home Icon" />
                   <span>Home</span>
                 </div>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about" passHref>
-              <a onClick={menuToggler}>
-                <div className="centeredIcon"  aria-label="About Link">
-                  <MdTagFaces className="icon" size={25} alt="About Icon"/>
+              </ListItem>
+            </a>
+          </Link>
+
+          <Link href="/about" passHref>
+            <a onClick={menuToggler}>
+              <ListItem>
+                <div className="centeredIcon" aria-label="About Link">
+                  <MdTagFaces className="icon" size={25} alt="About Icon" />
                   <span>About</span>
                 </div>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/projects">
-              <a onClick={menuToggler}>
-                <div className="centeredIcon"  aria-label="Projects Link">
-                  <BsBriefcase className="icon" size={25} alt="Projects Icon"/>
+              </ListItem>
+            </a>
+          </Link>
+
+          <Link href="/projects" passHref>
+            <a onClick={menuToggler}>
+              <ListItem>
+                <div className="centeredIcon" aria-label="Projects Link">
+                  <BsBriefcase className="icon" size={25} alt="Projects Icon" />
                   <span>Projects</span>
                 </div>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog/">
-              <a onClick={menuToggler}>
-                <div className="centeredIcon"  aria-label="Blog Link">
-                  <FaBlog className="icon" size={25} alt="Blog Icon"/>
+              </ListItem>
+            </a>
+          </Link>
+
+          {/* <Link href="/blog/" passHref>
+            <a onClick={menuToggler}>
+              <ListItem>
+                <div className="centeredIcon" aria-label="Blog Link">
+                  <FaBlog className="icon" size={25} alt="Blog Icon" />
                   <span>Blog</span>
                 </div>
-              </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a onClick={menuToggler}>
+              </ListItem>
+            </a>
+          </Link> */}
+
+          <Link href="/contact" passHref>
+            <a onClick={menuToggler}>
+              <ListItem>
                 <div className="centeredIcon" aria-label="Contact Link">
-                  <BiMessageDetail className="icon" size={25} alt="Contact Icon"/>
+                  <BiMessageDetail
+                    className="icon"
+                    size={25}
+                    alt="Contact Icon"
+                  />
                   <span>Contact</span>
                 </div>
-              </a>
-            </Link>
-          </li>
-        </ul>
+              </ListItem>
+            </a>
+          </Link>
+        </MenuList>
       </NavbarContainer>
       <Hamburger onClick={menuToggler} aria-label="hamburger menu">
         <div className={`bar top ${active ? "active" : ""}`}></div>
@@ -130,17 +138,6 @@ const NavbarContainer = styled.nav`
     opacity: 1;
   }
 
-  ul {
-    width: 80%;
-    text-align: center;
-  }
-
-  li {
-    height: 50px;
-    border-radius: 12px;
-    margin-top: 10px;
-  }
-
   .centeredIcon {
     display: flex;
     align-items: center;
@@ -148,12 +145,7 @@ const NavbarContainer = styled.nav`
     top: 50%;
   }
 
-  li:hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => theme.light};
-  }
-
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 990px) {
     width: 100%;
     max-width: 220px;
     left: -100%;
@@ -168,6 +160,21 @@ const NavbarContainer = styled.nav`
       left: 0;
     }
   }
+`;
+
+const ListItem = styled.div`
+  height: 50px;
+  border-radius: 12px;
+  margin-top: 10px;
+  :hover {
+    cursor: pointer;
+    background-color: ${({ theme }) => theme.light};
+  }
+`;
+
+const MenuList = styled.div`
+  width: 80%;
+  text-align: center;
 `;
 
 const Logo = styled.div`
@@ -221,7 +228,7 @@ const Hamburger = styled.button`
     transform: rotate(135deg) translate(-6px, 6px);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 990px) {
     display: block;
   }
 `;
@@ -229,7 +236,7 @@ const Hamburger = styled.button`
 const ColorPicker = styled.div`
   position: fixed;
   top: 50%;
-  right: 10px;
+  right: 5px;
   transform: translate(0, -50%);
   display: flex;
   flex-direction: column;
@@ -243,7 +250,7 @@ const ColorPicker = styled.div`
     width: 22px;
     height: 22px;
     border: none;
-    box-shadow: 1px 1px 5px #333;
+    box-shadow: 1px 1px 5px #000;
     border-radius: 50%;
     transition: all 0.2s;
 

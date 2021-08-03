@@ -15,12 +15,11 @@ const Footer = () => {
 				<Link href='/projects'>
 					<a>Projects</a>
 				</Link>
-				<Link href='/blog/'>
-					<a>Blog</a>
+				<Link href='/contact'>
+					<a>Contact</a>
 				</Link>
 			</LinksContainer>
 			<SocialLinks />
-			<p>Powered by coffee ☕</p>
 			<p>&#169; David Cho 2021 All rights reserved</p>
 		</FooterContainer>
 	);
@@ -40,6 +39,7 @@ const FooterContainer = styled.footer`
 	p {
 		margin: 5px;
 		padding: 5px;
+		font-family: "Yellowtail", cursive;
 	}
 
 `;
@@ -61,7 +61,7 @@ const LinksContainer = styled.nav`
 		}
 	}
 
-	@media screen and (max-width: 540px) {
+	@media screen and (max-width: 350px) {
 		display: block;
 		a {
 			padding: 8px 15px;
