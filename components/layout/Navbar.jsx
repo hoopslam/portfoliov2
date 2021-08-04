@@ -41,7 +41,7 @@ const Navbar = ({ themeHandler }) => {
             </a>
           </Link>
 
-          <Link href="/projects" passHref>
+          <Link href="/#projects" passHref>
             <a onClick={menuToggler}>
               <ListItem>
                 <div className="centeredIcon" aria-label="Projects Link">
