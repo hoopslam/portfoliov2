@@ -60,6 +60,7 @@ const FormContainer = styled.form`
   @media screen and (max-width: 560px) {
     min-width: 0;
     width: 100%;
+    margin: 30px 0;
   }
 `;
 
