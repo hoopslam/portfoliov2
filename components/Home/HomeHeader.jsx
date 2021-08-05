@@ -49,8 +49,8 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
         </TextBlock>
       </TextContainer>
       <Link href="/#about" passHref>
-        <a>
-          <DownArrow>
+        <a >
+          <DownArrow aria-label="About Link">
             <div className="arrowContainer">
               <div className="arrow"></div>
             </div>
