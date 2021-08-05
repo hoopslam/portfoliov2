@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { useRef } from "react";
 import { WHATIDO } from "../../util/constants";
+import Link from "next/link";
 
 const HomeHeader = ({ selectedTheme, themeHandler }) => {
-  const arrowRef = useRef();
 
   const toggler = (direction = "right") => {
     if (direction === "right") {
@@ -11,10 +10,6 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
     } else if (direction === "left") {
       selectedTheme > 0 ? themeHandler(selectedTheme - 1) : themeHandler(4);
     } else return null;
-  };
-
-  const scrollDown = () => {
-    arrowRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -53,11 +48,15 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
           </p>
         </TextBlock>
       </TextContainer>
-      <DownArrow onClick={scrollDown} ref={arrowRef}>
-        <div className="arrowContainer">
-          <div className="arrow"></div>
-        </div>
-      </DownArrow>
+      <Link href="/#about" passHref>
+        <a>
+          <DownArrow>
+            <div className="arrowContainer">
+              <div className="arrow"></div>
+            </div>
+          </DownArrow>
+        </a>
+      </Link>
     </Container>
   );
 };
