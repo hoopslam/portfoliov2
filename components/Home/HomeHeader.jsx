@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { useRef } from "react";
 import { WHATIDO } from "../../util/constants";
-import Fade from "react-reveal/Fade";
 
 const HomeHeader = ({ selectedTheme, themeHandler }) => {
   const arrowRef = useRef();
@@ -21,12 +20,12 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
   return (
     <Container id="home">
       <AvatarContainer>
-        <Fader className="left" onClick={() => toggler("left")}>
+        <Slider className="left" onClick={() => toggler("left")}>
           <Arrow className="left">{"<"}</Arrow>
-        </Fader>
-        <Fader className="right" onClick={() => toggler("right")}>
+        </Slider>
+        <Slider className="right" onClick={() => toggler("right")}>
           <Arrow className="right">{">"}</Arrow>
-        </Fader>
+        </Slider>
         <Avatar
           src={`/images/${selectedTheme}.png`}
           alt="David Simpsonized Profile Image"
@@ -36,26 +35,23 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
       </AvatarContainer>
       <TextContainer>
         <Greeting>
-          <Fade >
-            <p>Howdy!</p>
-          </Fade>
-          <Fade delay={1000}>
-            <p>I&apos;m</p>
-          </Fade>
-		  <Fade top delay={1200}>
-			  <p><span>David</span></p>
-		  </Fade>
+          <p>Howdy!</p>
+
+          <p>I&apos;m</p>
+
+          <p>
+            <span>David</span>
+          </p>
         </Greeting>
-        <Fade delay={2800}>
-          <TextBlock>
-            <p>
-              I&apos;m a{" "}
-              <span onClick={() => toggler("right")}>
-                {WHATIDO[selectedTheme]}
-              </span>
-            </p>
-          </TextBlock>
-        </Fade>
+
+        <TextBlock>
+          <p>
+            I&apos;m a{" "}
+            <span onClick={() => toggler("right")}>
+              {WHATIDO[selectedTheme]}
+            </span>
+          </p>
+        </TextBlock>
       </TextContainer>
       <DownArrow onClick={scrollDown} ref={arrowRef}>
         <div className="arrowContainer">
@@ -136,7 +132,7 @@ const Greeting = styled.div`
     font-family: "Poppins", sans-serif;
   }
   p {
-	  margin: 3px;
+    margin: 3px;
   }
 `;
 
@@ -243,7 +239,7 @@ const Arrow = styled.div`
   }
 `;
 
-const Fader = styled.div`
+const Slider = styled.div`
   position: absolute;
   width: 50%;
   height: 100%;
