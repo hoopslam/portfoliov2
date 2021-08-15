@@ -26,7 +26,7 @@ export const PROJECTS = [
 	},
 	{
 		id: 3,
-		title: "Animator Portfolio Website",
+		title: "Artist Portfolio Website",
 		description:
 			"A fully responsive portfolio website with a custom-built modal for easy viewing and navigation.  Built with Next.js for search engine optimization, static site generation, and lazy loading features.",
 		tech: "React (Next.js), CSS Modules, Vercel",
