@@ -4,7 +4,17 @@ export const COLORS = [{id: 0, hex: "#1976d2"}, {id: 1, hex: "#f57c00"}, {id: 2,
 
 export const PROJECTS = [
 	{
-		id: 1,
+        id: 1,
+		title: "Geography Quiz App",
+		image: "/images/projects/geoquiz.jpg",
+		mobile: "/images/projects/geoquizmobile.jpg",
+		description: "A random geography quiz app built in Typescript + React with MobX for global state management. Test your world knowledge!",
+		tech: "Typescript, React, MobX, Styled Components, Opentdb API",
+		github: "https://github.com/hoopslam/geoquiz",
+		live: "https://hoopslam.github.io/geoquiz/",
+	},
+	{
+		id: 2,
 		title: "Covid-19 Tracker",
 		description:
 			"A worldwide Covid-19 tracker app using live data from John's Hopkins University and Worldometers. Fully intactive map and charts that dynamically render based on user input.",
@@ -15,7 +25,7 @@ export const PROJECTS = [
 		live: "https://hoopslam.github.io/Covid-19-tracker/",
 	},
 	{
-		id: 2,
+		id: 3,
 		title: "Animator Portfolio Website",
 		description:
 			"A fully responsive portfolio website with a custom-built modal for easy viewing and navigation.  Built with Next.js for search engine optimization, static site generation, and lazy loading features.",
@@ -24,16 +34,6 @@ export const PROJECTS = [
 		mobile: "/images/projects/jiseonmobile.jpg",
 		github: "https://github.com/hoopslam/lee_jiseon",
 		live: "https://www.jiseonlee.art/",
-	},
-	{
-        id: 3,
-		title: "Geography Quiz App",
-		image: "/images/projects/random.jpg",
-		mobile: "/images/projects/randommobile.jpg",
-		description: "A random geography quiz app built in Typescript.  This app uses the Opentdb API to generate random questions.",
-		tech: "Typescript, React, Styled Components, Opentdb API",
-		github: "https://github.com/hoopslam/RandomTrivia",
-		live: "https://hoopslam.github.io/RandomTrivia/",
 	},
     {
         id: 4,

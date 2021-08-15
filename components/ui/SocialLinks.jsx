@@ -5,8 +5,8 @@ import {HiOutlineMail} from "react-icons/hi";
 const SocialLinks = () => {
     return (
         <Container>
-            <a href="https://www.github.com/hoopslam" target="_blank" rel="noreferrer"><FaGithubAlt size={25} alt="Github Icon" aria-label="Github Link"/></a>
-            <a href="https://www.linkedin.com/in/david-cho-818aa7171/" target="_blank" rel="noreferrer"><FaLinkedin size={25} alt="LinkedIn Icon" aria-label="LinkedIn Link"/></a>
+            <a href="https://www.github.com/hoopslam" target="_blank"><FaGithubAlt size={25} alt="Github Icon" aria-label="Github Link"/></a>
+            <a href="https://www.linkedin.com/in/david-cho-818aa7171/" target="_blank"><FaLinkedin size={25} alt="LinkedIn Icon" aria-label="LinkedIn Link"/></a>
             <a href="mailto: hoopslam@gmail.com"><HiOutlineMail size={25} alt="Email Icon" aria-label="Email Link"/></a>
         </Container>
     )
