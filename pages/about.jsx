@@ -10,28 +10,28 @@ const about = () => {
         </Quote>
 
         <p>
-          Hi, I&apos;m David Cho. I&apos;m a web developer based out of
-          Seoul. I love making things, be it web apps, homemade kimchi, or
-          cardboard box castles for my cat, Miru. Whatever the endeavor, I
-          genuinely enjoy the challenge of putting small pieces together to
-          create a beautiful and cohesive product.
+          Hi, I&apos;m David Cho. I&apos;m a web developer based out of Seoul. I
+          love making things, be it web apps, homemade kimchi, or cardboard box
+          castles for my cat, Miru. Whatever the endeavor, I genuinely enjoy the
+          challenge of putting small pieces together to create a beautiful and
+          cohesive creation.
         </p>
         <p>
           Originally from Southern California, I moved to Korea shortly after
-          graduating from UC Davis to travel the world and learn more about
-          Korean culture. After years working in the English education industry,
-          I decided to pursue my passion for coding right as the 2020 pandemic
-          struck. What better way to spend a pandemic than to lock yourself in
-          self confinement and learn the things you&apos;ve always wanted to learn?
+          graduating from UC Davis to travel the world and learn more about my
+          Korean heritage. After years of working in the English education
+          industry, I hung up my teaching hat in 2020, right as the pandemic
+          struck. While the world was being engulfed by Covid-19, I was at home,
+          studying Javascript, OOP, functional programming, and other core CS
+          competencies.
         </p>
         <p>
-          Nowadays, I build modern web apps using awesome technologies like
-          React and Typescript. Meanwhile, the learning hasn&apos;t stopped and
-          I continue to add new skills to my developer toolbox with each passing
-          day. While I&apos;m by no means, anywhere close to being a world-class
-          developer, if you&apos;re looking for someone who believes in hard-work,
-          dedication, kindness, and a willingness to try just about anything,
-          I&apos;m your guy.
+          Nowadays, I build modern web apps using technologies like React and
+          Typescript. Meanwhile, the learning hasn&apos;t stopped and I enjoy
+          adding new skills to my developer toolbox every day. You&apos;ll
+          usually find me in front of Visual Studio Code but when I&apos;m not
+          coding, I enjoy playing a few rounds of Overwatch or watching some NBA
+          highlights.
         </p>
       </About>
       <FunFacts>
