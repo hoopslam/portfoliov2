@@ -52,6 +52,7 @@ const about = () => {
             <li>Firebase</li>
             <li>PostgreSQL</li>
             <li>MongoDB</li>
+            <li>Socket.io</li>
           </ul>
         </Cat>
         <Cat>
@@ -65,7 +66,7 @@ const about = () => {
         <Cat>
           <h2>Availability</h2>
           <ul>
-            <li>Currently available for hire</li>
+            <li>Available for hire</li>
             <li>Current Location: Korea</li>
             <li>Nationality: USA</li>
             <li>Willing to Relocate: Yes</li>
