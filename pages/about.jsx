@@ -3,41 +3,45 @@ import styled from "styled-components";
 const about = () => {
   return (
     <AboutContainer>
-      <About>
-        <Quote>
-          <q>Work hard, be kind, and amazing things will happen.</q>
-          <p>~ Conan O&apos;Brien</p>
-        </Quote>
+      <div className="title">
+        <div className="textblock">
+          <h1>
+            About <span>Me</span>
+          </h1>
+        </div>
 
+        <hr />
+      </div>
+
+      <div className="intro">
+        <div className="image-container">
+          <img
+            className="profile-image"
+            src="/images/profile2.jpg"
+            alt="David Cho profile pic"
+          />
+        </div>
         <p>
-          Hi, I&apos;m David Cho. I&apos;m a web developer based out of Seoul. I
-          love making things, be it web apps, homemade kimchi, or cardboard box
-          castles for my cat, Miru. Whatever the endeavor, I genuinely enjoy the
-          challenge of putting small pieces together to create a beautiful and
-          cohesive creation.
+          Hi, I&apos;m <span>David</span> and I&apos;m a web developer, hooper,
+          gamer, and cat dad.
         </p>
-        <p>
-          Originally from Southern California, I moved to Korea shortly after
-          graduating from UC Davis to travel the world and learn more about my
-          Korean heritage. After years of working in the English education
-          industry, I hung up my teaching hat in 2020, right as the pandemic
-          struck. While the world was being engulfed by Covid-19, I was at home,
-          studying Javascript, OOP, functional programming, and other core CS
-          competencies.
-        </p>
-        <p>
-          Nowadays, I build modern web apps using technologies like React and
-          Typescript. Meanwhile, the learning hasn&apos;t stopped and I enjoy
-          adding new skills to my developer toolbox every day. You&apos;ll
-          usually find me in front of Visual Studio Code but when I&apos;m not
-          coding, I enjoy playing a few rounds of Overwatch or watching some NBA
-          highlights.
-        </p>
-      </About>
-      <FunFacts>
-        <ImageContainer>
-          <ProfileImg src="/images/profile.jpg" alt="David Cho profile pic" />
-        </ImageContainer>
+      </div>
+      <p>
+        When developing, I leverage modern libraries like Gatsby &#38; Next.js
+        to deliver blazing fast, mobile-friendly, interactive web apps that
+        adhere to modern web standards.
+      </p>
+      <p>
+        When I&apos;m not coding or learning, you can usually find me cradling
+        my furbaby (Miru), playing games on steam / battlenet, or on the prowl
+        for the best burrito in town.
+      </p>
+      <p>
+        If you&apos;re interested in working with me or have any questions, feel
+        free to reach me at <span>hoopslam@gmail.com</span> and I&apos;ll get
+        back to you posthaste!
+      </p>
+      {/* <FunFacts>
         <Cat>
           <h2>Tech Stack</h2>
           <ul>
@@ -72,7 +76,6 @@ const about = () => {
             <li>Willing to Relocate: Yes</li>
           </ul>
         </Cat>
-
         <Cat>
           <h2>Education</h2>
           <ul>
@@ -81,7 +84,7 @@ const about = () => {
             <li>Graduated in 2009</li>
           </ul>
         </Cat>
-      </FunFacts>
+      </FunFacts> */}
     </AboutContainer>
   );
 };
@@ -95,33 +98,61 @@ const AboutContainer = styled.div`
   align-items: flex-start;
   justify-items: center;
 
+  P {
+    font-size: 1.3rem;
+  }
+
+  .title {
+    margin: 100px 0 50px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+
+    .textblock {
+      background-color: black;
+    }
+
+    span {
+      color: ${({ theme }) => theme.primary};
+    }
+
+    hr {
+      position: absolute;
+      width: 100%;
+      top: 20px;
+      z-index: -1;
+    }
+  }
+
+  .intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin: 10px;
+
+      span {
+        color: ${({ theme }) => theme.primary};
+        font-weight: bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .image-container {
+    padding: 10px;
+    box-shadow: 2px 2px 10px #000;
+
+    img {
+      width: 350px;
+      height: auto;
+    }
+  }
+
   @media screen and (max-width: 990px) {
     margin: 0;
     grid-template-columns: 1fr;
-  }
-`;
-
-const About = styled.section`
-  margin-top: 50px;
-  padding: 10px;
-  width: 100%;
-  max-width: 667px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  p {
-    margin: 10px 50px;
-  }
-`;
-
-const Quote = styled.div`
-  font-size: 2.3rem;
-  font-family: "Yellowtail", cursive;
-  padding: 20px;
-
-  p {
-    font-size: 1.5rem;
-    text-align: right;
   }
 `;
 
@@ -177,12 +208,7 @@ const Cat = styled.div`
 
 const ProfileImg = styled.img`
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: auto;
   margin: 25px;
-`;
-
-const ImageContainer = styled.div`
-  width: 100%;
-  text-align: center;
 `;

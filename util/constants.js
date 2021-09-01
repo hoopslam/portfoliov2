@@ -56,12 +56,12 @@ export const PROJECTS = [
 		live: "https://disneyplus-clone-703c8.web.app/",
     },
 	{
-		title: "Portfolio v1",
+		title: "My Portfolio Website",
 		id: 6,
-		image: "/images/projects/oldportfolio.png",
-		mobile: "/images/projects/oldportfoliomobile.jpg",
-		description: "Previous version of my portfolio website.  A bit embarressing to show now but I think it shows my progression as a developer and designer.",
-		tech: "Next.js, CSS Modules, React-reveal",
+		image: "/images/projects/newportfolio.png",
+		mobile: "/images/projects/newportfoliomobile.png",
+		description: "Curious how I made this site?  Feel free to have a look at my code or send me a message with any questions about the site.",
+		tech: "Next.js, Styled-Components, React-reveal",
 		github: "https://github.com/hoopslam/portfolio",
 		live: "https://portfoliov2-alpha.vercel.app/",
 	}
