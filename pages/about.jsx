@@ -3,16 +3,6 @@ import styled from "styled-components";
 const about = () => {
   return (
     <AboutContainer>
-      <div className="title">
-        <div className="textblock">
-          <h1>
-            About <span>Me</span>
-          </h1>
-        </div>
-
-        <hr />
-      </div>
-
       <div className="intro">
         <div className="image-container">
           <img
@@ -21,27 +11,30 @@ const about = () => {
             alt="David Cho profile pic"
           />
         </div>
+      </div>
+      <div className="description">
         <p>
           Hi, I&apos;m <span>David</span> and I&apos;m a web developer, hooper,
           gamer, and cat dad.
         </p>
+        <p>
+          I love the challenge of building out beautifully simple and well
+          crafted web apps using modern libraries that deliver blazing fast,
+          mobile-friendly, interactive web experiences.
+        </p>
+        <p>
+          When I&apos;m not coding or learning, you can usually find me cradling
+          my furbaby (Miru), playing games on steam / battlenet, or on the prowl
+          for the best burrito in town.
+        </p>
+        <p>
+          If you&apos;re interested in working with me or have any questions,
+          feel free to reach me at <span>hoopslam@gmail.com</span> and I&apos;ll
+          get back to you posthaste!
+        </p>
       </div>
-      <p>
-        When developing, I leverage modern libraries like Gatsby &#38; Next.js
-        to deliver blazing fast, mobile-friendly, interactive web apps that
-        adhere to modern web standards.
-      </p>
-      <p>
-        When I&apos;m not coding or learning, you can usually find me cradling
-        my furbaby (Miru), playing games on steam / battlenet, or on the prowl
-        for the best burrito in town.
-      </p>
-      <p>
-        If you&apos;re interested in working with me or have any questions, feel
-        free to reach me at <span>hoopslam@gmail.com</span> and I&apos;ll get
-        back to you posthaste!
-      </p>
-      {/* <FunFacts>
+
+      <FunFacts>
         <Cat>
           <h2>Tech Stack</h2>
           <ul>
@@ -84,7 +77,7 @@ const about = () => {
             <li>Graduated in 2009</li>
           </ul>
         </Cat>
-      </FunFacts> */}
+      </FunFacts>
     </AboutContainer>
   );
 };
@@ -92,39 +85,29 @@ const about = () => {
 export default about;
 
 const AboutContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  align-items: flex-start;
-  justify-items: center;
+  align-items: center;
+  justify-content: center;
 
   P {
     font-size: 1.3rem;
   }
-
-  .title {
-    margin: 100px 0 50px;
-    position: relative;
+  span {
+    color: ${({ theme }) => theme.primary};
+  }
+  .description {
     width: 100%;
-    text-align: center;
+    text-align: start;
 
-    .textblock {
-      background-color: black;
-    }
-
-    span {
-      color: ${({ theme }) => theme.primary};
-    }
-
-    hr {
-      position: absolute;
-      width: 100%;
-      top: 20px;
-      z-index: -1;
+    p {
+      margin: 10px;
     }
   }
 
   .intro {
+    margin: 100px 0 50px;
     display: flex;
     justify-content: center;
     align-items: center;
