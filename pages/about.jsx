@@ -53,7 +53,7 @@ const about = () => {
         </p>
         <p>
           I&apos;m always interested in hearing from my visitors so feel free to
-          send me a message and I'll get back to you as soon as I can.
+          send me a message and I&apos;ll get back to you as soon as I can.
         </p>
       </div>
 
