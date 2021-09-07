@@ -142,7 +142,7 @@ const AboutContainer = styled.div`
       margin: 10px;
     }
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 769px) {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -176,7 +176,7 @@ const AboutContainer = styled.div`
       text-align: center;
       color: #000;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 769px) {
       float: none;
       width: 250px;
       margin: 0;
@@ -223,7 +223,7 @@ const AboutContainer = styled.div`
       width: 230px;
       padding: 20px;
     }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 769px) {
       padding: 10px 0;
       font-size: .85rem;
 
@@ -254,7 +254,7 @@ const DrawerButton = styled.div`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 769px) {
     top: 10px;
     transform: translateY(0);
   }
