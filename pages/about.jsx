@@ -139,7 +139,7 @@ const AboutContainer = styled.div`
     }
 
     p {
-      margin: 10px;
+      margin: 10px 25px;
     }
 
     @media screen and (max-width: 768px) {
@@ -147,12 +147,6 @@ const AboutContainer = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-    }
-
-    @media screen and (max-width: 540px) {
-      p {
-        margin: 10px 0;
-      }
     }
   }
 
