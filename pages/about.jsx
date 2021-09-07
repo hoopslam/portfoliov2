@@ -148,6 +148,12 @@ const AboutContainer = styled.div`
       justify-content: center;
       align-items: center;
     }
+
+    @media screen and (max-width: 540px) {
+      p {
+        margin: 10px 0;
+      }
+    }
   }
 
   .image-container {
@@ -172,6 +178,8 @@ const AboutContainer = styled.div`
     }
     @media screen and (max-width: 767px) {
       float: none;
+      width: 250px;
+      margin: 0;
     }
   }
 
@@ -185,7 +193,7 @@ const AboutContainer = styled.div`
     align-items: center;
     background-color: ${({ theme }) => theme.sidebar};
     color: white;
-    font-size: 0.85rem;
+    font-size: 1rem;
     padding: 10px 10px 20px;
     height: 100vh;
     z-index: 100;
@@ -214,6 +222,14 @@ const AboutContainer = styled.div`
     .category {
       width: 230px;
       padding: 20px;
+    }
+    @media screen and (max-width: 767px) {
+      padding: 10px 0;
+      font-size: .85rem;
+
+      .category {
+        padding: 5px 15px;
+      }
     }
   }
 
