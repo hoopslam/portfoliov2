@@ -1,9 +1,9 @@
+import { useState } from "react";
 import styled from "styled-components";
 import ContactForm from "../components/ui/ContactForm";
-import { useState } from "react";
 import {CgArrowLongRight} from "react-icons/cg";
 
-const about = () => {
+const About = () => {
   const [drawerActive, setDrawerActive] = useState(false);
 
   const toggleActive = (action) => {
@@ -12,7 +12,6 @@ const about = () => {
     } else {
       setDrawerActive(false);
     }
-    console.log(action);
   };
 
   return (
@@ -33,7 +32,7 @@ const about = () => {
           Hi, I&apos;m <span>David</span>
         </p>
         <p>
-          I'm a web developer based out of Seoul, South Korea. I love rainy
+          I&apos;m a web developer based out of Seoul, South Korea. I love rainy
           weather, watching NBA highlights, being a cat dad, and building awesome
           web apps.
         </p>
@@ -101,7 +100,7 @@ const about = () => {
   );
 };
 
-export default about;
+export default About;
 
 const AboutContainer = styled.div`
   display: flex;
