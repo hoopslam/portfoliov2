@@ -37,9 +37,9 @@ const About = () => {
           web apps.
         </p>
         <p>
-          I spend most of my days striving to write clean code and building UI components
+          I spend most of my days striving to write clean, simple code and building UI components
           that fit and work well. I&apos;m all about simplicity in life; I like
-          my coffee black and my functions pure. The world of software
+          my coffee black and my functions modular. The world of software
           development isn&apos;t always so simple but I enjoy discovering new
           ways to improve my coding/design skills and the challenge of making
           things as elegant as possible.
