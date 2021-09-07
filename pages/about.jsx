@@ -68,20 +68,22 @@ const about = () => {
             <li>CSS / SASS</li>
             <li>Javascript</li>
             <li>Typescript</li>
-            <li>React, Next.js</li>
-            <li>Redux / MobX</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Redux</li>
+            <li>MobX</li>
+            <li>Styled Components</li>
             <li>Node / Express</li>
             <li>REST APIS</li>
             <li>Firebase</li>
             <li>PostgreSQL</li>
             <li>MongoDB</li>
-            <li>Socket.io</li>
           </ul>
         </div>
         <div className="category">
           <h2>Languages</h2>
           <ul>
-            <li>English: Fluent </li>
+            <li>English: Native </li>
             <li>Korean: Proficient</li>
             <li>Spanish: Beginner</li>
           </ul>
