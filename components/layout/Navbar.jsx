@@ -1,13 +1,13 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { FaHome, FaBlog } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdTagFaces } from "react-icons/md";
 import { BsBriefcase } from "react-icons/bs";
 import { BiMessageDetail } from "react-icons/bi";
 import Link from "next/link";
 import { COLORS } from "../../util/constants";
 
-const Navbar = ({ themeHandler }) => {
+const Navbar = ({ themeHandler,  }) => {
   const [active, setActive] = useState(false);
 
   const menuToggler = () => {
@@ -84,7 +84,7 @@ const Navbar = ({ themeHandler }) => {
         <div className={`bar middle ${active ? "active" : ""}`}></div>
         <div className={`bar bottom ${active ? "active" : ""}`}></div>
       </Hamburger>
-      <ColorPicker>
+      {/* <ColorPicker>
         {COLORS.map((color) => (
           <button
             key={color.id}
@@ -93,7 +93,7 @@ const Navbar = ({ themeHandler }) => {
             aria-label="color-picker-button"
           ></button>
         ))}
-      </ColorPicker>
+      </ColorPicker> */}
     </>
   );
 };
@@ -196,7 +196,7 @@ const Hamburger = styled.button`
   display: none;
   position: fixed;
   top: 10px;
-  right: 10px;
+  left: 10px;
   width: 35px;
   height: 35px;
   cursor: pointer;
@@ -204,7 +204,7 @@ const Hamburger = styled.button`
   background: none;
   border: none;
   outline: none;
-  z-index: 10;
+  z-index: 100;
 
   .bar {
     content: "";
@@ -214,6 +214,10 @@ const Hamburger = styled.button`
     background-color: rgb(160, 160, 160);
     margin: 5px 0px;
     transition: 0.6s;
+  }
+
+  .bar.active {
+    background-color: white;
   }
 
   .bar.top.active {

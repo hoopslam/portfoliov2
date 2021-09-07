@@ -54,21 +54,23 @@ export default ContactForm;
 const FormContainer = styled.form`
   display: grid;
   grid-template-columns: 1fr;
-  margin: 30px;
-  min-width: 420px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 50px;
+  max-width: 440px;
 
   @media screen and (max-width: 560px) {
     min-width: 0;
-    width: 100%;
-    margin: 30px 0;
   }
 `;
 
 const InputGroup = styled.div`
   margin: 10px;
+  
   input,
   textarea {
     width: 100%;
+    min-width: 320px;
     background-color: whitesmoke;
     border: none;
     border-radius: 12px;
@@ -78,6 +80,10 @@ const InputGroup = styled.div`
 
     :focus {
       border: 1px solid ${({ theme }) => theme.primary};
+    }
+
+    @media screen and (max-width: 560px) {
+      min-width: 0;
     }
   }
 

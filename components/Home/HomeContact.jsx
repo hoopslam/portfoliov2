@@ -29,6 +29,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   min-height: 70vh;
+  margin-top: 100px;
 
   h1 {
     margin-bottom: 30px;
