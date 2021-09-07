@@ -62,7 +62,7 @@ export const PROJECTS = [
 		mobile: "/images/projects/newportfoliomobile.png",
 		description: "Curious how I made this site?  Feel free to have a look at my code or send me a message with any questions about the site.",
 		tech: "Next.js, Styled-Components, React-reveal",
-		github: "https://github.com/hoopslam/portfolio",
-		live: "https://portfoliov2-alpha.vercel.app/",
+		github: "https://github.com/hoopslam/portfoliov2",
+		live: "https://devcho.com",
 	}
 ];
