@@ -14,11 +14,10 @@ const ContactForm = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
           alert("Message Sent!");
         },
         (error) => {
-          console.log(error.text);
+          alert("Woopsie, your message didn't go through.  Please try sending a message via your email client to hoopslam@gmail.com")
         }
       );
     e.target.reset();
