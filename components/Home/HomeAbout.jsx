@@ -9,7 +9,7 @@ const HomeAbout = () => {
   return (
     <AboutContainer id="about">
       <Fade>
-        <h1>I build mobile responsive web apps</h1>
+        <h1>I build responsive web apps</h1>
       </Fade>
       <SliderContainer>
         <DesktopContainer>
@@ -23,7 +23,7 @@ const HomeAbout = () => {
       </SliderContainer>
       <Fade fraction={.5}>
         <ToolkitContainer>
-          <h2>using modern web technology</h2>
+          <h2>using the latest and greatest in tech</h2>
           <Toolkit />
         </ToolkitContainer>
       </Fade>

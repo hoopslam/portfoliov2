@@ -1,4 +1,4 @@
-export const WHATIDO = ["Web Developer", "Cat Dad", "Basketball Fanatic", "Gamer", "Foodie"];
+export const WHATIDO = ["Software Developer", "Cat Dad", "Basketball Fanatic", "Gamer", "Foodie"];
 
 export const COLORS = [{id: 0, hex: "#1976d2"}, {id: 1, hex: "#f57c00"}, {id: 2, hex: "#d32f2f"}, {id: 3, hex: "#263238"}, {id: 4, hex: "#00796b"}];
 

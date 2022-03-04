@@ -32,7 +32,7 @@ const About = () => {
           Hi, I&apos;m <span>David</span>
         </p>
         <p>
-          I&apos;m a web developer based out of Seoul, South Korea. I love rainy
+          I&apos;m a software developer based out of Seoul, South Korea. I love rainy
           weather, watching NBA highlights, being a cat dad, and building awesome
           web apps.
         </p>
@@ -47,7 +47,7 @@ const About = () => {
         <p>
           When I&apos;m not coding or studying, you can usually find me running
           around the house to entertain my furbaby (Miru), playing games with my
-          fiancée on steam/battlenet, or on the prowl for the best Mexican food
+          wife on steam/battlenet, or on the prowl for the best Mexican food
           in town.
         </p>
         <p>
@@ -68,6 +68,7 @@ const About = () => {
             <li>Javascript</li>
             <li>Typescript</li>
             <li>React</li>
+            <li>Material UI</li>
             <li>Next.js</li>
             <li>Redux</li>
             <li>MobX</li>
