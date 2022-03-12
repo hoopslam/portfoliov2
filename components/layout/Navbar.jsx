@@ -84,7 +84,7 @@ const Navbar = ({ themeHandler,  }) => {
         <div className={`bar middle ${active ? "active" : ""}`}></div>
         <div className={`bar bottom ${active ? "active" : ""}`}></div>
       </Hamburger>
-      {/* <ColorPicker>
+      <ColorPicker>
         {COLORS.map((color) => (
           <button
             key={color.id}
@@ -93,7 +93,7 @@ const Navbar = ({ themeHandler,  }) => {
             aria-label="color-picker-button"
           ></button>
         ))}
-      </ColorPicker> */}
+      </ColorPicker>
     </>
   );
 };

@@ -237,8 +237,7 @@ const AboutContainer = styled.div`
 const DrawerButton = styled.div`
   position: fixed;
   display: ${props => props.drawerActive ? "none" : "block"};
-  top: 50%;
-  transform: translateY(-50%);
+  top: 50px;
   right: 20px;
   width: 75px;
   height: 75px;
@@ -247,10 +246,5 @@ const DrawerButton = styled.div`
 
   :hover {
     cursor: pointer;
-  }
-
-  @media screen and (max-width: 768px) {
-    top: 10px;
-    transform: translateY(0);
   }
 `;
