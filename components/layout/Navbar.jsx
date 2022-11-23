@@ -283,11 +283,9 @@ const Hamburger = styled.button`
 
 const ColorPicker = styled.div`
     position: fixed;
-    top: 50%;
+    bottom: 5px;
     right: 5px;
-    transform: translate(0, -50%);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 100;
@@ -308,13 +306,6 @@ const ColorPicker = styled.div`
     }
 
     @media screen and (max-width: 990px) {
-        flex-direction: row;
-        top: 10px;
-        right: 50%;
-        transform: translate(50%, 0);
-
-        button {
-            margin: 10px;
-        }
+        display: none;
     }
 `;
