@@ -54,7 +54,7 @@ export const PROJECTS = [
         image: '/images/projects/jiseon-0.png',
         mobile: '/images/projects/jiseonmobile.jpg',
         github: 'https://github.com/hoopslam/lee_jiseon',
-        live: 'https://www.jiseonlee.art/',
+        live: 'https://lee-jiseon.vercel.app/',
     },
     {
         id: 4,
