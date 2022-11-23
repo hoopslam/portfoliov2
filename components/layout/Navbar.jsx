@@ -292,9 +292,9 @@ const ColorPicker = styled.div`
 
     button {
         cursor: pointer;
-        margin: 5px;
-        width: 22px;
-        height: 22px;
+        margin: 4px;
+        width: 18px;
+        height: 18px;
         border: none;
         box-shadow: 1px 1px 5px #000;
         border-radius: 50%;
