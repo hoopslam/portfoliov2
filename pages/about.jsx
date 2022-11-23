@@ -39,8 +39,8 @@ const About = () => {
                 <p>
                     I spend most of my days striving to build great apps and
                     learn cool new things about coding/life in general. As any
-                    good developer knows, coding isn't always easy, but I enjoy
-                    the challenge of discovering new ways to improve my
+                    good developer knows, coding isn&apos;t always easy, but I
+                    enjoy the challenge of discovering new ways to improve my
                     coding/design skills and tackling difficult problems.
                 </p>
                 <p>
