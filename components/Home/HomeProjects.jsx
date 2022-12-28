@@ -3,7 +3,7 @@ import { PROJECTS } from "../../util/constants";
 import { FaGithubAlt, FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
 import Fade from "react-reveal/Fade";
-import {StyledButton} from "../../styles/GlobalStyle";
+import { StyledButton } from "../../styles/GlobalStyle";
 
 const HomeProjects = () => {
   return (
@@ -38,12 +38,16 @@ const HomeProjects = () => {
                     <FaGithubAlt size={25} className="icon" />
                   </StyledButton>
                 </a>
-                <a href={project.live} target="_blank" rel="noreferrer">
-                  <StyledButton>
-                    Live
-                    <FaExternalLinkAlt size={25} className="icon" />
-                  </StyledButton>
-                </a>
+                {
+                  project?.live && (
+                    <a href={project.live} target="_blank" rel="noreferrer">
+                      <StyledButton>
+                        Live
+                        <FaExternalLinkAlt size={25} className="icon" />
+                      </StyledButton>
+                    </a>
+                  )
+                }
               </Links>
             </ProjectDescription>
           </Project>
