@@ -283,7 +283,7 @@ const Hamburger = styled.button`
 
 const ColorPicker = styled.div`
     position: fixed;
-    bottom: 5px;
+    top: 5px;
     right: 5px;
     display: flex;
     justify-content: center;
