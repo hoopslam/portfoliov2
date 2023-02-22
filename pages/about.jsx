@@ -7,7 +7,7 @@ import Image from 'next/image';
 const PROFILE_PICS = [
     {
         src: `/images/pro0.jpg`,
-        text: `Exploring Ankor Thom`,
+        text: `Exploring Angkor Thom`,
     },
     {
         src: `/images/pro1.jpg`,
