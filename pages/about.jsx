@@ -28,7 +28,7 @@ const About = () => {
     const [activeImage, setActiveImage] = useState(0);
 
     const changeImage = (imageNum) => {
-        if (imageNum === PROFILE_PICS.length) {
+        if (imageNum > PROFILE_PICS.length - 1) {
             setActiveImage(0);
             return;
         }
@@ -43,24 +43,25 @@ const About = () => {
             <div className='description'>
                 <div className='image-container'>
                     {PROFILE_PICS.map((pic, i) => (
-                        <div
+                        <ImageContainer
                             key={pic.src}
-                            className={`profile-image ${
-                                activeImage === i && `activeImage`
-                            }`}
+                            order={i + 1}
+                            activeImage={i === activeImage}
                             onClick={() => changeImage(i + 1)}
                         >
-                            <Image
-                                src={pic.src}
-                                height={250}
-                                width={320}
-                                alt={pic.text}
-                            />
-                        </div>
+                            <div className='image-group'>
+                                <div className={`profile-image`}>
+                                    <Image
+                                        src={pic.src}
+                                        height={250}
+                                        width={320}
+                                        alt={pic.text}
+                                    />
+                                </div>
+                                <p className='image-text'>{pic.text}</p>
+                            </div>
+                        </ImageContainer>
                     ))}
-                    <p className='image-text'>
-                        {PROFILE_PICS[activeImage].text}
-                    </p>
                 </div>
                 <p className='greeting'>
                     Hi, I&apos;m <span>David</span>
@@ -145,6 +146,37 @@ const About = () => {
 
 export default About;
 
+const ImageContainer = styled.div`
+    position: absolute;
+    padding: 10px;
+    box-shadow: 2px 2px 10px #000;
+    background-color: white;
+    transform: ${({ order }) =>
+        order === 1
+            ? `rotate(6deg)`
+            : order === 2
+            ? `rotate(4deg)`
+            : order === 3
+            ? `rotate(2deg)`
+            : `rotate(0deg)`};
+    z-index: ${({ activeImage }) => (activeImage ? `100` : `0`)};
+
+    p {
+        font-family: 'Indie Flower', cursive;
+        font-weight: 600;
+        text-align: center;
+        color: #000;
+    }
+    @media screen and (max-width: 768px) {
+        float: none;
+        margin: 0;
+
+        p {
+            margin: 0;
+        }
+    }
+`;
+
 const AboutContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -152,6 +184,20 @@ const AboutContainer = styled.div`
     align-items: center;
     justify-content: center;
     transition: all 0.5s ease;
+
+    .image-container {
+        width: 320px;
+        height: 300px;
+        margin: 0 35px 25px 20px;
+        cursor: pointer;
+        float: left;
+        position: relative;
+
+        @media screen and (max-width: 768px) {
+            width: 250px;
+            height: 230px;
+        }
+    }
 
     h1 {
         font-family: cursive;
@@ -191,43 +237,6 @@ const AboutContainer = styled.div`
             justify-content: center;
             align-items: center;
         }
-    }
-
-    .image-container {
-        padding: 10px;
-        box-shadow: 2px 2px 10px #000;
-        background-color: white;
-        transform: rotate(4deg);
-        width: 320px;
-        height: 300px;
-        float: left;
-        margin: 0 35px 25px 20px;
-        cursor: pointer;
-        p {
-            font-family: 'Indie Flower', cursive;
-            font-weight: 600;
-            text-align: center;
-            color: #000;
-        }
-        @media screen and (max-width: 768px) {
-            float: none;
-            width: 250px;
-            height: 230px;
-            margin: 0;
-
-            p {
-                margin: 0;
-            }
-        }
-    }
-
-    .profile-image {
-        position: relative;
-        display: none;
-    }
-
-    .activeImage {
-        display: block;
     }
 
     .funfacts {
