@@ -58,7 +58,9 @@ const About = () => {
                             />
                         </div>
                     ))}
-                    <p>{PROFILE_PICS[activeImage].text}</p>
+                    <p className='image-text'>
+                        {PROFILE_PICS[activeImage].text}
+                    </p>
                 </div>
                 <p className='greeting'>
                     Hi, I&apos;m <span>David</span>
@@ -212,6 +214,10 @@ const AboutContainer = styled.div`
             width: 250px;
             height: 230px;
             margin: 0;
+
+            p {
+                margin: 0;
+            }
         }
     }
 
