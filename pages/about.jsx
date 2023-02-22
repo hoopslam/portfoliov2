@@ -159,7 +159,7 @@ const ImageContainer = styled.div`
             : order === 3
             ? `rotate(2deg)`
             : `rotate(0deg)`};
-    z-index: ${({ activeImage }) => (activeImage ? `100` : `0`)};
+    z-index: ${({ activeImage }) => (activeImage ? `10` : `0`)};
 
     p {
         font-family: 'Indie Flower', cursive;
