@@ -2,44 +2,75 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import ContactForm from '../components/ui/ContactForm';
 import { CgArrowLongRight } from 'react-icons/cg';
+import Image from 'next/image';
+
+const PROFILE_PICS = [
+    {
+        src: `/images/pro0.jpg`,
+        text: `Exploring Ankor Thom`,
+    },
+    {
+        src: `/images/pro1.jpg`,
+        text: `With Wife, Becky`,
+    },
+    {
+        src: `/images/pro2.jpg`,
+        text: `Our cat, Miru`,
+    },
+    {
+        src: `/images/pro3.jpg`,
+        text: `#Clippers Nation`,
+    },
+];
 
 const About = () => {
     const [drawerActive, setDrawerActive] = useState(false);
+    const [activeImage, setActiveImage] = useState(0);
 
-    const toggleActive = (action) => {
-        if (action) {
-            setDrawerActive(true);
-        } else {
-            setDrawerActive(false);
+    const changeImage = (imageNum) => {
+        if (imageNum === PROFILE_PICS.length) {
+            setActiveImage(0);
+            return;
         }
+        setActiveImage(imageNum);
     };
 
     return (
-        <AboutContainer onClick={() => drawerActive && toggleActive(false)}>
+        <AboutContainer onClick={() => drawerActive && setDrawerActive(false)}>
             <div className='intro'>
                 <h1>About Me</h1>
             </div>
             <div className='description'>
                 <div className='image-container'>
-                    <img
-                        className='profile-image'
-                        src='/images/profile2.jpg'
-                        alt='David Cho profile pic'
-                    />
-                    <p>Miru and David 2021</p>
+                    {PROFILE_PICS.map((pic, i) => (
+                        <div
+                            key={pic.src}
+                            className={`profile-image ${
+                                activeImage === i && `activeImage`
+                            }`}
+                            onClick={() => changeImage(i + 1)}
+                        >
+                            <Image
+                                src={pic.src}
+                                height={250}
+                                width={320}
+                                alt={pic.text}
+                            />
+                        </div>
+                    ))}
+                    <p>{PROFILE_PICS[activeImage].text}</p>
                 </div>
                 <p className='greeting'>
                     Hi, I&apos;m <span>David</span>
                 </p>
                 <p>
-                    I&apos;m a Web developer based out of Seoul, South Korea. I
-                    love gaming, watching NBA highlights, being a cat dad, and
-                    writing code.
+                    I&apos;m a Software Developer based out of Seoul, South
+                    Korea. I love traveling, watching NBA highlights, being a
+                    cat dad, and writing code.
                 </p>
                 <p>
                     I spend most of my days striving to build great apps and
-                    learn cool new things about coding/life in general. As any
-                    good developer knows, coding isn&apos;t always easy, but I
+                    learning cool new things about coding/life in general. I
                     enjoy the challenge of discovering new ways to improve my
                     coding/design skills and tackling difficult problems.
                 </p>
@@ -57,30 +88,52 @@ const About = () => {
             </div>
 
             <ContactForm />
-            <DrawerButton onClick={() => toggleActive(true)}>
+            <DrawerButton onClick={() => setDrawerActive(true)}>
                 <p>Things I know</p>
                 <CgArrowLongRight size={35} />
             </DrawerButton>
 
             <div className={`funfacts ${drawerActive ? 'active' : ''}`}>
                 <div className='category'>
-                    <h2>Tech Stack</h2>
+                    <h2>FRONT END</h2>
                     <ul>
                         <li>HTML</li>
-                        <li>CSS / SASS</li>
+                        <li>CSS</li>
                         <li>Javascript</li>
                         <li>Typescript</li>
                         <li>React</li>
                         <li>Material UI</li>
                         <li>Next.js</li>
-                        <li>Redux</li>
+                        <li>Redux/Zustand/Recoil</li>
                         <li>Styled Components</li>
                         <li>Tailwind</li>
                         <li>GraphQL</li>
-                        <li>REST APIS</li>
                         <li>Jest / RTL</li>
-                        <li>Node / Express</li>
+                    </ul>
+                    <h2>BACKEND</h2>
+                    <ul>
+                        <li>Node/Express</li>
+                        <li>REST</li>
+                        <li>Sanity</li>
+                        <li>Firebase</li>
+                    </ul>
+                    <h2>DATABASE</h2>
+                    <ul>
                         <li>MongoDB</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                    <h2>Mobile</h2>
+                    <ul>
+                        <li>React Native/Expo</li>
+                        <li>Cordova</li>
+                    </ul>
+                    <h2>WORKFLOW</h2>
+                    <ul>
+                        <li>Git</li>
+                        <li>Github</li>
+                        <li>Bitbucket</li>
+                        <li>Jira</li>
+                        <li>Agile/Scrum</li>
                     </ul>
                 </div>
             </div>
@@ -144,14 +197,10 @@ const AboutContainer = styled.div`
         background-color: white;
         transform: rotate(4deg);
         width: 320px;
+        height: 300px;
         float: left;
         margin: 0 35px 25px 20px;
-
-        img {
-            width: 100%;
-            height: auto;
-        }
-
+        cursor: pointer;
         p {
             font-family: 'Indie Flower', cursive;
             font-weight: 600;
@@ -161,8 +210,18 @@ const AboutContainer = styled.div`
         @media screen and (max-width: 768px) {
             float: none;
             width: 250px;
+            height: 230px;
             margin: 0;
         }
+    }
+
+    .profile-image {
+        position: relative;
+        display: none;
+    }
+
+    .activeImage {
+        display: block;
     }
 
     .funfacts {
@@ -177,7 +236,7 @@ const AboutContainer = styled.div`
         color: white;
         font-size: 1rem;
         padding: 10px 10px 20px;
-        height: 100vh;
+        height: 100%;
         z-index: 100;
         transition: transform 0.5s ease;
         transform: translateX(100%);
@@ -187,7 +246,7 @@ const AboutContainer = styled.div`
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin: 10px 0px 5px;
             border-bottom: 1px solid ${({ theme }) => theme.light};
         }
@@ -197,8 +256,9 @@ const AboutContainer = styled.div`
             text-align: center;
         }
 
-        p {
-            margin: 5px;
+        ul {
+            margin-left: 5px;
+            margin-bottom: 5px;
         }
 
         .category {
@@ -222,14 +282,18 @@ const AboutContainer = styled.div`
 `;
 
 const DrawerButton = styled.div`
-    position: fixed;
+    position: absolute;
     display: ${(props) => (props.drawerActive ? 'none' : 'block')};
-    top: 50px;
+    top: 75px;
     right: 20px;
     width: 75px;
     height: 75px;
     z-index: 99;
     color: ${({ theme }) => theme.primary};
+
+    @media screen and(max-width: 990px) {
+        top: 25px;
+    }
 
     :hover {
         cursor: pointer;
