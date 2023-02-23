@@ -13,21 +13,19 @@ function MyApp({ Component, pageProps }) {
     };
 
     return (
-        <>
-            <ThemeProvider theme={themes[selectedTheme]}>
-                <GlobalStyle />
-                <Layout
-                    themeHandler={themeHandler}
+        <ThemeProvider theme={themes[selectedTheme]}>
+            <GlobalStyle />
+            <Layout
+                themeHandler={themeHandler}
+                selectedTheme={selectedTheme}
+            >
+                <Component
+                    {...pageProps}
                     selectedTheme={selectedTheme}
-                >
-                    <Component
-                        {...pageProps}
-                        selectedTheme={selectedTheme}
-                        themeHandler={themeHandler}
-                    />
-                </Layout>
-            </ThemeProvider>
-        </>
+                    themeHandler={themeHandler}
+                />
+            </Layout>
+        </ThemeProvider>
     );
 }
 
