@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import SocialLinks from '../ui/SocialLinks';
+import { scrollToTop } from '../../util/utilfunctions';
 
 const Footer = () => {
     return (
         <FooterContainer>
             <LinksContainer>
                 <Link href='/'>
-                    <a>Home</a>
+                    <a onClick={scrollToTop}>Home</a>
                 </Link>
                 <Link href='/about'>
                     <a>About</a>
@@ -18,9 +19,14 @@ const Footer = () => {
                 <Link href='/contact'>
                     <a>Contact</a>
                 </Link>
-                <Link href='http://ajeossipost.com'>
-                    <a>Blog</a>
-                </Link>
+
+                <a
+                    href='http://ajeossipost.com'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    Blog
+                </a>
             </LinksContainer>
             <SocialLinks />
             <p>Made by David Cho &#169; {new Date().getFullYear()}</p>

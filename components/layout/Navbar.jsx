@@ -7,7 +7,7 @@ import { BiMessageDetail } from 'react-icons/bi';
 import Link from 'next/link';
 import { COLORS } from '../../util/constants';
 import Drawer from '../ui/Drawer';
-import { CgArrowLongRight } from 'react-icons/cg';
+import { scrollToTop } from '../../util/utilfunctions';
 
 const Navbar = ({ themeHandler, selectedTheme }) => {
     const [active, setActive] = useState(false);
@@ -26,7 +26,12 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                         href='/'
                         passHref
                     >
-                        <a onClick={menuToggler}>
+                        <a
+                            onClick={() => {
+                                scrollToTop();
+                                menuToggler();
+                            }}
+                        >
                             <ListItem>
                                 <div
                                     className='centeredIcon'
@@ -78,7 +83,7 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                                 size={25}
                                 alt='Contact Icon'
                             />
-                            <span>Resume</span>
+                            <span>Skills</span>
                         </div>
                     </ListItem>
 
@@ -115,7 +120,7 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
           </Link> */}
 
                     <Link
-                        href='/contact'
+                        href='/#contact'
                         passHref
                     >
                         <a onClick={menuToggler}>
@@ -308,7 +313,7 @@ const Hamburger = styled.button`
 
 const ColorPicker = styled.div`
     position: fixed;
-    top: 8px;
+    bottom: 8px;
     right: 16px;
     display: flex;
     justify-content: center;

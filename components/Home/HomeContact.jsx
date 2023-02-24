@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 const HomeContact = () => {
     return (
-        <Container>
+        <Container id='contact'>
             <div>
                 <Fade>
                     <h1>Want to reach me?</h1>

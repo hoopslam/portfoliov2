@@ -64,21 +64,27 @@ const About = () => {
                 <p> Thanks for stopping by!</p>
                 <p>
                     I&apos;m David, a Korean American Software Developer based
-                    out of Seoul, South Korea. Originally from California, I
-                    moved to Korea shortly after graduating from UC Davis in
-                    2010. I love traveling, watching NBA highlights, being a cat
-                    dad, and writing code.
+                    out of Seoul.
                 </p>
                 <p>
-                    You&apos;ll usually find me in the front end, developing
-                    mostly with React, Typescript, and a styling library of some
-                    sort like Tailwind, Styled-Components, Material-UI, or
-                    Bootstrap. I also enjoy working on full stack projects and
-                    have recently even gotten into a bit of mobile development.
+                    I specialize in the Front End, where I build user-facing
+                    applications on the web as well as on mobile. I primarily
+                    use a combination of React, Typescript, and Styled
+                    Components for my front-end stack but am also well versed in
+                    Tailwind, Material-UI, Bootstrap, and JQuery.
+                </p>
+                <p>
+                    These days, I&apos;ve been working more on Full Stack
+                    projects using tools like Next.js, Sanity, Firebase,
+                    MongoDB, Node/Express, and GraphQL.
+                </p>
+                <p>
+                    I love being able to build things and am always adding new
+                    skills to add to my toolbelt.
                 </p>
             </div>
             <ToolkitContainer>
-                <h2>Some of the things I use</h2>
+                <h2>Here are some of the tools I use</h2>
                 <Toolkit />
             </ToolkitContainer>
         </AboutContainer>
@@ -92,6 +98,7 @@ const ImageContainer = styled.div`
     padding: 10px;
     box-shadow: 2px 2px 10px #000;
     background-color: white;
+    transition: transform 0.5s ease-out;
     transform: ${({ order }) =>
         order === 1
             ? `rotate(6deg)`
@@ -120,7 +127,7 @@ const ImageContainer = styled.div`
 
 const ToolkitContainer = styled.div`
     width: 100%;
-    margin: 150px 0;
+    margin: 50px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +146,7 @@ const AboutContainer = styled.div`
     .image-container {
         width: 320px;
         height: 300px;
-        margin: 0 35px 25px 20px;
+        margin: 0 35px 50px 20px;
         cursor: pointer;
         float: left;
         position: relative;
@@ -151,7 +158,13 @@ const AboutContainer = styled.div`
     }
 
     P {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+    }
+
+    h1,
+    h2 {
+        color: ${({ theme }) => theme.primary};
+        padding: 0 24px;
     }
 
     .intro {

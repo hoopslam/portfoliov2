@@ -62,13 +62,13 @@ const Overlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0);
     z-index: 200;
     transition: transform 1s ease;
-    transform: translateX(100%) scaleX(0);
+    transform: translateX(100%);
 
     &.active {
-        transform: translateX(0) scaleX(1);
+        transform: translateX(0);
     }
 `;
 

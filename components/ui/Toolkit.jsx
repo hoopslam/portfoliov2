@@ -1,4 +1,11 @@
-import { SiJavascript, SiNextDotJs, SiFirebase, SiRedux } from 'react-icons/si';
+import {
+    SiJavascript,
+    SiNextDotJs,
+    SiFirebase,
+    SiRedux,
+    SiTypescript,
+    SiTailwindcss,
+} from 'react-icons/si';
 import { AiFillHtml5, AiFillGithub } from 'react-icons/ai';
 import {
     DiCss3,
@@ -36,6 +43,22 @@ const Toolkit = () => {
                     title={'Javascript'}
                 />
                 <p>Javascript</p>
+            </ToolIcon>
+            <ToolIcon>
+                <SiTypescript
+                    size={50}
+                    color={'#007acc'}
+                    title={'Typescript'}
+                />
+                <p>Typescript</p>
+            </ToolIcon>
+            <ToolIcon>
+                <SiTailwindcss
+                    size={50}
+                    color={'#0ea4e9'}
+                    title={'Tailwind'}
+                />
+                <p>Tailwind</p>
             </ToolIcon>
             <ToolIcon>
                 <DiBootstrap
@@ -120,6 +143,7 @@ const ToolKitContainer = styled.div`
     margin: 20px 0;
     width: 100%;
     display: grid;
+    grid-gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
 
     @media screen and (max-width: 480px) {

@@ -25,28 +25,17 @@ export const PROFILE_IMGS = [
 export const PROJECTS = [
     {
         id: 1,
-        title: 'Geography Quiz App',
-        image: '/images/projects/geoquiz.jpg',
-        mobile: '/images/projects/geoquizmobile.jpg',
-        description:
-            'A random geography quiz app built in Typescript + React with MobX for global state management. Test your world knowledge!',
-        tech: 'Typescript, React, MobX, Styled Components, Opentdb API',
-        github: 'https://github.com/hoopslam/geoquiz',
-        live: 'https://hoopslam.github.io/geoquiz/',
-    },
-    {
-        id: 2,
         title: 'Covid-19 Tracker',
         description:
             "A worldwide Covid-19 tracker app using live data from John's Hopkins University and Worldometers. Fully intactive map and charts that dynamically render based on user input.",
-        tech: 'React(CRA), disease.sh API, React-Leaflet, Chart-JS',
+        tech: 'React, disease.sh API, React-Leaflet, Chart-JS',
         image: '/images/projects/covid-0.png',
         mobile: '/images/projects/covidmobile.jpg',
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
     },
     {
-        id: 3,
+        id: 2,
         title: 'Voca Mocha',
         image: '/images/projects/mocha.png',
         mobile: '/images/projects/mochamobile.jpg',
@@ -56,11 +45,22 @@ export const PROJECTS = [
         github: 'https://github.com/hoopslam/vocamocha',
     },
     {
+        title: 'Disney Plus Clone',
+        id: 3,
+        image: '/images/projects/disneyplus1.png',
+        mobile: '/images/projects/disneyplusmobile.jpg',
+        description:
+            'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
+        tech: 'React, Redux, Styled Components, Firebase',
+        github: 'https://github.com/hoopslam/disneyplusclone',
+        live: 'https://disneyplus-clone-703c8.web.app/',
+    },
+    {
         id: 4,
         title: 'Artist Portfolio Website',
         description:
             'A fully responsive portfolio website with a custom-built modal for easy viewing and navigation.  Built with Next.js for search engine optimization, static site generation, and lazy loading features.',
-        tech: 'React (Next.js), CSS Modules, Vercel',
+        tech: 'Next.js, CSS Modules, Vercel',
         image: '/images/projects/jiseon-0.png',
         mobile: '/images/projects/jiseonmobile.jpg',
         github: 'https://github.com/hoopslam/lee_jiseon',
@@ -78,15 +78,15 @@ export const PROJECTS = [
         live: 'https://hoopslam.github.io/tier-list-v1/',
     },
     {
-        title: 'Disney Plus Clone',
         id: 6,
-        image: '/images/projects/disneyplus1.png',
-        mobile: '/images/projects/disneyplusmobile.jpg',
+        title: 'Geography Quiz App',
+        image: '/images/projects/geoquiz.jpg',
+        mobile: '/images/projects/geoquizmobile.jpg',
         description:
-            'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
-        tech: 'React, Redux, Styled Components, Firebase',
-        github: 'https://github.com/hoopslam/disneyplusclone',
-        live: 'https://disneyplus-clone-703c8.web.app/',
+            'A random geography quiz app built in Typescript + React with MobX for global state management. Test your world knowledge!',
+        tech: 'Typescript, React, MobX, Styled Components, Opentdb API',
+        github: 'https://github.com/hoopslam/geoquiz',
+        live: 'https://hoopslam.github.io/geoquiz/',
     },
     {
         title: 'My Portfolio Website',
