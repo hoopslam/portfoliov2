@@ -85,6 +85,11 @@ const AvatarContainer = styled.div`
     width: 100%;
     height: 350px;
     margin: 15px;
+    transition: transform 0.5s ease;
+
+    :hover {
+        transform: scale(1.1);
+    }
 
     @media screen and (max-width: 990px) {
         width: 100%;
