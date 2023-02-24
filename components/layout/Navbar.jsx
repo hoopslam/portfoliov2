@@ -2,13 +2,16 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import { FaHome } from 'react-icons/fa';
 import { MdTagFaces } from 'react-icons/md';
-import { BsBriefcase } from 'react-icons/bs';
+import { BsBriefcase, BsCodeSlash } from 'react-icons/bs';
 import { BiMessageDetail } from 'react-icons/bi';
 import Link from 'next/link';
 import { COLORS } from '../../util/constants';
+import Drawer from '../ui/Drawer';
+import { scrollToTop } from '../../util/utilfunctions';
 
 const Navbar = ({ themeHandler, selectedTheme }) => {
     const [active, setActive] = useState(false);
+    const [drawerActive, setDrawerActive] = useState(false);
 
     const menuToggler = () => {
         setActive(!active);
@@ -23,7 +26,12 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                         href='/'
                         passHref
                     >
-                        <a onClick={menuToggler}>
+                        <a
+                            onClick={() => {
+                                scrollToTop();
+                                menuToggler();
+                            }}
+                        >
                             <ListItem>
                                 <div
                                     className='centeredIcon'
@@ -41,7 +49,7 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                     </Link>
 
                     <Link
-                        href='/about'
+                        href='/#about'
                         passHref
                     >
                         <a onClick={menuToggler}>
@@ -60,6 +68,24 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                             </ListItem>
                         </a>
                     </Link>
+                    <ListItem
+                        onClick={() => {
+                            setDrawerActive((prev) => !prev);
+                            menuToggler();
+                        }}
+                    >
+                        <div
+                            className='centeredIcon'
+                            aria-label='Contact Link'
+                        >
+                            <BsCodeSlash
+                                className='icon'
+                                size={25}
+                                alt='Contact Icon'
+                            />
+                            <span>Skills</span>
+                        </div>
+                    </ListItem>
 
                     <Link
                         href='/#projects'
@@ -94,7 +120,7 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
           </Link> */}
 
                     <Link
-                        href='/contact'
+                        href='/#contact'
                         passHref
                     >
                         <a onClick={menuToggler}>
@@ -138,6 +164,10 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                     ></button>
                 ))}
             </ColorPicker>
+            <Drawer
+                drawerActive={drawerActive}
+                closeDrawer={() => setDrawerActive(false)}
+            />
         </>
     );
 };
@@ -283,8 +313,8 @@ const Hamburger = styled.button`
 
 const ColorPicker = styled.div`
     position: fixed;
-    top: 5px;
-    right: 5px;
+    bottom: 8px;
+    right: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -307,5 +337,24 @@ const ColorPicker = styled.div`
 
     @media screen and (max-width: 990px) {
         display: none;
+    }
+`;
+
+const DrawerButton = styled.div`
+    position: fixed;
+    display: block;
+    top: 45%;
+    right: 20px;
+    width: 75px;
+    height: 75px;
+    z-index: 98;
+    color: ${({ theme }) => theme.primary};
+
+    @media screen and (max-width: 990px) {
+        display: none;
+    }
+
+    :hover {
+        cursor: pointer;
     }
 `;

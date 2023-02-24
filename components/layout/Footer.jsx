@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import Link from 'next/link';
 import SocialLinks from '../ui/SocialLinks';
+import { scrollToTop } from '../../util/utilfunctions';
 
 const Footer = () => {
     return (
         <FooterContainer>
             <LinksContainer>
                 <Link href='/'>
-                    <a>Home</a>
+                    <a onClick={scrollToTop}>Home</a>
                 </Link>
                 <Link href='/about'>
                     <a>About</a>
@@ -18,11 +19,17 @@ const Footer = () => {
                 <Link href='/contact'>
                     <a>Contact</a>
                 </Link>
+
+                <a
+                    href='http://ajeossipost.com'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    Blog
+                </a>
             </LinksContainer>
             <SocialLinks />
-            <p>
-                &#169; David Cho {new Date().getFullYear()} All rights reserved
-            </p>
+            <p>Made by David Cho &#169; {new Date().getFullYear()}</p>
         </FooterContainer>
     );
 };
@@ -34,7 +41,6 @@ const FooterContainer = styled.footer`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     width: 100%;
     color: ${({ theme }) => (theme.primary === '#00ff37' ? '#fff' : '#333')};
 
@@ -47,14 +53,15 @@ const FooterContainer = styled.footer`
 
 const LinksContainer = styled.nav`
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     margin: 15px;
+    width: 100%;
     cursor: pointer;
 
     a {
-        padding: 0 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        padding: 15px;
         transition: all 0.2s ease;
 
         :hover {

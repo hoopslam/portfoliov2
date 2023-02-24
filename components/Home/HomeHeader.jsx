@@ -23,24 +23,25 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
                 <Slider
                     className='left'
                     onClick={() => toggler('left')}
-                >
-                    <Arrow className='left'>{'<'}</Arrow>
-                </Slider>
+                ></Slider>
                 <Slider
                     className='right'
                     onClick={() => toggler('right')}
-                >
-                    <Arrow className='right'>{'>'}</Arrow>
-                </Slider>
+                ></Slider>
                 {PROFILE_IMGS.map((profile_image, i) => (
-                    <Avatar
-                        active={i === selectedTheme}
+                    <ImageContainer
                         key={i}
-                        src={profile_image}
-                        alt='David Simpsonized Profile Image'
-                        width='350'
-                        height='350'
-                    />
+                        active={i === selectedTheme}
+                    >
+                        <Arrow className='left'>{'<'}</Arrow>
+                        <Arrow className='right'>{'>'}</Arrow>
+                        <img
+                            src={profile_image}
+                            alt='David Simpsonized Profile Image'
+                            width='100%'
+                            height='100%'
+                        />
+                    </ImageContainer>
                 ))}
             </AvatarContainer>
             <TextContainer>
@@ -62,18 +63,6 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
                     </p>
                 </TextBlock>
             </TextContainer>
-            <Link
-                href='/#about'
-                passHref
-            >
-                <a>
-                    <DownArrow aria-label='About Link'>
-                        <div className='arrowContainer'>
-                            <div className='arrow'></div>
-                        </div>
-                    </DownArrow>
-                </a>
-            </Link>
         </Container>
     );
 };
@@ -93,7 +82,7 @@ const Container = styled.header`
 
 const AvatarContainer = styled.div`
     position: relative;
-    width: 350px;
+    width: 100%;
     height: 350px;
     margin: 15px;
 
@@ -104,14 +93,22 @@ const AvatarContainer = styled.div`
     }
 `;
 
-const Avatar = styled.img`
-    display: ${(props) => (props.active ? `` : `none`)};
+const ImageContainer = styled.div`
+    position: absolute;
     border-radius: 50%;
     width: 350px;
     height: 350px;
-    box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 4px #333;
     cursor: pointer;
     aspect-ratio: 1 / 1;
+    transition: all 0.5s ease-out;
+    backface-visibility: hidden;
+    transform: ${({ active }) => (active ? `rotateY(0)` : `rotateY(180deg)`)};
+
+    img {
+        border-radius: 50%;
+    }
+
     @media screen and (max-width: 990px) {
         width: 100%;
         width: 250px;
@@ -168,66 +165,6 @@ const TextBlock = styled.div`
                 theme.primary === '#263238' ? '#000' : theme.primary};
         &:hover {
             cursor: pointer;
-        }
-    }
-`;
-
-const DownArrow = styled.div`
-    .arrowContainer {
-        position: absolute;
-        left: 50%;
-        bottom: 0px;
-        transform: translate(-50%, -50%);
-        display: flex;
-        height: 100px;
-        justify-content: center;
-        align-items: center;
-        animation: bounce 1.5s ease infinite;
-
-        @keyframes bounce {
-            0% {
-                bottom: 20px;
-            }
-            50% {
-                bottom: 10px;
-            }
-            100% {
-                bottom: 20px;
-            }
-        }
-    }
-
-    @media screen and (max-width: 990px) {
-        .arrowContainer {
-            height: 50px;
-
-            @keyframes bounce {
-                0% {
-                    bottom: 5px;
-                }
-                50% {
-                    bottom: 0px;
-                }
-                100% {
-                    bottom: 5px;
-                }
-            }
-        }
-    }
-
-    .arrow {
-        height: 50px;
-        width: 50px;
-        border-style: solid;
-        border-color: ${({ theme }) => theme.primary};
-        border-width: 0px 4px 4px 0px;
-        transform: rotate(45deg);
-        transition: border-width 150ms ease-in-out;
-
-        :hover {
-            cursor: pointer;
-            border-color: ${({ theme }) =>
-                theme.light === '#4f5b62' ? theme.dark : theme.light};
         }
     }
 `;
