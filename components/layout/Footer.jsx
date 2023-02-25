@@ -21,7 +21,7 @@ const Footer = () => {
                 </Link>
 
                 <a
-                    href='http://ajeossipost.com'
+                    href='https://www.ajeossipost.com/'
                     target='_blank'
                     rel='noopener noreferrer'
                 >
