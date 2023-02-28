@@ -24,6 +24,16 @@ export const PROFILE_IMGS = [
 
 export const PROJECTS = [
     {
+        id: 8,
+        title: 'Full Stack Blog CMS',
+        description: "A full featured blog project with a custom CMS.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.",
+        tech: 'Next.js 13, Sanity, GROQ, Tailwind, Typescript, Portable Text,',
+        image: '/images/projects/blog.jpg',
+        mobile: './images/projects/randommobile.jpg',
+        github: 'https://github.com/hoopslam/ajeossiPost',
+        live: 'https://ajeossipost.com',
+    },
+    {
         id: 1,
         title: 'Covid-19 Tracker',
         description:
