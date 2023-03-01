@@ -26,7 +26,8 @@ export const PROJECTS = [
     {
         id: 8,
         title: 'Full Stack Blog CMS',
-        description: "A full featured blog project with a custom CMS.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.",
+        description:
+            'A full featured blog project with a custom CMS.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.',
         tech: 'Next.js 13, Sanity, GROQ, Tailwind, Typescript, Portable Text,',
         image: '/images/projects/blog.jpg',
         mobile: './images/projects/randommobile.jpg',
@@ -107,6 +108,6 @@ export const PROJECTS = [
             'Curious how I made this site?  Feel free to have a look at my code or send me a message with any questions about the site.',
         tech: 'Next.js, Styled-Components, React-reveal',
         github: 'https://github.com/hoopslam/portfoliov2',
-        live: 'https://devcho.com',
+        live: 'https://devidcho.com',
     },
 ];
