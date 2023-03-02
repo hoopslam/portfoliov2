@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import Toolkit from '../ui/Toolkit';
 
 const PROFILE_PICS = [
@@ -49,7 +48,7 @@ const About = () => {
                         >
                             <div className='image-group'>
                                 <div className={`profile-image`}>
-                                    <Image
+                                    <img
                                         src={pic.src}
                                         height={250}
                                         width={320}
