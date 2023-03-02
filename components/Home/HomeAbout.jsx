@@ -50,8 +50,6 @@ const About = () => {
                                 <div className={`profile-image`}>
                                     <img
                                         src={pic.src}
-                                        height={250}
-                                        width={320}
                                         alt={pic.text}
                                     />
                                 </div>
@@ -60,7 +58,7 @@ const About = () => {
                         </ImageContainer>
                     ))}
                 </div>
-                <p> Thanks for stopping by!</p>
+                <p className='text-intro'> Thanks for stopping by!</p>
                 <p>
                     I&apos;m David, a Korean American Software Developer based
                     out of Seoul.
@@ -70,7 +68,7 @@ const About = () => {
                     applications on the web as well as on mobile. I primarily
                     use a combination of React, Typescript, and Styled
                     Components for my front-end stack but am also well versed in
-                    Tailwind, Material-UI, Bootstrap, and JQuery.
+                    Tailwind, Material-UI, and Bootstrap.
                 </p>
                 <p>
                     These days, I&apos;ve been working more on Full Stack
@@ -96,6 +94,7 @@ const ImageContainer = styled.div`
     position: absolute;
     padding: 10px;
     box-shadow: 2px 2px 10px #000;
+    width: 100%;
     background-color: white;
     transition: transform 0.5s ease-out;
     transform: ${({ order }) =>
@@ -145,14 +144,20 @@ const AboutContainer = styled.div`
     .image-container {
         width: 320px;
         height: 300px;
-        margin: 0 70px 50px 25px;
+        margin: 0 50px 25px 25px;
         cursor: pointer;
         float: left;
         position: relative;
 
+        img {
+            width: 100%;
+            height: auto;
+        }
+
         @media screen and (max-width: 768px) {
             width: 250px;
             height: 230px;
+            margin: auto;
         }
     }
 
@@ -195,6 +200,10 @@ const AboutContainer = styled.div`
             flex-direction: column;
             justify-content: center;
             align-items: center;
+
+            .text-intro {
+                margin-top: 75px;
+            }
         }
     }
 `;
