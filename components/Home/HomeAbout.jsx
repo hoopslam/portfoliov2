@@ -145,7 +145,7 @@ const AboutContainer = styled.div`
     .image-container {
         width: 320px;
         height: 300px;
-        margin: 0 35px 50px 20px;
+        margin: 0 70px 50px 25px;
         cursor: pointer;
         float: left;
         position: relative;
