@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { WHATIDO, PROFILE_IMGS } from '../../util/constants';
-import Link from 'next/link';
+import { COLORS } from '../../util/constants';
 
 const HomeHeader = ({ selectedTheme, themeHandler }) => {
     const toggler = (direction = 'right') => {
@@ -43,6 +43,21 @@ const HomeHeader = ({ selectedTheme, themeHandler }) => {
                         />
                     </ImageContainer>
                 ))}
+                <ColorPicker>
+                    {COLORS.map((color, i) => (
+                        <button
+                            key={color.id}
+                            onClick={() => themeHandler(color.id)}
+                            style={{
+                                backgroundColor: `${color.hex}`,
+                                transform: `${
+                                    selectedTheme === i ? `scale(1.4)` : ''
+                                }`,
+                            }}
+                            aria-label='color-picker-button'
+                        ></button>
+                    ))}
+                </ColorPicker>
             </AvatarContainer>
             <TextContainer>
                 <Greeting>
@@ -85,16 +100,12 @@ const AvatarContainer = styled.div`
     width: 100%;
     height: 350px;
     margin: 15px;
-    transition: transform 0.5s ease;
-
-    :hover {
-        transform: scale(1.1);
-    }
 
     @media screen and (max-width: 990px) {
         width: 100%;
         max-width: 250px;
         height: 250px;
+        margin-bottom: 50px;
     }
 `;
 
@@ -213,5 +224,31 @@ const Slider = styled.div`
 
     &.right {
         right: 0;
+    }
+`;
+
+const ColorPicker = styled.div`
+    position: absolute;
+    bottom: -48px;
+    right: 50%;
+    transform: translateX(50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    button {
+        cursor: pointer;
+        margin: 4px;
+        width: 16px;
+        height: 16px;
+        border: none;
+        box-shadow: 1px 1px 3px #000;
+        border-radius: 50%;
+        transition: all 0.2s;
+
+        :hover {
+            transform: scale(1.4);
+        }
     }
 `;
