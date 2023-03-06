@@ -101,13 +101,6 @@ const AvatarContainer = styled.div`
     height: 350px;
     margin: 15px;
 
-    .picker {
-        transition: transform 0.5s ease;
-        :hover {
-            transform: scale(1.05);
-        }
-    }
-
     @media screen and (max-width: 990px) {
         width: 100%;
         max-width: 250px;
