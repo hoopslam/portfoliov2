@@ -4,7 +4,6 @@ import { COLORS } from '../../util/constants';
 
 const HomeHeader = ({ selectedTheme, themeHandler }) => {
     const toggler = (direction = 'right') => {
-        console.log(`triggered`);
         if (!direction) return null;
         if (direction === 'right') {
             selectedTheme < 4
