@@ -5,11 +5,10 @@ import { MdTagFaces } from 'react-icons/md';
 import { BsBriefcase, BsCodeSlash } from 'react-icons/bs';
 import { BiMessageDetail } from 'react-icons/bi';
 import Link from 'next/link';
-import { COLORS } from '../../util/constants';
 import Drawer from '../ui/Drawer';
 import { scrollToTop } from '../../util/utilfunctions';
 
-const Navbar = ({ themeHandler, selectedTheme }) => {
+const Navbar = () => {
     const [active, setActive] = useState(false);
     const [drawerActive, setDrawerActive] = useState(false);
 
@@ -149,21 +148,6 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                 <div className={`bar middle ${active ? 'active' : ''}`}></div>
                 <div className={`bar bottom ${active ? 'active' : ''}`}></div>
             </Hamburger>
-            <ColorPicker>
-                {COLORS.map((color, i) => (
-                    <button
-                        key={color.id}
-                        onClick={() => themeHandler(color.id)}
-                        style={{
-                            backgroundColor: `${color.hex}`,
-                            transform: `${
-                                selectedTheme === i ? `scale(1.2)` : ''
-                            }`,
-                        }}
-                        aria-label='color-picker-button'
-                    ></button>
-                ))}
-            </ColorPicker>
             <Drawer
                 drawerActive={drawerActive}
                 closeDrawer={() => setDrawerActive(false)}
@@ -308,53 +292,5 @@ const Hamburger = styled.button`
 
     @media screen and (max-width: 990px) {
         display: block;
-    }
-`;
-
-const ColorPicker = styled.div`
-    position: fixed;
-    bottom: 8px;
-    right: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-
-    button {
-        cursor: pointer;
-        margin: 4px;
-        width: 18px;
-        height: 18px;
-        border: none;
-        box-shadow: 1px 1px 5px #000;
-        border-radius: 50%;
-        transition: all 0.2s;
-
-        :hover {
-            transform: scale(1.2);
-        }
-    }
-
-    @media screen and (max-width: 990px) {
-        display: none;
-    }
-`;
-
-const DrawerButton = styled.div`
-    position: fixed;
-    display: block;
-    top: 45%;
-    right: 20px;
-    width: 75px;
-    height: 75px;
-    z-index: 98;
-    color: ${({ theme }) => theme.primary};
-
-    @media screen and (max-width: 990px) {
-        display: none;
-    }
-
-    :hover {
-        cursor: pointer;
     }
 `;
