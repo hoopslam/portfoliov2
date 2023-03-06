@@ -113,6 +113,7 @@ const AvatarContainer = styled.div`
         width: 100%;
         max-width: 250px;
         height: 250px;
+        margin-bottom: 50px;
     }
 `;
 
