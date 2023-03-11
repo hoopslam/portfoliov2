@@ -65,19 +65,17 @@ const About = () => {
                 </p>
                 <p>
                     I specialize in the Front End, where I build user-facing
-                    applications on the web as well as on mobile. I primarily
-                    use a combination of React, Typescript, and Styled
-                    Components for my front-end stack but am also well versed in
-                    Tailwind, Material-UI, and Bootstrap.
+                    applications that work beautifully on the web and mobile
+                    devices. All of my projects are built with mobile
+                    responsiveness in mind so feel free to check them out with
+                    different screen sizes.
                 </p>
                 <p>
-                    These days, I&apos;ve been working more on Full Stack
-                    projects using tools like Next.js, Sanity, Firebase,
-                    MongoDB, Node/Express, and GraphQL.
-                </p>
-                <p>
-                    I love being able to build things and am always adding new
-                    skills to add to my toolbelt.
+                    I&apos;m always playing around with new technologies and
+                    constantly adding new skills to my skillset. These days,
+                    I&apos;ve also been exploring the backend more and am
+                    working on full stack projects using tools like Next.js,
+                    Sanity, Firebase, MongoDB, Node/Express, and GraphQL.
                 </p>
             </div>
             <ToolkitContainer>

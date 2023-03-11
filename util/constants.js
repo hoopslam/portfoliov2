@@ -24,13 +24,22 @@ export const PROFILE_IMGS = [
 
 export const PROJECTS = [
     {
-        id: 8,
-        title: 'Full Stack Blog CMS',
+        id: 9,
+        title: 'Catazon',
         description:
-            'A full featured blog project with a custom CMS.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.',
+            'An E-Commerce platform for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
+        tech: 'Firebase, React, Sass, Stripe API, Netlify',
+        image: '/images/projects/catazon.jpg',
+        github: 'https://github.com/hoopslam/catazon',
+        live: 'https://startling-melba-a51cc6.netlify.app/',
+    },
+    {
+        id: 8,
+        title: 'The Ajeossi Post',
+        description:
+            'A full stack blog project with Sanity Headless CMS and Next.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.',
         tech: 'Next.js 13, Sanity, GROQ, Tailwind, Typescript, Portable Text,',
         image: '/images/projects/blog.jpg',
-        mobile: './images/projects/randommobile.jpg',
         github: 'https://github.com/hoopslam/ajeossiPost',
         live: 'https://ajeossipost.com',
     },
@@ -38,7 +47,6 @@ export const PROJECTS = [
         title: 'Disney Plus Front End',
         id: 3,
         image: '/images/projects/disneyplus1.png',
-        mobile: '/images/projects/disneyplusmobile.jpg',
         description:
             'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
         tech: 'React, Redux, Styled Components, Firebase',
@@ -52,7 +60,6 @@ export const PROJECTS = [
             "A worldwide Covid-19 tracker app using live data from John's Hopkins University and Worldometers. Fully intactive map and charts that dynamically render based on user input.",
         tech: 'React, disease.sh API, React-Leaflet, Chart-JS',
         image: '/images/projects/covid-0.png',
-        mobile: '/images/projects/covidmobile.jpg',
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
     },
@@ -60,7 +67,6 @@ export const PROJECTS = [
         id: 6,
         title: 'Geography Quiz App',
         image: '/images/projects/geoquiz.jpg',
-        mobile: '/images/projects/geoquizmobile.jpg',
         description:
             'A random geography quiz app built in Typescript + React with MobX for global state management. Test your world knowledge!',
         tech: 'Typescript, React, MobX, Styled Components, Opentdb API',
@@ -70,8 +76,7 @@ export const PROJECTS = [
     {
         id: 2,
         title: 'Voca Mocha',
-        image: '/images/projects/mocha.png',
-        mobile: '/images/projects/mochamobile.jpg',
+        image: '/images/projects/mocha.jpg',
         description:
             'A vocabulary memorization app for both Android and IOS.  Features local storage and a study reminder notification system.',
         tech: 'React Native, Expo, Typescript',
