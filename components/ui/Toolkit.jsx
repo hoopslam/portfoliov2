@@ -63,14 +63,12 @@ const ToolKitContainer = styled.div`
     .slide-track {
         animation: scroll 28s linear infinite;
         display: flex;
-        width: 200%;
         position: absolute;
         left: 0;
     }
 
     .items-container {
         display: flex;
-        width: 100%;
         margin: 0;
         padding: 0;
     }
@@ -80,7 +78,7 @@ const ToolKitContainer = styled.div`
             transform: translateX(0);
         }
         100% {
-            transform: translateX(-100%);
+            transform: translateX(-50%);
         }
     }
 `;
