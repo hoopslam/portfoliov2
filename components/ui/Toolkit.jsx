@@ -1,138 +1,17 @@
-import {
-    SiJavascript,
-    SiNextDotJs,
-    SiFirebase,
-    SiRedux,
-    SiTypescript,
-    SiTailwindcss,
-} from 'react-icons/si';
-import { AiFillHtml5, AiFillGithub } from 'react-icons/ai';
-import {
-    DiCss3,
-    DiBootstrap,
-    DiReact,
-    DiMongodb,
-    DiSass,
-} from 'react-icons/di';
-import { FaNode } from 'react-icons/fa';
 import styled from 'styled-components';
+import ToolkitItems from './ToolkitItems';
 
 const Toolkit = () => {
     return (
         <ToolKitContainer>
-            <ToolIcon>
-                <AiFillHtml5
-                    size={50}
-                    color={'#e34c26'}
-                    title={'HTML 5'}
-                />
-                <p>HTML5</p>
-            </ToolIcon>
-            <ToolIcon>
-                <DiCss3
-                    size={50}
-                    color={'#264de4'}
-                    title={'CSS 3'}
-                />
-                <p>CSS3</p>
-            </ToolIcon>
-            <ToolIcon>
-                <SiJavascript
-                    size={50}
-                    color={'#f0db4f'}
-                    title={'Javascript'}
-                />
-                <p>Javascript</p>
-            </ToolIcon>
-            <ToolIcon>
-                <SiTypescript
-                    size={50}
-                    color={'#007acc'}
-                    title={'Typescript'}
-                />
-                <p>Typescript</p>
-            </ToolIcon>
-            <ToolIcon>
-                <SiTailwindcss
-                    size={50}
-                    color={'#0ea4e9'}
-                    title={'Tailwind'}
-                />
-                <p>Tailwind</p>
-            </ToolIcon>
-            <ToolIcon>
-                <DiBootstrap
-                    size={50}
-                    color={'#602C50'}
-                    title={'Bootstrap'}
-                />
-                <p>Bootstrap</p>
-            </ToolIcon>
-            <ToolIcon>
-                <DiSass
-                    size={50}
-                    color={'#c69'}
-                    title={'Sass'}
-                />
-                <p>Sass</p>
-            </ToolIcon>
-            <ToolIcon>
-                <DiReact
-                    size={50}
-                    color={'#61DBFB'}
-                    title={'React'}
-                />
-                <p>React</p>
-            </ToolIcon>
-            <ToolIcon>
-                <SiRedux
-                    size={50}
-                    color={'#764abc'}
-                    title={'Redux'}
-                />
-                <p>Redux</p>
-            </ToolIcon>
-            <ToolIcon>
-                <SiNextDotJs
-                    size={50}
-                    color={'#000000'}
-                    title={'Next.js'}
-                />
-                <p>Next.js</p>
-            </ToolIcon>
-            <ToolIcon>
-                <FaNode
-                    size={50}
-                    color={'#303030'}
-                    title={'Node'}
-                />
-                <p>Node</p>
-            </ToolIcon>
-            <ToolIcon>
-                <DiMongodb
-                    size={50}
-                    color={'#4DB33D'}
-                    title={'MongoDB'}
-                />
-                <p>MongoDB</p>
-            </ToolIcon>
-            <ToolIcon>
-                <AiFillGithub
-                    size={50}
-                    color={'#211F1F'}
-                    title={'Github'}
-                />
-                <p>Github</p>
-            </ToolIcon>
-
-            <ToolIcon>
-                <SiFirebase
-                    size={50}
-                    color={'#ffcb2b'}
-                    title={'Firebase'}
-                />
-                <p>Firebase</p>
-            </ToolIcon>
+            <div className='slide-track'>
+                <div className='items-container'>
+                    <ToolkitItems />
+                </div>
+                <div className='items-container'>
+                    <ToolkitItems />
+                </div>
+            </div>
         </ToolKitContainer>
     );
 };
@@ -140,28 +19,68 @@ const Toolkit = () => {
 export default Toolkit;
 
 const ToolKitContainer = styled.div`
-    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
+    height: 100px;
+    position: relative;
     width: 100%;
-    display: grid;
-    grid-gap: 12px;
-    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    overflow: hidden;
 
-    @media screen and (max-width: 480px) {
-        grid-template-columns: 90px 90px 90px;
-        width: auto;
+    &::before,
+    &::after {
+        background: linear-gradient(
+            to right,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 0) 100%
+        );
+        content: '';
+        height: 100px;
+        position: absolute;
+        z-index: 2;
     }
-`;
 
-const ToolIcon = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin: 10px 0;
+    &::after {
+        width: 200px;
+        right: 0;
+        top: 0;
+        transform: rotateZ(180deg);
 
-    p {
+        @media screen and (max-width: 767px) {
+            width: 0;
+        }
+    }
+
+    &::before {
+        left: 0;
+        top: 0;
+        width: 350px;
+
+        @media screen and (max-width: 767px) {
+            width: 0;
+        }
+    }
+
+    .slide-track {
+        animation: scroll 28s linear infinite;
+        display: flex;
+        width: 200%;
+        position: absolute;
+        left: 0;
+    }
+
+    .items-container {
+        display: flex;
+        width: 100%;
         margin: 0;
-        font-size: 1rem;
+        padding: 0;
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
     }
 `;

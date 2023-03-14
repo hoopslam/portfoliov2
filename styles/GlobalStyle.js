@@ -1,11 +1,8 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 
 //Global Styles Reset
 const GlobalStyle = createGlobalStyle`
 
-html {
-  scroll-behavior: smooth;
-}
 
 * {
     box-sizing: border-box;
@@ -24,34 +21,39 @@ ul {
 
 body{
   min-height:100vh;
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  background-color: ${({theme}) => theme.background};
+  background-color: ${({ theme }) => theme.background};
   scroll-behavior: smooth;
+  scrollbar-width: none;
+
+  #__next {
+    width:100%;
+  }
 }
 `;
 
-export default GlobalStyle
+export default GlobalStyle;
 
 export const StyledButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: ${({ theme }) => (theme.primary === "#00ff37" ? "#000" : "#fff")};
-  background-color: ${({ theme }) => theme.primary};
-  border: none;
-  padding: 8px 12px;
-  border-radius: 12px;
-  transition: all 0.25s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${({ theme }) => (theme.primary === '#00ff37' ? '#000' : '#fff')};
+    background-color: ${({ theme }) => theme.primary};
+    border: none;
+    padding: 8px 12px;
+    border-radius: 12px;
+    transition: all 0.25s ease;
 
-  .icon {
-    margin: 0 5px;
-  }
+    .icon {
+        margin: 0 5px;
+    }
 
-  :hover {
-    cursor: pointer;
-    background-color: ${({ theme }) => (theme.primary === "#00ff37" ? "#00cc00" : theme.dark)};
-  }
+    :hover {
+        cursor: pointer;
+        background-color: ${({ theme }) =>
+            theme.primary === '#00ff37' ? '#00cc00' : theme.dark};
+    }
 `;

@@ -7,10 +7,10 @@ const Layout = ({ children, themeHandler, selectedTheme }) => {
     return (
         <LayoutContainer>
             <Head>
-                <title>David Cho Web Developer</title>
+                <title>David Cho Software Engineer</title>
                 <meta
                     name='description'
-                    content="David Cho's home page.  Web Developer, blogger, cat dad"
+                    content="David Cho's home page.  Software Engineer, blogger, cat dad"
                 />
                 <link
                     rel='icon'
@@ -30,19 +30,10 @@ const Layout = ({ children, themeHandler, selectedTheme }) => {
 export default Layout;
 
 const LayoutContainer = styled.div`
-    width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     color: ${({ theme }) => theme.textColor};
 `;
 
-const Main = styled.main`
-    width: 100%;
-    max-width: 767px;
-    flex-grow: 1;
-
-    @media screen and (max-width: 990px) {
-        max-width: none;
-    }
-`;
+const Main = styled.main``;
