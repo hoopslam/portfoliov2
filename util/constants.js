@@ -63,23 +63,4 @@ export const PROJECTS = [
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
     },
-    {
-        id: 6,
-        title: 'Geography Quiz App',
-        image: '/images/projects/geoquiz.jpg',
-        description:
-            'A random geography quiz app built in Typescript + React with MobX for global state management. Test your world knowledge!',
-        tech: 'Typescript, React, MobX, Styled Components, Opentdb API',
-        github: 'https://github.com/hoopslam/geoquiz',
-        live: 'https://hoopslam.github.io/geoquiz/',
-    },
-    {
-        id: 2,
-        title: 'Voca Mocha',
-        image: '/images/projects/mocha.jpg',
-        description:
-            'A vocabulary memorization app for both Android and IOS.  Features local storage and a study reminder notification system.',
-        tech: 'React Native, Expo, Typescript',
-        github: 'https://github.com/hoopslam/vocamocha',
-    },
 ];
