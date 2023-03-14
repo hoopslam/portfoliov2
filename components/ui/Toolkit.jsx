@@ -22,9 +22,9 @@ const ToolKitContainer = styled.div`
     background-color: white;
     box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
     height: 100px;
-    overflow: hidden;
     position: relative;
     width: 100%;
+    overflow: hidden;
 
     &::before,
     &::after {
@@ -61,7 +61,7 @@ const ToolKitContainer = styled.div`
     }
 
     .slide-track {
-        animation: scroll 40s linear infinite;
+        animation: scroll 28s linear infinite;
         display: flex;
         width: 200%;
         position: absolute;
@@ -70,7 +70,9 @@ const ToolKitContainer = styled.div`
 
     .items-container {
         display: flex;
-        justify-content: space-around;
+        width: 100%;
+        margin: 0;
+        padding: 0;
     }
 
     @keyframes scroll {
@@ -78,7 +80,7 @@ const ToolKitContainer = styled.div`
             left: 0%;
         }
         100% {
-            left: -227%;
+            left: -200%;
         }
     }
 `;

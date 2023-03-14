@@ -143,8 +143,8 @@ const ToolIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 220px;
     height: 100px;
-    padding: 12px 32px;
 
     p {
         margin-left: 12px;
