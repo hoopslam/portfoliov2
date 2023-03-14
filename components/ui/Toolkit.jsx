@@ -77,10 +77,10 @@ const ToolKitContainer = styled.div`
 
     @keyframes scroll {
         0% {
-            left: 0%;
+            transform: translateX(0);
         }
         100% {
-            left: -200%;
+            transform: translateX(-100%);
         }
     }
 `;

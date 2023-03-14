@@ -145,6 +145,7 @@ const ToolIcon = styled.div`
     align-items: center;
     width: 220px;
     height: 100px;
+    margin-right: 16px;
 
     p {
         margin-left: 12px;
