@@ -44,6 +44,12 @@ const FooterContainer = styled.footer`
     width: 100%;
     color: ${({ theme }) => (theme.primary === '#00ff37' ? '#fff' : '#333')};
 
+    padding-left: 110px;
+
+    @media screen and (max-width: 990px) {
+        padding-left: 0;
+    }
+
     p {
         margin: 5px;
         padding: 5px;

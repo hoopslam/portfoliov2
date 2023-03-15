@@ -1,97 +1,43 @@
 import styled from 'styled-components';
 import { PROJECTS } from '../../util/constants';
-import { FaGithubAlt, FaExternalLinkAlt } from 'react-icons/fa';
-import Image from 'next/image';
 import Fade from 'react-reveal/Fade';
-import { StyledButton } from '../../styles/GlobalStyle';
+import ProjectCard from '../ui/ProjectCard';
 
 const HomeProjects = () => {
     return (
-        <ProjectContainer id='projects'>
+        <ProjectsSectionContainer>
             <Fade>
-                <h1>And here are some of the projects I&apos;ve made</h1>
+                <h1>Here are some of my projects</h1>
             </Fade>
-            <div className='projects-container'>
+            <ProjectsContainer id='projects'>
                 {PROJECTS.map((project) => (
                     <Fade
                         fraction={0.5}
                         key={project.id}
                     >
-                        <Project>
-                            <LeftContainer>
-                                <h2>{project.title}</h2>
-                                <ImageContainer>
-                                    <Image
-                                        src={project.image}
-                                        alt={`Project Image ${project.title}`}
-                                        width={350}
-                                        height={262}
-                                    />
-                                </ImageContainer>
-                            </LeftContainer>
-                            <ProjectDescription>
-                                <h3>
-                                    Tech: <span>{project.tech}</span>
-                                </h3>
-                                <p>{project.description}</p>
-                                <Links>
-                                    <a
-                                        href={project.github}
-                                        target='_blank'
-                                        rel='noreferrer'
-                                    >
-                                        <StyledButton>
-                                            Code
-                                            <FaGithubAlt
-                                                size={25}
-                                                className='icon'
-                                            />
-                                        </StyledButton>
-                                    </a>
-                                    {project?.live && (
-                                        <a
-                                            href={project.live}
-                                            target='_blank'
-                                            rel='noreferrer'
-                                        >
-                                            <StyledButton>
-                                                Live
-                                                <FaExternalLinkAlt
-                                                    size={25}
-                                                    className='icon'
-                                                />
-                                            </StyledButton>
-                                        </a>
-                                    )}
-                                </Links>
-                            </ProjectDescription>
-                        </Project>
+                        <ProjectCard project={project} />
                     </Fade>
                 ))}
-            </div>
-        </ProjectContainer>
+            </ProjectsContainer>
+        </ProjectsSectionContainer>
     );
 };
 
 export default HomeProjects;
 
-const ProjectContainer = styled.section`
-    width: 100%;
-    padding: 40px;
+const ProjectsSectionContainer = styled.div`
+    padding: 48px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
 
-    .projects-container {
-        display: grid;
-        max-width: 700px;
-        grid-template-columns: 1fr;
-    }
+    /* * {
+        outline: 1px solid red;
+    } */
 
     h1 {
         color: ${({ theme }) => theme.primary};
-        margin-bottom: 50px;
+        text-align: center;
     }
 
     a {
@@ -99,6 +45,22 @@ const ProjectContainer = styled.section`
             ${({ theme }) =>
                 theme.primary === '#263238' ? '#fff' : theme.primary};
         font-weight: bold;
+    }
+
+    @media screen and (max-width: 990px) {
+        padding: 24px;
+    }
+`;
+
+const ProjectsContainer = styled.section`
+    margin-top: 40px;
+    display: grid;
+    gap: 64px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    @media screen and (max-width: 767px) {
+        grid-template-columns: 1fr;
+        gap: 40px;
     }
 `;
 

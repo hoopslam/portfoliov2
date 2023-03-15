@@ -66,9 +66,6 @@ const AboutContainer = styled.div`
         p {
             padding: 16px;
         }
-
-        @media screen and (max-width: 767px) {
-        }
     }
 
     P {
