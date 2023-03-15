@@ -23,4 +23,10 @@ const HomeContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding-left: 110px;
+
+    @media screen and (max-width: 990px) {
+        padding-left: 0;
+    }
 `;
