@@ -28,6 +28,36 @@ function ProjectCard({ project }) {
             <div className='description-overlay'>
                 <h2>{title}</h2>
                 <p>{description}</p>
+                <div className='links'>
+                    <a
+                        href={github}
+                        target='_blank'
+                        rel='noreferrer'
+                    >
+                        <StyledButton>
+                            Code
+                            <FaGithubAlt
+                                size={25}
+                                className='icon'
+                            />
+                        </StyledButton>
+                    </a>
+                    {project?.live && (
+                        <a
+                            href={live}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            <StyledButton>
+                                Live
+                                <FaExternalLinkAlt
+                                    size={25}
+                                    className='icon'
+                                />
+                            </StyledButton>
+                        </a>
+                    )}
+                </div>
             </div>
         </ProjectCardContainer>
     );
@@ -48,7 +78,7 @@ const ProjectCardContainer = styled.div`
 
     .description-overlay {
         position: absolute;
-        top: ${({ overlayActive }) => (overlayActive ? `0` : `80%`)};
+        top: ${({ overlayActive }) => (overlayActive ? `0%` : `80%`)};
         left: 0;
         width: 100%;
         height: 100%;
@@ -56,6 +86,9 @@ const ProjectCardContainer = styled.div`
         color: white;
         transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         padding: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         h2 {
             text-align: center;
@@ -65,6 +98,11 @@ const ProjectCardContainer = styled.div`
         p {
             padding: 12px;
         }
+    }
+
+    .links {
+        display: flex;
+        justify-content: space-evenly;
     }
 
     :hover {
