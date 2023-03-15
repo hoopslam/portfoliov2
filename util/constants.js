@@ -27,7 +27,7 @@ export const PROJECTS = [
         id: 9,
         title: 'Catazon',
         description:
-            'An E-Commerce platform for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
+            'A Full-Stack E-Commerce project for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
         tech: 'Firebase, React, Sass, Stripe API, Netlify',
         image: '/images/projects/catazon.jpg',
         github: 'https://github.com/hoopslam/catazon',
@@ -37,18 +37,18 @@ export const PROJECTS = [
         id: 8,
         title: 'The Ajeossi Post',
         description:
-            'A full stack blog project with Sanity Headless CMS and Next.  Static Site Generation with Incremental Static Regeneration for Blazing fast performance and SEO.',
+            'A Full-Stack blog project with Sanity Headless CMS and Next 13.  Features Static Site Generation with Incremental Static Regeneration for fast performance and SEO.',
         tech: 'Next.js 13, Sanity, GROQ, Tailwind, Typescript, Portable Text,',
         image: '/images/projects/blog.jpg',
         github: 'https://github.com/hoopslam/ajeossiPost',
         live: 'https://ajeossipost.com',
     },
     {
-        title: 'Disney Plus Front End',
+        title: 'Disney Plus Replica',
         id: 3,
         image: '/images/projects/disneyplus1.png',
         description:
-            'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
+            'A replica of the Disney Plus Front End.  Built with React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
         tech: 'React, Redux, Styled Components, Firebase',
         github: 'https://github.com/hoopslam/disneyplusclone',
         live: 'https://disneyplus-clone-703c8.web.app/',

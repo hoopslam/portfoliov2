@@ -35,7 +35,7 @@ function ProjectCard({ project }) {
                         rel='noreferrer'
                     >
                         <StyledButton>
-                            Code
+                            About
                             <FaGithubAlt
                                 size={25}
                                 className='icon'
@@ -49,7 +49,7 @@ function ProjectCard({ project }) {
                             rel='noreferrer'
                         >
                             <StyledButton>
-                                Live
+                                Live Demo
                                 <FaExternalLinkAlt
                                     size={25}
                                     className='icon'
@@ -82,7 +82,8 @@ const ProjectCardContainer = styled.div`
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: ${({ theme }) => theme.light};
+        background-color: ${({ theme, overlayActive }) =>
+            overlayActive ? `${theme.light}ee` : theme.light};
         color: white;
         transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
         padding: 12px;
