@@ -44,14 +44,13 @@ export const PROJECTS = [
         live: 'https://ajeossipost.com',
     },
     {
-        title: 'Disney Plus Replica',
+        title: 'Voca Mocha',
         id: 3,
-        image: '/images/projects/disneyplus1.png',
+        image: '/images/projects/mocha.jpg',
         description:
-            'A replica of the Disney Plus Front End.  Built with React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
+            'A vocabulary builder App for Android and IOS devices.  Create your own vocabulary study list and set study reminders to help you keep track of what you have learned.',
         tech: 'React, Redux, Styled Components, Firebase',
-        github: 'https://github.com/hoopslam/disneyplusclone',
-        live: 'https://disneyplus-clone-703c8.web.app/',
+        github: 'https://github.com/hoopslam/vocamocha',
     },
     {
         id: 1,
