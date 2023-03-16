@@ -4,7 +4,7 @@ Welcome to my portfolio site repo. Feel free to poke around and see how everythi
 
 ## Visit Live Site
 
-You can check out the live site [here](https://devcho.com/)
+You can check out the live site [here](https://devidcho.com/)
 
 ## 🎨 Design
 

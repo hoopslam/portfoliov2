@@ -30,6 +30,16 @@ const Footer = () => {
             </LinksContainer>
             <SocialLinks />
             <p>Made by David Cho &#169; {new Date().getFullYear()}</p>
+            <p>
+                {`Learn more about this portfolio site project `}
+                <a
+                    href='https://github.com/hoopslam/portfoliov2'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                >
+                    here
+                </a>
+            </p>
         </FooterContainer>
     );
 };
@@ -45,6 +55,7 @@ const FooterContainer = styled.footer`
     color: ${({ theme }) => (theme.primary === '#00ff37' ? '#fff' : '#333')};
 
     padding-left: 110px;
+    padding-bottom: 40px;
 
     @media screen and (max-width: 990px) {
         padding-left: 0;
@@ -53,7 +64,10 @@ const FooterContainer = styled.footer`
     p {
         margin: 5px;
         padding: 5px;
-        font-family: 'Yellowtail', cursive;
+
+        a {
+            color: ${({ theme }) => theme.primary};
+        }
     }
 `;
 
