@@ -7,8 +7,9 @@ import { BiMessageDetail } from 'react-icons/bi';
 import Link from 'next/link';
 import Drawer from '../ui/Drawer';
 import { scrollToTop } from '../../util/utilfunctions';
+import { COLORS } from '../../util/constants';
 
-const Navbar = () => {
+const Navbar = ({ themeHandler, selectedTheme }) => {
     const [active, setActive] = useState(false);
     const [drawerActive, setDrawerActive] = useState(false);
 
@@ -106,18 +107,6 @@ const Navbar = () => {
                             </ListItem>
                         </a>
                     </Link>
-
-                    {/* <Link href="/blog/" passHref>
-            <a onClick={menuToggler}>
-              <ListItem>
-                <div className="centeredIcon" aria-label="Blog Link">
-                  <FaBlog className="icon" size={25} alt="Blog Icon" />
-                  <span>Blog</span>
-                </div>
-              </ListItem>
-            </a>
-          </Link> */}
-
                     <Link
                         href='/#contact'
                         passHref
@@ -138,6 +127,21 @@ const Navbar = () => {
                             </ListItem>
                         </a>
                     </Link>
+                    <ColorPicker>
+                        {COLORS.map((color, i) => (
+                            <button
+                                key={color.id}
+                                onClick={() => themeHandler(color.id)}
+                                style={{
+                                    backgroundColor: `${color.hex}`,
+                                    transform: `${
+                                        selectedTheme === i ? `scale(1.4)` : ''
+                                    }`,
+                                }}
+                                aria-label='color-picker-button'
+                            ></button>
+                        ))}
+                    </ColorPicker>
                 </MenuList>
             </NavbarContainer>
             <Hamburger
@@ -292,5 +296,31 @@ const Hamburger = styled.button`
 
     @media screen and (max-width: 990px) {
         display: block;
+    }
+`;
+
+const ColorPicker = styled.div`
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+
+    button {
+        cursor: pointer;
+        width: 16px;
+        margin: 4px;
+        height: 16px;
+        border: none;
+        box-shadow: 1px 1px 3px #000;
+        border-radius: 50%;
+        transition: all 0.2s;
+
+        :hover {
+            transform: scale(1.4);
+        }
     }
 `;
