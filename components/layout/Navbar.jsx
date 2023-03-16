@@ -127,23 +127,23 @@ const Navbar = ({ themeHandler, selectedTheme }) => {
                             </ListItem>
                         </a>
                     </Link>
-                    <ColorPicker>
-                        {COLORS.map((color, i) => (
-                            <button
-                                key={color.id}
-                                onClick={() => themeHandler(color.id)}
-                                style={{
-                                    backgroundColor: `${color.hex}`,
-                                    transform: `${
-                                        selectedTheme === i ? `scale(1.4)` : ''
-                                    }`,
-                                }}
-                                aria-label='color-picker-button'
-                            ></button>
-                        ))}
-                    </ColorPicker>
                 </MenuList>
             </NavbarContainer>
+            <ColorPicker>
+                {COLORS.map((color, i) => (
+                    <button
+                        key={color.id}
+                        onClick={() => themeHandler(color.id)}
+                        style={{
+                            backgroundColor: `${color.hex}`,
+                            transform: `${
+                                selectedTheme === i ? `scale(1.4)` : ''
+                            }`,
+                        }}
+                        aria-label='color-picker-button'
+                    ></button>
+                ))}
+            </ColorPicker>
             <Hamburger
                 onClick={menuToggler}
                 aria-label='hamburger menu'
