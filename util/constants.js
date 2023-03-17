@@ -24,7 +24,7 @@ export const PROFILE_IMGS = [
 
 export const PROJECTS = [
     {
-        id: 9,
+        id: 5,
         title: 'Catazon',
         description:
             'A Full-Stack E-Commerce project for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
@@ -34,7 +34,7 @@ export const PROJECTS = [
         live: 'https://startling-melba-a51cc6.netlify.app/',
     },
     {
-        id: 8,
+        id: 4,
         title: 'The Ajeossi Post',
         description:
             'A Full-Stack blog project with Sanity Headless CMS and Next 13.  Features Static Site Generation with Incremental Static Regeneration for fast performance and SEO.',
@@ -53,7 +53,7 @@ export const PROJECTS = [
         github: 'https://github.com/hoopslam/vocamocha',
     },
     {
-        id: 1,
+        id: 2,
         title: 'Covid-19 Tracker',
         description:
             "A worldwide Covid-19 tracker app using live data from John's Hopkins University and Worldometers. Fully intactive map and charts that dynamically render based on user input.",
@@ -61,5 +61,14 @@ export const PROJECTS = [
         image: '/images/projects/covid-0.png',
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
+    },
+    {
+        id: 0,
+        title: 'This Portfolio Site',
+        description:
+            "Wanna see what's under the hood of this portfolio website?  Feel free to have a look at my potfolio site repo",
+        tech: 'Next.js, Styled-Components',
+        image: '/images/projects/portfolio.png',
+        github: 'https://github.com/hoopslam/portfoliov2',
     },
 ];

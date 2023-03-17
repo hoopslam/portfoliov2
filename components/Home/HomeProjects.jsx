@@ -73,4 +73,14 @@ const ProjectsContainer = styled.section`
         grid-template-columns: 1fr;
         gap: 40px;
     }
+
+    > div:last-child {
+        grid-column-end: span 2;
+        justify-self: center;
+
+        @media screen and (max-width: 767px) {
+            grid-column-end: auto;
+            justify-self: auto;
+        }
+    }
 `;

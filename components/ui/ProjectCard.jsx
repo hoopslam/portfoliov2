@@ -68,7 +68,6 @@ const ProjectCardContainer = styled.div`
     cursor: pointer;
     overflow: hidden; //hide image container corner
     position: relative;
-    width: 350px;
     height: 300px;
 
     .description-overlay {
