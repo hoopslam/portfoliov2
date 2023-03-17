@@ -99,6 +99,10 @@ const ProjectCardContainer = styled.div`
     .links {
         display: flex;
         justify-content: space-evenly;
+
+        a {
+            text-decoration: none;
+        }
     }
 
     :hover {

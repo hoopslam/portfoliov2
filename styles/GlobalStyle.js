@@ -45,7 +45,7 @@ export const StyledButton = styled.button`
     border: none;
     padding: 8px 12px;
     border-radius: 12px;
-    transition: all 0.25s ease;
+    transition: all 0.5s ease;
 
     .icon {
         margin: 0 5px;
