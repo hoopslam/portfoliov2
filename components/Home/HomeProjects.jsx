@@ -1,21 +1,36 @@
+import { useState } from 'react';
 import styled from 'styled-components';
 import { PROJECTS } from '../../util/constants';
 import Fade from 'react-reveal/Fade';
 import ProjectCard from '../ui/ProjectCard';
 
 const HomeProjects = () => {
+    const [activeCardNumber, setActiveCardNumber] = useState(null);
+
+    const handleCardClick = (index) => {
+        if (activeCardNumber === index) {
+            setActiveCardNumber(null);
+            return;
+        }
+        setActiveCardNumber(index);
+    };
+
     return (
         <ProjectsSectionContainer>
             <Fade>
                 <h1>Here are some of my projects</h1>
             </Fade>
             <ProjectsContainer id='projects'>
-                {PROJECTS.map((project) => (
+                {PROJECTS.map((project, i) => (
                     <Fade
                         fraction={0.5}
                         key={project.id}
                     >
-                        <ProjectCard project={project} />
+                        <ProjectCard
+                            project={project}
+                            isActive={activeCardNumber === i}
+                            onClick={() => handleCardClick(i)}
+                        />
                     </Fade>
                 ))}
             </ProjectsContainer>

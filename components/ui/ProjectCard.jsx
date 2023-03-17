@@ -1,21 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { FaGithubAlt, FaExternalLinkAlt } from 'react-icons/fa';
 import { StyledButton } from '../../styles/GlobalStyle';
 import Image from 'next/image';
 
-function ProjectCard({ project }) {
+function ProjectCard({ project, isActive, onClick }) {
     const { title, image, description, github, live } = project;
-    const [overlayActive, setOverlayActive] = useState(false);
-
-    const handleClick = () => {
-        setOverlayActive(!overlayActive);
-    };
 
     return (
         <ProjectCardContainer
-            onClick={handleClick}
-            overlayActive={overlayActive}
+            onClick={onClick}
+            overlayActive={isActive}
         >
             <div className='card-front'>
                 <Image
