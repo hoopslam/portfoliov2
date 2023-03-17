@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
   }
 
 a {
@@ -25,8 +27,6 @@ body{
   display: flex;
   justify-content: center;
   background-color: ${({ theme }) => theme.background};
-  scroll-behavior: smooth;
-  scrollbar-width: none;
 
   #__next {
     width:100%;

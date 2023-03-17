@@ -61,7 +61,7 @@ function ProjectCard({ project, isActive, onClick }) {
 export default ProjectCard;
 
 const ProjectCardContainer = styled.div`
-    border: 3px solid rgba(249, 249, 249, 0.1);
+    border: 3px solid rgba(196, 202, 206, 0.5);
     border-radius: 12px;
     box-shadow: rgb(0 0 0 / 69%) 0px 4px 24px -12px;
     transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
