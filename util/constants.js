@@ -24,6 +24,16 @@ export const PROFILE_IMGS = [
 
 export const PROJECTS = [
     {
+        id: 6,
+        title: 'AI Language Coach',
+        description:
+            'A language learning application using the power of OpenAI.  Have conversation classes with an AI Language Instructor',
+        tech: 'OpenAI, Next.js, Typescript, Firebase, Tailwind',
+        image: '/images/projects/babelon.png',
+        github: 'https://github.com/hoopslam/babel_on',
+        live: 'https://babel-on.vercel.app/',
+    },
+    {
         id: 5,
         title: 'Catazon',
         description:
@@ -61,6 +71,16 @@ export const PROJECTS = [
         image: '/images/projects/covid-0.png',
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
+    },
+    {
+        id: 1,
+        title: 'Tier List Maker',
+        description:
+            'A Tier List Maker using vanilla Javascript, HTML, and CSS',
+        tech: 'HTML, CSS, Javscript',
+        image: '/images/projects/tier.jpg',
+        github: 'https://github.com/hoopslam/tier-list-v1',
+        live: 'https://hoopslam.github.io/tier-list-v1/',
     },
     {
         id: 0,
