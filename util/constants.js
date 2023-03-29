@@ -44,15 +44,6 @@ export const PROJECTS = [
         live: 'https://startling-melba-a51cc6.netlify.app/',
     },
     {
-        title: 'Voca Mocha',
-        id: 3,
-        image: '/images/projects/mocha.jpg',
-        description:
-            'A vocabulary builder App for Android and IOS devices.  Create your own vocabulary study list and set study reminders to help you keep track of what you have learned.',
-        tech: 'React, Redux, Styled Components, Firebase',
-        github: 'https://github.com/hoopslam/vocamocha',
-    },
-    {
         id: 2,
         title: 'Covid-19 Tracker',
         description:
@@ -61,16 +52,6 @@ export const PROJECTS = [
         image: '/images/projects/covid-0.png',
         github: 'https://github.com/hoopslam/Covid-19-tracker',
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
-    },
-    {
-        id: 1,
-        title: 'Tier List Maker',
-        description:
-            'A Tier List Maker using vanilla Javascript, HTML, and CSS',
-        tech: 'HTML, CSS, Javscript',
-        image: '/images/projects/tier.jpg',
-        github: 'https://github.com/hoopslam/tier-list-v1',
-        live: 'https://hoopslam.github.io/tier-list-v1/',
     },
     {
         id: 0,
