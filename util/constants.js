@@ -44,16 +44,6 @@ export const PROJECTS = [
         live: 'https://startling-melba-a51cc6.netlify.app/',
     },
     {
-        id: 4,
-        title: 'The Ajeossi Post',
-        description:
-            'A Full-Stack blog project with Sanity Headless CMS and Next 13.  Features Static Site Generation with Incremental Static Regeneration for fast performance and SEO.',
-        tech: 'Next.js 13, Sanity, GROQ, Tailwind, Typescript, Portable Text,',
-        image: '/images/projects/blog.jpg',
-        github: 'https://github.com/hoopslam/ajeossiPost',
-        live: 'https://ajeossipost.com',
-    },
-    {
         title: 'Voca Mocha',
         id: 3,
         image: '/images/projects/mocha.jpg',
