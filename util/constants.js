@@ -54,6 +54,17 @@ export const PROJECTS = [
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
     },
     {
+        title: 'Disney Plus Front End',
+        id: 3,
+        image: '/images/projects/disneyplus1.png',
+        mobile: '/images/projects/disneyplusmobile.jpg',
+        description:
+            'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
+        tech: 'React, Redux, Styled Components, Firebase',
+        github: 'https://github.com/hoopslam/disneyplusclone',
+        live: 'https://disneyplus-clone-703c8.web.app/',
+    },
+    {
         id: 0,
         title: 'This Portfolio Site',
         description:
