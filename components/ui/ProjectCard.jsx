@@ -5,7 +5,7 @@ import { StyledButton } from '../../styles/GlobalStyle';
 import Image from 'next/image';
 
 function ProjectCard({ project, isActive, onClick }) {
-    const { title, image, description, github, live } = project;
+    const { title, image, description, github, live, tech } = project;
 
     return (
         <ProjectCardContainer
@@ -21,7 +21,14 @@ function ProjectCard({ project, isActive, onClick }) {
                 />
             </div>
             <div className='description-overlay'>
-                <h2>{title}</h2>
+                <div className='top-card-container'>
+                    <h2>{title}</h2>
+                    <div className='tech'>
+                        {tech.map((item) => (
+                            <span key={item}>{item}</span>
+                        ))}
+                    </div>
+                </div>
                 <p>{description}</p>
                 <div className='links'>
                     <a
@@ -70,6 +77,10 @@ const ProjectCardContainer = styled.div`
     position: relative;
     height: 300px;
 
+    .top-card-container {
+        padding: 0 12px;
+    }
+
     .description-overlay {
         position: absolute;
         top: ${({ overlayActive }) => (overlayActive ? `0%` : `80%`)};
@@ -84,6 +95,17 @@ const ProjectCardContainer = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        z-index: 2;
+
+        .tech {
+            display: flex;
+            flex-wrap: wrap;
+
+            span {
+                margin: 0 8px;
+                font-weight: 900;
+            }
+        }
 
         h2 {
             text-align: center;

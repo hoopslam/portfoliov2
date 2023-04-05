@@ -74,7 +74,8 @@ const ProjectsContainer = styled.section`
         gap: 40px;
     }
 
-    > div:last-child {
+    //Disable if even number of projects
+    /* > div:last-child {
         grid-column-end: span 2;
         justify-self: center;
 
@@ -82,5 +83,5 @@ const ProjectsContainer = styled.section`
             grid-column-end: auto;
             justify-self: auto;
         }
-    }
+    } */
 `;

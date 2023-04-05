@@ -19,10 +19,12 @@ const About = () => {
                         with different screen sizes.
                     </p>
                     <p>
-                        I&apos;m always playing around with new technologies and
-                        constantly adding new skills to my skillset. These days,
-                        I build full stack projects using tools like Next.js,
-                        Sanity, Firebase, MongoDB, Node/Express, and GraphQL.
+                        I love spending my time in the world of CSS and
+                        Javascript and can easily get lost in it for days. In
+                        the outside world, you will find me from time to time,
+                        getting a few shots up on the basketball court, playing
+                        Overwatch/PUBG with my wife, or on the prowl for the
+                        best taco in town.
                     </p>
                 </div>
             </div>

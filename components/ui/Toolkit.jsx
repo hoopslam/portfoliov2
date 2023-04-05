@@ -61,7 +61,7 @@ const ToolKitContainer = styled.div`
     }
 
     .slide-track {
-        animation: scroll 28s linear infinite;
+        animation: scroll 50s linear infinite;
         display: flex;
         position: absolute;
         left: 0;
