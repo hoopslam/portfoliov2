@@ -54,14 +54,14 @@ export const PROJECTS = [
         live: 'https://hoopslam.github.io/Covid-19-tracker/',
     },
     {
-        title: 'Disney Plus Replica',
+        title: 'Geo Quiz',
         id: 3,
-        image: '/images/projects/disneyplus1.png',
+        image: '/images/projects/geoquiz.jpg',
         description:
-            'A replica of the Disney Plus Front End.  React + Redux + Styled Components frontend and Firebase backend for authentication and database.',
-        tech: ['React', 'Redux', 'Styled Components', 'Firebase'],
-        github: 'https://github.com/hoopslam/disneyplusclone',
-        live: 'https://disneyplus-clone-703c8.web.app/',
+            'A Geo Quiz app that tests your world knowledge.  Questions fetched from Opentdb API.',
+        tech: ['React', 'MobX', 'Styled Components', 'Typescript'],
+        github: 'https://github.com/hoopslam/geoquiz',
+        live: 'https://hoopslam.github.io/geoquiz/',
     },
     {
         title: 'Tier List Maker',
@@ -78,7 +78,7 @@ export const PROJECTS = [
         title: 'This Portfolio Site',
         description:
             "Wanna see what's under the hood of this portfolio website?  Feel free to have a look at my portfolio site repo",
-        tech: ['Next.js', 'Styled-Components'],
+        tech: ['Next.js', 'Styled Components'],
         image: '/images/projects/portfolio.png',
         github: 'https://github.com/hoopslam/portfoliov2',
     },

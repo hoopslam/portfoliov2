@@ -102,8 +102,12 @@ const ProjectCardContainer = styled.div`
             flex-wrap: wrap;
 
             span {
-                margin: 0 8px;
+                margin: 2px 4px;
                 font-weight: 900;
+                background-color: white;
+                border-radius: 12px;
+                padding: 2px 8px;
+                color: black;
             }
         }
 
