@@ -23,11 +23,11 @@ function ProjectCard({ project, isActive, onClick }) {
             <div className='description-overlay'>
                 <div className='top-card-container'>
                     <h2>{title}</h2>
-                    <div className='tech'>
+                    {/* <div className='tech'>
                         {tech.map((item) => (
                             <span key={item}>{item}</span>
                         ))}
-                    </div>
+                    </div> */}
                 </div>
                 <p>{description}</p>
                 <div className='links'>

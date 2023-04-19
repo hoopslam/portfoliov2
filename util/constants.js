@@ -35,13 +35,12 @@ export const PROJECTS = [
     },
     {
         id: 5,
-        title: 'Catazon',
+        title: 'Catazon (Mobile App)',
         description:
-            'A Full-Stack E-Commerce project for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
-        tech: ['React', 'Sass', 'Firebase', 'Stripe API', 'Netlify'],
-        image: '/images/projects/catazon.jpg',
-        github: 'https://github.com/hoopslam/catazon',
-        live: 'https://startling-melba-a51cc6.netlify.app/',
+            'A Full-Stack, Cross-Platform (Web, Android, IOS) E-Commerce project for cat products.  Features user authentication, Stripe payment integration, and Google Cloud database.',
+        tech: ['React && React Native', 'Redux', 'Firebase', 'Stripe API'],
+        image: '/images/projects/catazonmobile.png',
+        github: 'https://github.com/hoopslam/catazon_mobile',
     },
     {
         id: 2,
