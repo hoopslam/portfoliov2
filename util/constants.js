@@ -43,6 +43,16 @@ export const PROJECTS = [
         github: 'https://github.com/hoopslam/catazon_mobile',
     },
     {
+        id: 8,
+        title: 'Disney Plus Clone',
+        description:
+            'A Front End Replica of Disney Plus.  Built with React, Redux Toolkit, Styled Components, and Firebase',
+        tech: ['React', 'Redux', 'Styled Components', 'Firebase'],
+        image: '/images/projects/disneyplus1.png',
+        github: 'https://github.com/hoopslam/disneyplusclone',
+        live: 'https://disneyplus-clone-703c8.web.app/home',
+    },
+    {
         id: 2,
         title: 'Covid-19 Tracker',
         description:
@@ -72,13 +82,13 @@ export const PROJECTS = [
         github: 'https://github.com/hoopslam/tier-list-v1',
         live: 'https://hoopslam.github.io/tier-list-v1/',
     },
-    {
-        id: 0,
-        title: 'This Portfolio Site',
-        description:
-            "Wanna see what's under the hood of this portfolio website?  Feel free to have a look at my portfolio site repo",
-        tech: ['Next.js', 'Styled Components'],
-        image: '/images/projects/portfolio.png',
-        github: 'https://github.com/hoopslam/portfoliov2',
-    },
+    // {
+    //     id: 0,
+    //     title: 'This Portfolio Site',
+    //     description:
+    //         "Wanna see what's under the hood of this portfolio website?  Feel free to have a look at my portfolio site repo",
+    //     tech: ['Next.js', 'Styled Components'],
+    //     image: '/images/projects/portfolio.png',
+    //     github: 'https://github.com/hoopslam/portfoliov2',
+    // },
 ];
