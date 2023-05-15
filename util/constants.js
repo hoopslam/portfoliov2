@@ -35,7 +35,7 @@ export const PROJECTS = [
     },
     {
         id: 5,
-        title: 'Cross-Platform E-Commerce',
+        title: 'Cross-Platform Store',
         description:
             'Catazon, a Full-Stack, Cross-Platform (Web, Android, IOS) E-Commerce project for cat products.  Built with React.js(Web) and React Native(Mobile App), Firebase Auth, Google Cloud Storage',
         tech: ['React && React Native', 'Redux', 'Firebase', 'Stripe API'],
