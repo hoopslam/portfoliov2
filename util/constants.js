@@ -35,9 +35,9 @@ export const PROJECTS = [
     },
     {
         id: 5,
-        title: 'Catazon (Web, Android, IOS)',
+        title: 'Cross-Platform E-Commerce',
         description:
-            'A Full-Stack, Cross-Platform (Web, Android, IOS) E-Commerce project for cat products.  Built with React.js(Web) and React Native(Mobile App), Firebase Auth, Google Cloud Storage',
+            'Catazon, a Full-Stack, Cross-Platform (Web, Android, IOS) E-Commerce project for cat products.  Built with React.js(Web) and React Native(Mobile App), Firebase Auth, Google Cloud Storage',
         tech: ['React && React Native', 'Redux', 'Firebase', 'Stripe API'],
         image: '/images/projects/catazonmobile.png',
         github: 'https://github.com/hoopslam/catazon_mobile',
